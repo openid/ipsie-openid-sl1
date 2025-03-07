@@ -70,10 +70,8 @@ informative:
 
 --- abstract
 
-TODO Abstract
+The IPSIE SL1 OpenID Connect Profile is a profile of OpenID Connect intended to meet the security and interoperability requirements of enterprise integrations using OpenID Connect.
 
-
---- middle
 
 # Introduction
 
