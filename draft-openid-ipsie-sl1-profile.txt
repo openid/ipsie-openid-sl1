@@ -2,14 +2,14 @@
 
 
 
-WG Working Group                                              Y. N. Here
-Internet-Draft                                    Your Organization Here
+IPSIE Working Group                                           A. Parecki
+Internet-Draft                                                      Okta
 Intended status: Informational                              7 March 2025
 Expires: 8 September 2025
 
 
-                           TODO - Your title
-                  draft-todo-yourname-protocol-latest
+                    IPSIE SL1 OpenID Connect Profile
+                 draft-openid-ipsie-sl1-profile-latest
 
 Abstract
 
@@ -20,16 +20,16 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://example.com/LATEST.  Status information for this document may
-   be found at https://datatracker.ietf.org/doc/draft-todo-yourname-
-   protocol/.
+   https://github.com/aaronpk/ipsie-openid-sl1.  Status information for
+   this document may be found at https://datatracker.ietf.org/doc/draft-
+   openid-ipsie-sl1-profile/.
 
-   Discussion of this document takes place on the WG Working Group
-   mailing list (mailto:WG@example.com), which is archived at
-   https://example.com/WG.
+   Discussion of this document takes place on the IPSIE Working Group
+   mailing list (mailto:openid-specs-ipsie@lists.openid.net), which is
+   archived at https://openid.net/wg/ipsie/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/USER/REPO.
+   https://github.com/aaronpk/ipsie-openid-sl1.
 
 Status of This Memo
 
@@ -57,10 +57,7 @@ Copyright Notice
    Provisions Relating to IETF Documents (https://trustee.ietf.org/
    license-info) in effect on the date of publication of this document.
    Please review these documents carefully, as they describe your rights
-   and restrictions with respect to this document.  Code Components
-   extracted from this document must include Revised BSD License text as
-   described in Section 4.e of the Trust Legal Provisions and are
-   provided without warranty as described in the Revised BSD License.
+   and restrictions with respect to this document.
 
 Table of Contents
 
@@ -109,6 +106,6 @@ Acknowledgments
 
 Author's Address
 
-   Your Name Here
-   Your Organization Here
-   Email: your.email@example.com
+   Aaron Parecki
+   Okta
+   Email: aaron@parecki.com
