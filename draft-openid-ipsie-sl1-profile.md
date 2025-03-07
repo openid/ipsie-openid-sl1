@@ -130,12 +130,12 @@ In the following, a profile of the following technologies is defined:
 
 OpenID Providers:
 
-* shall distribute discovery metadata (such as the authorization endpoint) via the metadata document as specified in [OIDD];
+* shall distribute discovery metadata (such as the authorization endpoint) via the metadata document as specified in [OpenID.Discovery];
 * shall reject requests using the resource owner password credentials grant;
 * shall only support confidential clients as defined in [RFC6749];
 * shall only issue sender-constrained access tokens using DPoP [RFC9449];
 * shall authenticate clients using `private_key_jwt` as specified in Section 9 of [OpenID];
-* shall not expose open redirectors [Section 4.11 of RFC9700];
+* shall not expose open redirectors [[Section 4.11 of RFC9700]];
 * shall only accept its issuer identifier value (as defined in [RFC8414]) as a string in the `aud` claim received in client authentication assertions;
 
 
@@ -144,7 +144,7 @@ OpenID Providers:
 For flows that use the authorization endpoint, OpenID Providers:
 
 * shall issue authorization codes with a maximum lifetime of 60 seconds;
-* shall support "Authorization Code Binding to DPoP Key" (as required by [Section 10.1 of RFC9449]);
+* shall support "Authorization Code Binding to DPoP Key" (as required by [[Section 10.1 of RFC9449]]);
 
 
 ### Requirements for OpenID Relying Parties
