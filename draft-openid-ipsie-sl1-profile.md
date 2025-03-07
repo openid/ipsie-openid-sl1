@@ -19,7 +19,7 @@ venue:
   mail: openid-specs-ipsie@lists.openid.net
   arch: https://openid.net/wg/ipsie/
   github: "aaronpk/ipsie-openid-sl1"
-  latest: "https://aaronpk.github.io/ipsie-openid-sl1/draft-openid-ipsie-sl1-profile.html"
+  latest: "https://drafts.aaronpk.com/ipsie-openid-sl1/draft-openid-ipsie-sl1-profile.html"
 
 author:
  -
