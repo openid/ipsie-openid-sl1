@@ -1057,7 +1057,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <div id="internal-metadata" class="document-information">
 <dl id="identifiers">
 <dt class="label-workgroup">Workgroup:</dt>
-<dd class="workgroup">Network Working Group</dd>
+<dd class="workgroup">IPSIE Working Group</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
 <dd class="internet-draft">draft-openid-ipsie-sl1-profile-latest</dd>
 <dt class="label-published">Published:</dt>
@@ -1090,8 +1090,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-note.1-2">
         The latest revision of this draft can be found at <span><a href="https://aaronpk.github.io/ipsie-openid-sl1/draft-openid-ipsie-sl1-profile.html">https://aaronpk.github.io/ipsie-openid-sl1/draft-openid-ipsie-sl1-profile.html</a></span>.
         Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-openid-ipsie-sl1-profile/">https://datatracker.ietf.org/doc/draft-openid-ipsie-sl1-profile/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
-<p id="section-note.1-3">Source for this draft and an issue tracker can be found at
-        <span><a href="https://github.com/aaronpk/ipsie-openid-sl1">https://github.com/aaronpk/ipsie-openid-sl1</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
+<p id="section-note.1-3">
+        Discussion of this document takes place on the
+        IPSIE Working Group mailing list (<span><a href="mailto:openid-specs-ipsie@lists.openid.net">mailto:openid-specs-ipsie@lists.openid.net</a></span>),
+        which is archived at <span><a href="https://openid.net/wg/ipsie/">https://openid.net/wg/ipsie/</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
+<p id="section-note.1-4">Source for this draft and an issue tracker can be found at
+        <span><a href="https://github.com/aaronpk/ipsie-openid-sl1">https://github.com/aaronpk/ipsie-openid-sl1</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
@@ -1143,6 +1147,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.1">
+                <p id="section-toc.1-1.2.2.1.1" class="keepWithNext"><a href="#section-2.1" class="auto internal xref">2.1</a>.  <a href="#name-roles" class="internal xref">Roles</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-profile" class="internal xref">Profile</a></p>
@@ -1151,7 +1160,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
                 <p id="section-toc.1-1.3.2.1.1"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-network-layer-requirements" class="internal xref">Network Layer Requirements</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1.2.1">
-                    <p id="section-toc.1-1.3.2.1.2.1.1" class="keepWithNext"><a href="#section-3.1.1" class="auto internal xref">3.1.1</a>.  <a href="#name-requirements-for-all-endpoi" class="internal xref">Requirements for all endpoints</a></p>
+                    <p id="section-toc.1-1.3.2.1.2.1.1"><a href="#section-3.1.1" class="auto internal xref">3.1.1</a>.  <a href="#name-requirements-for-all-endpoi" class="internal xref">Requirements for all endpoints</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1.2.2">
                     <p id="section-toc.1-1.3.2.1.2.2.1"><a href="#section-3.1.2" class="auto internal xref">3.1.2</a>.  <a href="#name-requirements-for-endpoints-" class="internal xref">Requirements for endpoints not used by web browsers</a></p>
@@ -1214,6 +1223,15 @@ this document are to be interpreted as described in ISO Directive Part 2
 [ISODIR2]. These keywords are not used as dictionary terms such that any
 occurrence of them shall be interpreted as keywords and are not to be
 interpreted with their natural language meanings.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<div id="roles">
+<section id="section-2.1">
+        <h3 id="name-roles">
+<a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-roles" class="section-name selfRef">Roles</a>
+        </h3>
+<p id="section-2.1-1">This document uses the term "Identity Provider" to refer to the "OpenID Provider" in <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span> and the "Authorization Server" in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+<p id="section-2.1-2">This document uses the term "Application" to refer to the "Relying Party" in <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span> and the "Client" in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>.<a href="#section-2.1-2" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="profile">
@@ -1292,7 +1310,33 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
 <section id="section-3.2">
         <h3 id="name-cryptography-and-secrets">
 <a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-cryptography-and-secrets" class="section-name selfRef">Cryptography and Secrets</a>
-      </h3>
+        </h3>
+<p id="section-3.2-1">The following requirements apply to cryptographic operations and secrets:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3.2-2.1">
+            <p id="section-3.2-2.1.1">Authorization servers, clients, and resource servers when creating or processing JWTs shall:<a href="#section-3.2-2.1.1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3.2-2.1.2.1">
+                <p id="section-3.2-2.1.2.1.1">adhere to <span>[<a href="#RFC8725" class="cite xref">RFC8725</a>]</span>;<a href="#section-3.2-2.1.2.1.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-3.2-2.1.2.2">
+                <p id="section-3.2-2.1.2.2.1">use PS256, ES256, or EdDSA (using the Ed25519 variant) algorithms; and<a href="#section-3.2-2.1.2.2.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-3.2-2.1.2.3">
+                <p id="section-3.2-2.1.2.3.1">not use or accept the <code>none</code> algorithm.<a href="#section-3.2-2.1.2.3.1" class="pilcrow">¶</a></p>
+</li>
+            </ul>
+</li>
+          <li class="normal" id="section-3.2-2.2">
+            <p id="section-3.2-2.2.1">RSA keys shall have a minimum length of 2048 bits.<a href="#section-3.2-2.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-3.2-2.3">
+            <p id="section-3.2-2.3.1">Elliptic curve keys shall have a minimum length of 224 bits.<a href="#section-3.2-2.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-3.2-2.4">
+            <p id="section-3.2-2.4.1">Credentials not intended for handling by end-users (e.g., access tokens, refresh tokens, authorization codes, etc.) shall be created with at least 128 bits of entropy such that an attacker correctly guessing the value is computationally infeasible (<span><a href="https://rfc-editor.org/rfc/rfc6749#section-10.10" class="relref">Section 10.10</a> of [<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>).<a href="#section-3.2-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
 </section>
 </div>
 <div id="openid-connect">
@@ -1329,103 +1373,176 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
           <h4 id="name-requirements-for-openid-pro">
 <a href="#section-3.3.1" class="section-number selfRef">3.3.1. </a><a href="#name-requirements-for-openid-pro" class="section-name selfRef">Requirements for OpenID Providers</a>
           </h4>
-<div id="general-requirements">
-<section id="section-3.3.1.1">
-            <h5 id="name-general-requirements">
-<a href="#section-3.3.1.1" class="section-number selfRef">3.3.1.1. </a><a href="#name-general-requirements" class="section-name selfRef">General Requirements</a>
-            </h5>
-<p id="section-3.3.1.1-1">OpenID Providers:<a href="#section-3.3.1.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.3.1-1">OpenID Providers:<a href="#section-3.3.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.3.1.1-2.1">
-                <p id="section-3.3.1.1-2.1.1">shall distribute discovery metadata (such as the authorization endpoint) via the metadata document as specified in <span>[<a href="#OpenID.Discovery" class="cite xref">OpenID.Discovery</a>]</span>;<a href="#section-3.3.1.1-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-3.3.1-2.1">
+              <p id="section-3.3.1-2.1.1">shall distribute discovery metadata (such as the authorization endpoint) via the metadata document as specified in <span>[<a href="#OpenID.Discovery" class="cite xref">OpenID.Discovery</a>]</span>;<a href="#section-3.3.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.1-2.2">
-                <p id="section-3.3.1.1-2.2.1">shall reject requests using the resource owner password credentials grant;<a href="#section-3.3.1.1-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-2.2">
+              <p id="section-3.3.1-2.2.1">shall reject requests using the resource owner password credentials grant;<a href="#section-3.3.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.1-2.3">
-                <p id="section-3.3.1.1-2.3.1">shall only support confidential clients as defined in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>;<a href="#section-3.3.1.1-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-2.3">
+              <p id="section-3.3.1-2.3.1">shall only support confidential clients as defined in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>;<a href="#section-3.3.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.1-2.4">
-                <p id="section-3.3.1.1-2.4.1">shall only issue sender-constrained access tokens using DPoP <span>[<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>;<a href="#section-3.3.1.1-2.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-2.4">
+              <p id="section-3.3.1-2.4.1">shall authenticate clients using <code>private_key_jwt</code> as specified in Section 9 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.1-2.5">
-                <p id="section-3.3.1.1-2.5.1">shall authenticate clients using <code>private_key_jwt</code> as specified in Section 9 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.1.1-2.5.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-2.5">
+              <p id="section-3.3.1-2.5.1">shall only issue sender-constrained access tokens using DPoP <span>[<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>;<a href="#section-3.3.1-2.5.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.1-2.6">
-                <p id="section-3.3.1.1-2.6.1">shall not expose open redirectors <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.11" class="relref">Section 4.11</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>;<a href="#section-3.3.1.1-2.6.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-2.6">
+              <p id="section-3.3.1-2.6.1">shall not expose open redirectors <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.11" class="relref">Section 4.11</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>;<a href="#section-3.3.1-2.6.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.1-2.7">
-                <p id="section-3.3.1.1-2.7.1">shall only accept its issuer identifier value (as defined in <span>[<a href="#RFC8414" class="cite xref">RFC8414</a>]</span>) as a string in the <code>aud</code> claim received in client authentication assertions;<a href="#section-3.3.1.1-2.7.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-2.7">
+              <p id="section-3.3.1-2.7.1">shall only accept its issuer identifier value (as defined in <span>[<a href="#RFC8414" class="cite xref">RFC8414</a>]</span>) as a string in the <code>aud</code> claim received in client authentication assertions;<a href="#section-3.3.1-2.7.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.1-2.8">
-                <p id="section-3.3.1.1-2.8.1">shall<a href="#section-3.3.1.1-2.8.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-2.8">
+              <p id="section-3.3.1-2.8.1">shall issue authorization codes with a maximum lifetime of 60 seconds;<a href="#section-3.3.1-2.8.1" class="pilcrow">¶</a></p>
 </li>
-            </ul>
-</section>
-</div>
-<div id="authorization-endpoint-flows">
-<section id="section-3.3.1.2">
-            <h5 id="name-authorization-endpoint-flow">
-<a href="#section-3.3.1.2" class="section-number selfRef">3.3.1.2. </a><a href="#name-authorization-endpoint-flow" class="section-name selfRef">Authorization Endpoint Flows</a>
-            </h5>
-<p id="section-3.3.1.2-1">For flows that use the authorization endpoint, OpenID Providers:<a href="#section-3.3.1.2-1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-2.9">
+              <p id="section-3.3.1-2.9.1">shall require clients to be preregistered, and shall not support unauthenticated Dynamic Client Registration requests (see Note 1);<a href="#section-3.3.1-2.9.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
+<p id="section-3.3.1-3">ID Tokens issued by OpenID Providers:<a href="#section-3.3.1-3" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.3.1.2-2.1">
-                <p id="section-3.3.1.2-2.1.1">shall require the value of <code>response_type</code> described in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span> to be <code>code</code>;<a href="#section-3.3.1.2-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-3.3.1-4.1">
+              <p id="section-3.3.1-4.1.1">shall contain the OAuth Client ID of the RP as a single audience value as a string (see Note 2);<a href="#section-3.3.1-4.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.2-2.2">
-                <p id="section-3.3.1.2-2.2.1">shall require PKCE <span>[<a href="#RFC7636" class="cite xref">RFC7636</a>]</span> with S256 as the code challenge method (see Note 1 below);<a href="#section-3.3.1.2-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-4.2">
+              <p id="section-3.3.1-4.2.1">shall contain <code>acr</code> claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in Section 2 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.1-4.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.2-2.3">
-                <p id="section-3.3.1.2-2.3.1">shall issue authorization codes with a maximum lifetime of 60 seconds;<a href="#section-3.3.1.2-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-4.3">
+              <p id="section-3.3.1-4.3.1">shall contain the <code>amr</code> claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.1-4.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.2-2.4">
-                <p id="section-3.3.1.2-2.4.1">shall support "Authorization Code Binding to DPoP Key" (as required by <span><a href="https://rfc-editor.org/rfc/rfc9449#section-10.1" class="relref">Section 10.1</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>);<a href="#section-3.3.1.2-2.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-4.4">
+              <p id="section-3.3.1-4.4.1">shall indicate the expected lifetime of the RP session in the <code>session_lifetime</code> claim in seconds (see Note 3);<a href="#section-3.3.1-4.4.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.2-2.5">
-                <p id="section-3.3.1.2-2.5.1">shall return an iss parameter in the authorization response according to <span>[<a href="#RFC9207" class="cite xref">RFC9207</a>]</span>;<a href="#section-3.3.1.2-2.5.1" class="pilcrow">¶</a></p>
-</li>
-              <li class="normal" id="section-3.3.1.2-2.6">
-                <p id="section-3.3.1.2-2.6.1">shall not transmit authorization responses over unencrypted network connections, and, to this end, shall not allow redirect URIs that use the "http" scheme except for native clients that use loopback interface Redirection as described in Section 7.3 of [RFC8252];<a href="#section-3.3.1.2-2.6.1" class="pilcrow">¶</a></p>
-</li>
-              <li class="normal" id="section-3.3.1.2-2.7">
-                <p id="section-3.3.1.2-2.7.1">shall reject an authorization code (Section 1.3.1 of <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>) if it has been previously used;<a href="#section-3.3.1.2-2.7.1" class="pilcrow">¶</a></p>
-</li>
-              <li class="normal" id="section-3.3.1.2-2.8">
-                <p id="section-3.3.1.2-2.8.1">shall not use the HTTP 307 status code when redirecting a request that contains user credentials to avoid forwarding the credentials to a third party accidentally (see <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.12" class="relref">Section 4.12</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>);<a href="#section-3.3.1.2-2.8.1" class="pilcrow">¶</a></p>
-</li>
-              <li class="normal" id="section-3.3.1.2-2.9">
-                <p id="section-3.3.1.2-2.9.1">should use the HTTP 303 status code when redirecting the user agent using status codes;<a href="#section-3.3.1.2-2.9.1" class="pilcrow">¶</a></p>
-</li>
-              <li class="normal" id="section-3.3.1.2-2.10">
-                <p id="section-3.3.1.2-2.10.1">shall support <code>nonce</code> parameter values up to 64 characters in length, may reject <code>nonce</code> values longer than 64 characters.<a href="#section-3.3.1.2-2.10.1" class="pilcrow">¶</a></p>
-</li>
-            </ul>
-<p id="section-3.3.1.2-3">TBD: Should PAR be required at this level?<a href="#section-3.3.1.2-3" class="pilcrow">¶</a></p>
+          </ul>
+<p id="section-3.3.1-5">Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Trust Agreements" of <span>[<a href="#NIST.FAL" class="cite xref">NIST.FAL</a>]</span>.<a href="#section-3.3.1-5" class="pilcrow">¶</a></p>
+<p id="section-3.3.1-6">Note 2: The audience value must be a single string to meet the audience restriction of <span>[<a href="#NIST.FAL" class="cite xref">NIST.FAL</a>]</span>.<a href="#section-3.3.1-6" class="pilcrow">¶</a></p>
+<p id="section-3.3.1-7">Note 3: This claim is not currently defined in OpenID Connect, this maybe should be pulled out into its own spec in OpenID Core instead of being defined here.<a href="#section-3.3.1-7" class="pilcrow">¶</a></p>
+<p id="section-3.3.1-8">For the authorization code flow, OpenID Providers:<a href="#section-3.3.1-8" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.3.1.2-4.1">
-                <p id="section-3.3.1.2-4.1.1">shall support client-authenticated pushed authorization requests according to [RFC9126];<a href="#section-3.3.1.2-4.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-3.3.1-9.1">
+              <p id="section-3.3.1-9.1.1">shall require the value of <code>response_type</code> described in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span> to be <code>code</code>;<a href="#section-3.3.1-9.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.2-4.2">
-                <p id="section-3.3.1.2-4.2.1">shall reject authorization requests sent without [RFC9126];<a href="#section-3.3.1.2-4.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-9.2">
+              <p id="section-3.3.1-9.2.1">shall require PKCE <span>[<a href="#RFC7636" class="cite xref">RFC7636</a>]</span> with S256 as the code challenge method (see Note 1 below);<a href="#section-3.3.1-9.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.2-4.3">
-                <p id="section-3.3.1.2-4.3.1">shall reject pushed authorization requests without client authentication;<a href="#section-3.3.1.2-4.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-9.3">
+              <p id="section-3.3.1-9.3.1">shall issue authorization codes with a maximum lifetime of 60 seconds;<a href="#section-3.3.1-9.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.3.1.2-4.4">
-                <p id="section-3.3.1.2-4.4.1">shall issue pushed authorization requests request_uri with expires_in values of less than 600 seconds;<a href="#section-3.3.1.2-4.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-9.4">
+              <p id="section-3.3.1-9.4.1">shall support "Authorization Code Binding to DPoP Key" (as required by <span><a href="https://rfc-editor.org/rfc/rfc9449#section-10.1" class="relref">Section 10.1</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>);<a href="#section-3.3.1-9.4.1" class="pilcrow">¶</a></p>
 </li>
-            </ul>
-<p id="section-3.3.1.2-5">Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.<a href="#section-3.3.1.2-5" class="pilcrow">¶</a></p>
-</section>
-</div>
+            <li class="normal" id="section-3.3.1-9.5">
+              <p id="section-3.3.1-9.5.1">shall return an iss parameter in the authorization response according to <span>[<a href="#RFC9207" class="cite xref">RFC9207</a>]</span>;<a href="#section-3.3.1-9.5.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.1-9.6">
+              <p id="section-3.3.1-9.6.1">shall not transmit authorization responses over unencrypted network connections, and, to this end, shall not allow redirect URIs that use the "http" scheme except for native clients that use loopback interface Redirection as described in Section 7.3 of <span>[<a href="#RFC8252" class="cite xref">RFC8252</a>]</span>;<a href="#section-3.3.1-9.6.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.1-9.7">
+              <p id="section-3.3.1-9.7.1">shall reject an authorization code (Section 1.3.1 of <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>) if it has been previously used;<a href="#section-3.3.1-9.7.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.1-9.8">
+              <p id="section-3.3.1-9.8.1">shall not use the HTTP 307 status code when redirecting a request that contains user credentials to avoid forwarding the credentials to a third party accidentally (see <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.12" class="relref">Section 4.12</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>);<a href="#section-3.3.1-9.8.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.1-9.9">
+              <p id="section-3.3.1-9.9.1">should use the HTTP 303 status code when redirecting the user agent using status codes;<a href="#section-3.3.1-9.9.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.1-9.10">
+              <p id="section-3.3.1-9.10.1">shall support <code>nonce</code> parameter values up to 64 characters in length, may reject <code>nonce</code> values longer than 64 characters.<a href="#section-3.3.1-9.10.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
+<p id="section-3.3.1-10">TBD: Should PAR be required at level SL1?<a href="#section-3.3.1-10" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3.3.1-11.1">
+              <p id="section-3.3.1-11.1.1">shall support client-authenticated pushed authorization requests according to <span>[<a href="#RFC9126" class="cite xref">RFC9126</a>]</span>;<a href="#section-3.3.1-11.1.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.1-11.2">
+              <p id="section-3.3.1-11.2.1">shall reject authorization requests sent without <span>[<a href="#RFC9126" class="cite xref">RFC9126</a>]</span>;<a href="#section-3.3.1-11.2.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.1-11.3">
+              <p id="section-3.3.1-11.3.1">shall reject pushed authorization requests without client authentication;<a href="#section-3.3.1-11.3.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.1-11.4">
+              <p id="section-3.3.1-11.4.1">shall issue pushed authorization requests request_uri with expires_in values of less than 600 seconds;<a href="#section-3.3.1-11.4.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
+<p id="section-3.3.1-12">Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.<a href="#section-3.3.1-12" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="requirements-for-openid-relying-parties">
 <section id="section-3.3.2">
           <h4 id="name-requirements-for-openid-rel">
 <a href="#section-3.3.2" class="section-number selfRef">3.3.2. </a><a href="#name-requirements-for-openid-rel" class="section-name selfRef">Requirements for OpenID Relying Parties</a>
-        </h4>
+          </h4>
+<p id="section-3.3.2-1">OpenID Relying Parties:<a href="#section-3.3.2-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3.3.2-2.1">
+              <p id="section-3.3.2-2.1.1">shall support third-party initiated login as defined in Section 4 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.2-2.1.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-2.2">
+              <p id="section-3.3.2-2.2.1">shall support client authentication using <code>private_key_jwt</code> as specified in Section 9 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.2-2.2.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-2.3">
+              <p id="section-3.3.2-2.3.1">shall use the authorization server's issuer identifier value (as defined in <span>[<a href="#RFC8414" class="cite xref">RFC8414</a>]</span>) in the <code>aud</code> claim in client authentication assertions. The issuer identifier value shall be sent as a string not as an item in an array;<a href="#section-3.3.2-2.3.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-2.4">
+              <p id="section-3.3.2-2.4.1">shall not expose open redirectors (see <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.11" class="relref">Section 4.11</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>);<a href="#section-3.3.2-2.4.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-2.5">
+              <p id="section-3.3.2-2.5.1">shall only use authorization server metadata (such as the authorization endpoint) retrieved from the metadata document as specified in <span>[<a href="#OpenID.Discovery" class="cite xref">OpenID.Discovery</a>]</span> and <span>[<a href="#RFC8414" class="cite xref">RFC8414</a>]</span>;<a href="#section-3.3.2-2.5.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-2.6">
+              <p id="section-3.3.2-2.6.1">shall ensure that the issuer URL used as the basis for retrieving the authorization server metadata is obtained from an authoritative source and using a secure channel, such that it cannot be modified by an attacker;<a href="#section-3.3.2-2.6.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-2.7">
+              <p id="section-3.3.2-2.7.1">shall ensure that this issuer URL and the issuer value in the obtained metadata match;<a href="#section-3.3.2-2.7.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
+<p id="section-3.3.2-3">OpenID Relying Parties making resource requests to the OpenID Provider:<a href="#section-3.3.2-3" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3.3.2-4.1">
+              <p id="section-3.3.2-4.1.1">shall support sender-constrined access tokens using DPoP as described in <span>[<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>;<a href="#section-3.3.2-4.1.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-4.2">
+              <p id="section-3.3.2-4.2.1">shall support the server provided nonce mechanism (as defined in <span><a href="https://rfc-editor.org/rfc/rfc9449#section-8" class="relref">Section 8</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>);<a href="#section-3.3.2-4.2.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-4.3">
+              <p id="section-3.3.2-4.3.1">shall send access tokens in the HTTP header as described in <span><a href="https://rfc-editor.org/rfc/rfc9449#section-7.1" class="relref">Section 7.1</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>;<a href="#section-3.3.2-4.3.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-4.4">
+              <p id="section-3.3.2-4.4.1">shall support refresh tokens and their rotation;<a href="#section-3.3.2-4.4.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
+<p id="section-3.3.2-5">For the authorization code flow, Relying Parties:<a href="#section-3.3.2-5" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3.3.2-6.1">
+              <p id="section-3.3.2-6.1.1">shall use the authorization code grant described in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>;<a href="#section-3.3.2-6.1.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-6.2">
+              <p id="section-3.3.2-6.2.1">shall use PKCE <span>[<a href="#RFC7636" class="cite xref">RFC7636</a>]</span> with S256 as the code challenge method;<a href="#section-3.3.2-6.2.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-6.3">
+              <p id="section-3.3.2-6.3.1">shall generate the PKCE challenge specifically for each authorization request and securely bind the challenge to the client and the user agent in which the flow was started;<a href="#section-3.3.2-6.3.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-6.4">
+              <p id="section-3.3.2-6.4.1">shall check the iss parameter in the authorization response according to <span>[<a href="#RFC9207" class="cite xref">RFC9207</a>]</span> to prevent mix-up attacks;<a href="#section-3.3.2-6.4.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-6.5">
+              <p id="section-3.3.2-6.5.1">should not use <code>nonce</code> parameter values longer than 64 characters;<a href="#section-3.3.2-6.5.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
+<p id="section-3.3.2-7">TBD: Should PAR be required at level SL1?<a href="#section-3.3.2-7" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3.3.2-8.1">
+              <p id="section-3.3.2-8.1.1">shall use Pushed Authorization Requests according to <span>[<a href="#RFC9126" class="cite xref">RFC9126</a>]</span>;<a href="#section-3.3.2-8.1.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-8.2">
+              <p id="section-3.3.2-8.2.1">shall only send <code>client_id</code> and <code>request_uri</code> request parameters to the authorization endpoint (all other authorization request parameters are sent in the pushed authorization request according to <span>[<a href="#RFC9126" class="cite xref">RFC9126</a>]</span>);<a href="#section-3.3.2-8.2.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
 </section>
 </div>
 </section>
@@ -1436,8 +1553,7 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
 <section id="section-4">
       <h2 id="name-security-considerations">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
-      </h2>
-<p id="section-4-1">TODO Security<a href="#section-4-1" class="pilcrow">¶</a></p>
+    </h2>
 </section>
 </div>
 <div id="iana-considerations">
@@ -1464,6 +1580,10 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
           <span class="refAuthor">Sheffer, Y.</span>, <span class="refAuthor">Saint-Andre, P.</span>, and <span class="refAuthor">T. Fossati</span>, <span class="refTitle">"Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"</span>, <span class="seriesInfo">BCP 195</span>, <span class="seriesInfo">RFC 9325</span>, <span class="seriesInfo">DOI 10.17487/RFC9325</span>, <time datetime="2022-11" class="refDate">November 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc9325">https://www.rfc-editor.org/info/rfc9325</a>&gt;</span>. </div>
 </dd>
 <dd class="break"></dd>
+<dt id="NIST.FAL">[NIST.FAL]</dt>
+      <dd>
+<span class="refTitle">"NIST SP 800-63 Digital Identity Guidelines Federation Assurance Level (FAL)"</span>, <time datetime="2024-08" class="refDate">August 2024</time>, <span>&lt;<a href="https://pages.nist.gov/800-63-4/sp800-63c/fal/">https://pages.nist.gov/800-63-4/sp800-63c/fal/</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="OpenID">[OpenID]</dt>
       <dd>
 <span class="refAuthor">Sakimura, N.</span>, <span class="refAuthor">Bradley, J.</span>, <span class="refAuthor">Jones, M.</span>, <span class="refAuthor">de Medeiros, B.</span>, and <span class="refAuthor">C. Mortimore</span>, <span class="refTitle">"OpenID Connect Core 1.0 incorporating errata set 2"</span>, <time datetime="2023-12" class="refDate">December 2023</time>, <span>&lt;<a href="https://openid.net/specs/openid-connect-core-1_0.html">https://openid.net/specs/openid-connect-core-1_0.html</a>&gt;</span>. </dd>
@@ -1488,9 +1608,21 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
       <dd>
 <span class="refAuthor">Sakimura, N., Ed.</span>, <span class="refAuthor">Bradley, J.</span>, and <span class="refAuthor">N. Agarwal</span>, <span class="refTitle">"Proof Key for Code Exchange by OAuth Public Clients"</span>, <span class="seriesInfo">RFC 7636</span>, <span class="seriesInfo">DOI 10.17487/RFC7636</span>, <time datetime="2015-09" class="refDate">September 2015</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7636">https://www.rfc-editor.org/rfc/rfc7636</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="RFC8252">[RFC8252]</dt>
+      <dd>
+<span class="refAuthor">Denniss, W.</span> and <span class="refAuthor">J. Bradley</span>, <span class="refTitle">"OAuth 2.0 for Native Apps"</span>, <span class="seriesInfo">BCP 212</span>, <span class="seriesInfo">RFC 8252</span>, <span class="seriesInfo">DOI 10.17487/RFC8252</span>, <time datetime="2017-10" class="refDate">October 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8252">https://www.rfc-editor.org/rfc/rfc8252</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC8414">[RFC8414]</dt>
       <dd>
 <span class="refAuthor">Jones, M.</span>, <span class="refAuthor">Sakimura, N.</span>, and <span class="refAuthor">J. Bradley</span>, <span class="refTitle">"OAuth 2.0 Authorization Server Metadata"</span>, <span class="seriesInfo">RFC 8414</span>, <span class="seriesInfo">DOI 10.17487/RFC8414</span>, <time datetime="2018-06" class="refDate">June 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8414">https://www.rfc-editor.org/rfc/rfc8414</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8725">[RFC8725]</dt>
+      <dd>
+<span class="refAuthor">Sheffer, Y.</span>, <span class="refAuthor">Hardt, D.</span>, and <span class="refAuthor">M. Jones</span>, <span class="refTitle">"JSON Web Token Best Current Practices"</span>, <span class="seriesInfo">BCP 225</span>, <span class="seriesInfo">RFC 8725</span>, <span class="seriesInfo">DOI 10.17487/RFC8725</span>, <time datetime="2020-02" class="refDate">February 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8725">https://www.rfc-editor.org/rfc/rfc8725</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9126">[RFC9126]</dt>
+      <dd>
+<span class="refAuthor">Lodderstedt, T.</span>, <span class="refAuthor">Campbell, B.</span>, <span class="refAuthor">Sakimura, N.</span>, <span class="refAuthor">Tonge, D.</span>, and <span class="refAuthor">F. Skokan</span>, <span class="refTitle">"OAuth 2.0 Pushed Authorization Requests"</span>, <span class="seriesInfo">RFC 9126</span>, <span class="seriesInfo">DOI 10.17487/RFC9126</span>, <time datetime="2021-09" class="refDate">September 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9126">https://www.rfc-editor.org/rfc/rfc9126</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9207">[RFC9207]</dt>
       <dd>
