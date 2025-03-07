@@ -8,18 +8,18 @@ submissiontype: "independent"
 number:
 date:
 v: 3
-area: AREA
-workgroup: IPSIE Working Group
+# area: AREA
+# workgroup: IPSIE Working Group
 keyword:
   - openid
   - ipsie
 venue:
-  group: IPSIE
-  type: Working Group
-  mail: openid-specs-ipsie@lists.openid.net
-  arch: https://openid.net/wg/ipsie/
-  github: aaronpk/ipsie-openid-sl1
-  latest: https://github.com/aaronpk/ipsie-openid-sl1
+#  group: IPSIE
+#  type: Working Group
+#  mail: openid-specs-ipsie@lists.openid.net
+#  arch: https://openid.net/wg/ipsie/
+  github: "aaronpk/ipsie-openid-sl1"
+  latest: "https://aaronpk.github.io/ipsie-openid-sl1/draft-openid-ipsie-sl1-profile.html"
 
 author:
  -
