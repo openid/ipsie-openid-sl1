@@ -75,8 +75,11 @@ TODO Introduction
 
 # Conventions and Definitions
 
-{::boilerplate bcp14-tagged}
-
+The keywords "shall", "shall not", "should", "should not", "may", and "can" in
+this document are to be interpreted as described in ISO Directive Part 2
+[ISODIR2]. These keywords are not used as dictionary terms such that any
+occurrence of them shall be interpreted as keywords and are not to be
+interpreted with their natural language meanings.
 
 # Profile
 
@@ -137,14 +140,33 @@ OpenID Providers:
 * shall authenticate clients using `private_key_jwt` as specified in Section 9 of [OpenID];
 * shall not expose open redirectors {{Section 4.11 of RFC9700}};
 * shall only accept its issuer identifier value (as defined in [RFC8414]) as a string in the `aud` claim received in client authentication assertions;
+* shall
 
 
 #### Authorization Endpoint Flows
 
 For flows that use the authorization endpoint, OpenID Providers:
 
+* shall require the value of `response_type` described in [RFC6749] to be `code`;
+* shall require PKCE [RFC7636] with S256 as the code challenge method (see Note 1 below);
 * shall issue authorization codes with a maximum lifetime of 60 seconds;
 * shall support "Authorization Code Binding to DPoP Key" (as required by {{Section 10.1 of RFC9449}});
+* shall return an iss parameter in the authorization response according to [RFC9207];
+* shall not transmit authorization responses over unencrypted network connections, and, to this end, shall not allow redirect URIs that use the "http" scheme except for native clients that use loopback interface Redirection as described in Section 7.3 of [RFC8252];
+* shall reject an authorization code (Section 1.3.1 of [RFC6749]) if it has been previously used;
+* shall not use the HTTP 307 status code when redirecting a request that contains user credentials to avoid forwarding the credentials to a third party accidentally (see {{Section 4.12 of RFC9700}});
+* should use the HTTP 303 status code when redirecting the user agent using status codes;
+* shall support `nonce` parameter values up to 64 characters in length, may reject `nonce` values longer than 64 characters.
+
+TBD: Should PAR be required at this level?
+
+* shall support client-authenticated pushed authorization requests according to [RFC9126];
+* shall reject authorization requests sent without [RFC9126];
+* shall reject pushed authorization requests without client authentication;
+* shall issue pushed authorization requests request_uri with expires_in values of less than 600 seconds;
+
+
+Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.
 
 
 ### Requirements for OpenID Relying Parties
