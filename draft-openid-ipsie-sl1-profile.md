@@ -33,6 +33,7 @@ normative:
   RFC6750:
   RFC6797:
   RFC7636:
+  RFC8252:
   RFC8414:
   RFC8725:
   RFC9126:
@@ -63,7 +64,6 @@ normative:
     title: NIST SP 800-63 Digital Identity Guidelines Federation Assurance Level (FAL)
     target: https://pages.nist.gov/800-63-4/sp800-63c/fal/
     date: August 28, 2024
-  IANA.AMR:
 
 informative:
 
