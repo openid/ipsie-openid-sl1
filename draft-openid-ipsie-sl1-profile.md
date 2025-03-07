@@ -35,6 +35,7 @@ normative:
   RFC7636:
   RFC8414:
   RFC8725:
+  RFC9126:
   RFC9207:
   RFC9449:
   RFC9525:
@@ -89,9 +90,9 @@ interpreted with their natural language meanings.
 
 ## Roles
 
-This document uses the term "Identity Provider" to refer to the "OpenID Provider" in [OIDC] and the "Authorization Server" in [OAuth].
+This document uses the term "Identity Provider" to refer to the "OpenID Provider" in [OpenID] and the "Authorization Server" in [RFC6749].
 
-This document uses the term "Application" to refer to the "Relying Party" in [OIDC] and the "Client" in [OAuth].
+This document uses the term "Application" to refer to the "Relying Party" in [OpenID] and the "Client" in [RFC6749].
 
 
 # Profile
@@ -167,7 +168,7 @@ ID Tokens issued by OpenID Providers:
 
 * shall contain the OAuth Client ID of the RP as a single audience value as a string (see Note 2);
 * shall contain `acr` claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in {{Section 2 of OpenID}};
-* shall contain the `amr` claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry [IANA.AMR], as described in {{Section 2 of OpenID}};
+* shall contain the `amr` claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in {{Section 2 of OpenID}};
 * shall indicate the expected lifetime of the RP session in the `session_lifetime` claim in seconds (see Note 3);
 
 Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Trust Agreements" of [NIST.FAL].
