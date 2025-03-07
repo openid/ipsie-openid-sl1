@@ -34,6 +34,7 @@ normative:
   RFC6797:
   RFC7636:
   RFC8414:
+  RFC8725:
   RFC9207:
   RFC9449:
   RFC9525:
@@ -57,6 +58,11 @@ normative:
       - ins: J. Bradley
       - ins: M. Jones
       - ins: E. Jay
+  NIST.FAL:
+    title: NIST SP 800-63 Digital Identity Guidelines Federation Assurance Level (FAL)
+    target: https://pages.nist.gov/800-63-4/sp800-63c/fal/
+    date: August 28, 2024
+  IANA.AMR:
 
 informative:
 
@@ -80,6 +86,13 @@ this document are to be interpreted as described in ISO Directive Part 2
 [ISODIR2]. These keywords are not used as dictionary terms such that any
 occurrence of them shall be interpreted as keywords and are not to be
 interpreted with their natural language meanings.
+
+## Roles
+
+This document uses the term "Identity Provider" to refer to the "OpenID Provider" in [OIDC] and the "Authorization Server" in [OAuth].
+
+This document uses the term "Application" to refer to the "Relying Party" in [OIDC] and the "Client" in [OAuth].
+
 
 # Profile
 
@@ -113,6 +126,15 @@ For endpoints that are used by web browsers, the following additional requiremen
 
 ## Cryptography and Secrets
 
+The following requirements apply to cryptographic operations and secrets:
+
+* Authorization servers, clients, and resource servers when creating or processing JWTs shall:
+  * adhere to [RFC8725];
+  * use PS256, ES256, or EdDSA (using the Ed25519 variant) algorithms; and
+  * not use or accept the `none` algorithm.
+* RSA keys shall have a minimum length of 2048 bits.
+* Elliptic curve keys shall have a minimum length of 224 bits.
+* Credentials not intended for handling by end-users (e.g., access tokens, refresh tokens, authorization codes, etc.) shall be created with at least 128 bits of entropy such that an attacker correctly guessing the value is computationally infeasible ({{Section 10.10 of RFC6749}}).
 
 ## OpenID Connect
 
@@ -129,23 +151,33 @@ In the following, a profile of the following technologies is defined:
 
 ### Requirements for OpenID Providers
 
-#### General Requirements
-
 OpenID Providers:
 
 * shall distribute discovery metadata (such as the authorization endpoint) via the metadata document as specified in [OpenID.Discovery];
 * shall reject requests using the resource owner password credentials grant;
 * shall only support confidential clients as defined in [RFC6749];
-* shall only issue sender-constrained access tokens using DPoP [RFC9449];
 * shall authenticate clients using `private_key_jwt` as specified in Section 9 of [OpenID];
+* shall only issue sender-constrained access tokens using DPoP [RFC9449];
 * shall not expose open redirectors {{Section 4.11 of RFC9700}};
 * shall only accept its issuer identifier value (as defined in [RFC8414]) as a string in the `aud` claim received in client authentication assertions;
-* shall
+* shall issue authorization codes with a maximum lifetime of 60 seconds;
+* shall require clients to be preregistered, and shall not support unauthenticated Dynamic Client Registration requests (see Note 1);
+
+ID Tokens issued by OpenID Providers:
+
+* shall contain the OAuth Client ID of the RP as a single audience value as a string (see Note 2);
+* shall contain `acr` claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in {{Section 2 of OpenID}};
+* shall contain the `amr` claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry [IANA.AMR], as described in {{Section 2 of OpenID}};
+* shall indicate the expected lifetime of the RP session in the `session_lifetime` claim in seconds (see Note 3);
+
+Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Trust Agreements" of [NIST.FAL].
+
+Note 2: The audience value must be a single string to meet the audience restriction of [NIST.FAL].
+
+Note 3: This claim is not currently defined in OpenID Connect, this maybe should be pulled out into its own spec in OpenID Core instead of being defined here.
 
 
-#### Authorization Endpoint Flows
-
-For flows that use the authorization endpoint, OpenID Providers:
+For the authorization code flow, OpenID Providers:
 
 * shall require the value of `response_type` described in [RFC6749] to be `code`;
 * shall require PKCE [RFC7636] with S256 as the code challenge method (see Note 1 below);
@@ -158,7 +190,7 @@ For flows that use the authorization endpoint, OpenID Providers:
 * should use the HTTP 303 status code when redirecting the user agent using status codes;
 * shall support `nonce` parameter values up to 64 characters in length, may reject `nonce` values longer than 64 characters.
 
-TBD: Should PAR be required at this level?
+TBD: Should PAR be required at level SL1?
 
 * shall support client-authenticated pushed authorization requests according to [RFC9126];
 * shall reject authorization requests sent without [RFC9126];
@@ -169,14 +201,42 @@ TBD: Should PAR be required at this level?
 Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.
 
 
+
 ### Requirements for OpenID Relying Parties
 
+OpenID Relying Parties:
 
+* shall support third-party initiated login as defined in Section 4 of [OpenID];
+* shall support client authentication using `private_key_jwt` as specified in Section 9 of [OpenID];
+* shall use the authorization server's issuer identifier value (as defined in [RFC8414]) in the `aud` claim in client authentication assertions. The issuer identifier value shall be sent as a string not as an item in an array;
+* shall not expose open redirectors (see {{Section 4.11 of RFC9700}});
+* shall only use authorization server metadata (such as the authorization endpoint) retrieved from the metadata document as specified in [OpenID.Discovery] and [RFC8414];
+* shall ensure that the issuer URL used as the basis for retrieving the authorization server metadata is obtained from an authoritative source and using a secure channel, such that it cannot be modified by an attacker;
+* shall ensure that this issuer URL and the issuer value in the obtained metadata match;
+
+OpenID Relying Parties making resource requests to the OpenID Provider:
+
+* shall support sender-constrined access tokens using DPoP as described in [RFC9449];
+* shall support the server provided nonce mechanism (as defined in {{Section 8 of RFC9449}});
+* shall send access tokens in the HTTP header as described in {{Section 7.1 of RFC9449}};
+* shall support refresh tokens and their rotation;
+
+For the authorization code flow, Relying Parties:
+
+* shall use the authorization code grant described in [RFC6749];
+* shall use PKCE [RFC7636] with S256 as the code challenge method;
+* shall generate the PKCE challenge specifically for each authorization request and securely bind the challenge to the client and the user agent in which the flow was started;
+* shall check the iss parameter in the authorization response according to [RFC9207] to prevent mix-up attacks;
+* should not use `nonce` parameter values longer than 64 characters;
+
+TBD: Should PAR be required at level SL1?
+
+* shall use Pushed Authorization Requests according to [RFC9126];
+* shall only send `client_id` and `request_uri` request parameters to the authorization endpoint (all other authorization request parameters are sent in the pushed authorization request according to [RFC9126]);
 
 
 # Security Considerations
 
-TODO Security
 
 
 # IANA Considerations
