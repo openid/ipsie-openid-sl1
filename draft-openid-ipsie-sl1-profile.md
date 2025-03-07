@@ -9,15 +9,15 @@ number:
 date:
 v: 3
 # area: AREA
-# workgroup: IPSIE Working Group
+workgroup: IPSIE Working Group
 keyword:
   - openid
   - ipsie
 venue:
-#  group: IPSIE
-#  type: Working Group
-#  mail: openid-specs-ipsie@lists.openid.net
-#  arch: https://openid.net/wg/ipsie/
+  group: IPSIE
+  type: Working Group
+  mail: openid-specs-ipsie@lists.openid.net
+  arch: https://openid.net/wg/ipsie/
   github: "aaronpk/ipsie-openid-sl1"
   latest: "https://aaronpk.github.io/ipsie-openid-sl1/draft-openid-ipsie-sl1-profile.html"
 
@@ -168,7 +168,7 @@ ID Tokens issued by OpenID Providers:
 
 * shall contain the OAuth Client ID of the RP as a single audience value as a string (see Note 2);
 * shall contain `acr` claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in {{Section 2 of OpenID}};
-* shall contain the `amr` claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in {{Section 2 of OpenID}};
+* shall contain the `amr` claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of [OpenID];
 * shall indicate the expected lifetime of the RP session in the `session_lifetime` claim in seconds (see Note 3);
 
 Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Trust Agreements" of [NIST.FAL].
