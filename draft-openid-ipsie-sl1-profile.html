@@ -1209,10 +1209,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-conventions-and-definitions">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-conventions-and-definitions" class="section-name selfRef">Conventions and Definitions</a>
       </h2>
-<p id="section-2-1">The key words "<span class="bcp14">MUST</span>", "<span class="bcp14">MUST NOT</span>", "<span class="bcp14">REQUIRED</span>", "<span class="bcp14">SHALL</span>", "<span class="bcp14">SHALL NOT</span>", "<span class="bcp14">SHOULD</span>", "<span class="bcp14">SHOULD NOT</span>", "<span class="bcp14">RECOMMENDED</span>", "<span class="bcp14">NOT RECOMMENDED</span>",
-"<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
-described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</span> <span>[<a href="#RFC8174" class="cite xref">RFC8174</a>]</span> when, and only when, they
-appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">The keywords "shall", "shall not", "should", "should not", "may", and "can" in
+this document are to be interpreted as described in ISO Directive Part 2
+[ISODIR2]. These keywords are not used as dictionary terms such that any
+occurrence of them shall be interpreted as keywords and are not to be
+interpreted with their natural language meanings.<a href="#section-2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="profile">
@@ -1356,6 +1357,9 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
               <li class="normal" id="section-3.3.1.1-2.7">
                 <p id="section-3.3.1.1-2.7.1">shall only accept its issuer identifier value (as defined in <span>[<a href="#RFC8414" class="cite xref">RFC8414</a>]</span>) as a string in the <code>aud</code> claim received in client authentication assertions;<a href="#section-3.3.1.1-2.7.1" class="pilcrow">¶</a></p>
 </li>
+              <li class="normal" id="section-3.3.1.1-2.8">
+                <p id="section-3.3.1.1-2.8.1">shall<a href="#section-3.3.1.1-2.8.1" class="pilcrow">¶</a></p>
+</li>
             </ul>
 </section>
 </div>
@@ -1367,12 +1371,52 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <p id="section-3.3.1.2-1">For flows that use the authorization endpoint, OpenID Providers:<a href="#section-3.3.1.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.3.1.2-2.1">
-                <p id="section-3.3.1.2-2.1.1">shall issue authorization codes with a maximum lifetime of 60 seconds;<a href="#section-3.3.1.2-2.1.1" class="pilcrow">¶</a></p>
+                <p id="section-3.3.1.2-2.1.1">shall require the value of <code>response_type</code> described in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span> to be <code>code</code>;<a href="#section-3.3.1.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-3.3.1.2-2.2">
-                <p id="section-3.3.1.2-2.2.1">shall support "Authorization Code Binding to DPoP Key" (as required by <span><a href="https://rfc-editor.org/rfc/rfc9449#section-10.1" class="relref">Section 10.1</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>);<a href="#section-3.3.1.2-2.2.1" class="pilcrow">¶</a></p>
+                <p id="section-3.3.1.2-2.2.1">shall require PKCE <span>[<a href="#RFC7636" class="cite xref">RFC7636</a>]</span> with S256 as the code challenge method (see Note 1 below);<a href="#section-3.3.1.2-2.2.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-3.3.1.2-2.3">
+                <p id="section-3.3.1.2-2.3.1">shall issue authorization codes with a maximum lifetime of 60 seconds;<a href="#section-3.3.1.2-2.3.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-3.3.1.2-2.4">
+                <p id="section-3.3.1.2-2.4.1">shall support "Authorization Code Binding to DPoP Key" (as required by <span><a href="https://rfc-editor.org/rfc/rfc9449#section-10.1" class="relref">Section 10.1</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>);<a href="#section-3.3.1.2-2.4.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-3.3.1.2-2.5">
+                <p id="section-3.3.1.2-2.5.1">shall return an iss parameter in the authorization response according to <span>[<a href="#RFC9207" class="cite xref">RFC9207</a>]</span>;<a href="#section-3.3.1.2-2.5.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-3.3.1.2-2.6">
+                <p id="section-3.3.1.2-2.6.1">shall not transmit authorization responses over unencrypted network connections, and, to this end, shall not allow redirect URIs that use the "http" scheme except for native clients that use loopback interface Redirection as described in Section 7.3 of [RFC8252];<a href="#section-3.3.1.2-2.6.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-3.3.1.2-2.7">
+                <p id="section-3.3.1.2-2.7.1">shall reject an authorization code (Section 1.3.1 of <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>) if it has been previously used;<a href="#section-3.3.1.2-2.7.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-3.3.1.2-2.8">
+                <p id="section-3.3.1.2-2.8.1">shall not use the HTTP 307 status code when redirecting a request that contains user credentials to avoid forwarding the credentials to a third party accidentally (see <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.12" class="relref">Section 4.12</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>);<a href="#section-3.3.1.2-2.8.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-3.3.1.2-2.9">
+                <p id="section-3.3.1.2-2.9.1">should use the HTTP 303 status code when redirecting the user agent using status codes;<a href="#section-3.3.1.2-2.9.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-3.3.1.2-2.10">
+                <p id="section-3.3.1.2-2.10.1">shall support <code>nonce</code> parameter values up to 64 characters in length, may reject <code>nonce</code> values longer than 64 characters.<a href="#section-3.3.1.2-2.10.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
+<p id="section-3.3.1.2-3">TBD: Should PAR be required at this level?<a href="#section-3.3.1.2-3" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3.3.1.2-4.1">
+                <p id="section-3.3.1.2-4.1.1">shall support client-authenticated pushed authorization requests according to [RFC9126];<a href="#section-3.3.1.2-4.1.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-3.3.1.2-4.2">
+                <p id="section-3.3.1.2-4.2.1">shall reject authorization requests sent without [RFC9126];<a href="#section-3.3.1.2-4.2.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-3.3.1.2-4.3">
+                <p id="section-3.3.1.2-4.3.1">shall reject pushed authorization requests without client authentication;<a href="#section-3.3.1.2-4.3.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-3.3.1.2-4.4">
+                <p id="section-3.3.1.2-4.4.1">shall issue pushed authorization requests request_uri with expires_in values of less than 600 seconds;<a href="#section-3.3.1.2-4.4.1" class="pilcrow">¶</a></p>
+</li>
+            </ul>
+<p id="section-3.3.1.2-5">Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.<a href="#section-3.3.1.2-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1428,10 +1472,6 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <dd>
 <span class="refAuthor">Sakimura, N.</span>, <span class="refAuthor">Bradley, J.</span>, <span class="refAuthor">Jones, M.</span>, and <span class="refAuthor">E. Jay</span>, <span class="refTitle">"OpenID Connect Discovery 1.0 incorporating errata set 2"</span>, <time datetime="2023-12" class="refDate">December 2023</time>, <span>&lt;<a href="https://openid.net/specs/openid-connect-discovery-1_0.html">https://openid.net/specs/openid-connect-discovery-1_0.html</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="RFC2119">[RFC2119]</dt>
-      <dd>
-<span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="RFC6749">[RFC6749]</dt>
       <dd>
 <span class="refAuthor">Hardt, D., Ed.</span>, <span class="refTitle">"The OAuth 2.0 Authorization Framework"</span>, <span class="seriesInfo">RFC 6749</span>, <span class="seriesInfo">DOI 10.17487/RFC6749</span>, <time datetime="2012-10" class="refDate">October 2012</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6749">https://www.rfc-editor.org/rfc/rfc6749</a>&gt;</span>. </dd>
@@ -1447,10 +1487,6 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <dt id="RFC7636">[RFC7636]</dt>
       <dd>
 <span class="refAuthor">Sakimura, N., Ed.</span>, <span class="refAuthor">Bradley, J.</span>, and <span class="refAuthor">N. Agarwal</span>, <span class="refTitle">"Proof Key for Code Exchange by OAuth Public Clients"</span>, <span class="seriesInfo">RFC 7636</span>, <span class="seriesInfo">DOI 10.17487/RFC7636</span>, <time datetime="2015-09" class="refDate">September 2015</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7636">https://www.rfc-editor.org/rfc/rfc7636</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC8174">[RFC8174]</dt>
-      <dd>
-<span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8414">[RFC8414]</dt>
       <dd>
