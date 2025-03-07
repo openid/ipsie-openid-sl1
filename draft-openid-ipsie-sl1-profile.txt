@@ -167,7 +167,8 @@ Table of Contents
    OpenID Providers:
 
    *  shall distribute discovery metadata (such as the authorization
-      endpoint) via the metadata document as specified in [OIDD];
+      endpoint) via the metadata document as specified in
+      [OpenID.Discovery];
 
    *  shall reject requests using the resource owner password
       credentials grant;
@@ -180,7 +181,7 @@ Table of Contents
    *  shall authenticate clients using private_key_jwt as specified in
       Section 9 of [OpenID];
 
-   *  shall not expose open redirectors [Section 4.11 of RFC9700];
+   *  shall not expose open redirectors [[Section 4.11 of RFC9700]];
 
    *  shall only accept its issuer identifier value (as defined in
       [RFC8414]) as a string in the aud claim received in client
@@ -194,7 +195,7 @@ Table of Contents
       seconds;
 
    *  shall support "Authorization Code Binding to DPoP Key" (as
-      required by [Section 10.1 of RFC9449]);
+      required by [[Section 10.1 of RFC9449]]);
 
 3.3.2.  Requirements for OpenID Relying Parties
 
