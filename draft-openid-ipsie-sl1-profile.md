@@ -155,13 +155,17 @@ OpenID Providers:
 
 * shall distribute discovery metadata (such as the authorization endpoint) via the metadata document as specified in [OpenID.Discovery];
 * shall reject requests using the resource owner password credentials grant;
-* shall only support confidential clients as defined in [RFC6749];
-* shall authenticate clients using `private_key_jwt` as specified in Section 9 of [OpenID];
-* shall only issue sender-constrained access tokens using DPoP [RFC9449];
+* shall support public clients as defined in [RFC6749];
 * shall not expose open redirectors {{Section 4.11 of RFC9700}};
 * shall only accept its issuer identifier value (as defined in [RFC8414]) as a string in the `aud` claim received in client authentication assertions;
 * shall issue authorization codes with a maximum lifetime of 60 seconds;
 * shall require clients to be preregistered, and shall not support unauthenticated Dynamic Client Registration requests (see Note 1);
+* shall require clients to pre-register their redirect URIs
+
+Access Tokens issued by OpenID Providers:
+
+* shall only be used by the RP to retrieve identity claims at the OpenID Provider;
+* shall only issue sender-constrained access tokens using DPoP [RFC9449];
 
 ID Tokens issued by OpenID Providers:
 
@@ -174,28 +178,22 @@ Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Tr
 
 Note 2: The audience value must be a single string to meet the audience restriction of [NIST.FAL].
 
-Note 3: This claim is not currently defined in OpenID Connect, this maybe should be pulled out into its own spec in OpenID Core instead of being defined here.
+Note 3: This claim is not currently defined in OpenID Connect, and should be pulled out into its own spec in OpenID Core instead of being defined here.
 
 
 For the authorization code flow, OpenID Providers:
 
 * shall require the value of `response_type` described in [RFC6749] to be `code`;
 * shall require PKCE [RFC7636] with S256 as the code challenge method (see Note 1 below);
+* shall require an exact match of a registered redirect URI as described in {{Section 2.1 of RFC9700}};
 * shall issue authorization codes with a maximum lifetime of 60 seconds;
 * shall support "Authorization Code Binding to DPoP Key" (as required by {{Section 10.1 of RFC9449}});
 * shall return an iss parameter in the authorization response according to [RFC9207];
-* shall not transmit authorization responses over unencrypted network connections, and, to this end, shall not allow redirect URIs that use the "http" scheme except for native clients that use loopback interface Redirection as described in Section 7.3 of [RFC8252];
+* shall not transmit authorization responses over unencrypted network connections, and, to this end, shall not allow redirect URIs that use the "http" scheme;
 * shall reject an authorization code (Section 1.3.1 of [RFC6749]) if it has been previously used;
 * shall not use the HTTP 307 status code when redirecting a request that contains user credentials to avoid forwarding the credentials to a third party accidentally (see {{Section 4.12 of RFC9700}});
 * should use the HTTP 303 status code when redirecting the user agent using status codes;
 * shall support `nonce` parameter values up to 64 characters in length, may reject `nonce` values longer than 64 characters.
-
-TBD: Should PAR be required at level SL1?
-
-* shall support client-authenticated pushed authorization requests according to [RFC9126];
-* shall reject authorization requests sent without [RFC9126];
-* shall reject pushed authorization requests without client authentication;
-* shall issue pushed authorization requests request_uri with expires_in values of less than 600 seconds;
 
 
 Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.
@@ -207,7 +205,6 @@ Note 1: while both nonce and PKCE can provide protection from authorization code
 OpenID Relying Parties:
 
 * shall support third-party initiated login as defined in Section 4 of [OpenID];
-* shall support client authentication using `private_key_jwt` as specified in Section 9 of [OpenID];
 * shall use the authorization server's issuer identifier value (as defined in [RFC8414]) in the `aud` claim in client authentication assertions. The issuer identifier value shall be sent as a string not as an item in an array;
 * shall not expose open redirectors (see {{Section 4.11 of RFC9700}});
 * shall only use authorization server metadata (such as the authorization endpoint) retrieved from the metadata document as specified in [OpenID.Discovery] and [RFC8414];
@@ -217,7 +214,7 @@ OpenID Relying Parties:
 OpenID Relying Parties making resource requests to the OpenID Provider:
 
 * shall support sender-constrined access tokens using DPoP as described in [RFC9449];
-* shall support the server provided nonce mechanism (as defined in {{Section 8 of RFC9449}});
+* shall support the server-provided nonce mechanism (as defined in {{Section 8 of RFC9449}});
 * shall send access tokens in the HTTP header as described in {{Section 7.1 of RFC9449}};
 * shall support refresh tokens and their rotation;
 
@@ -228,11 +225,6 @@ For the authorization code flow, Relying Parties:
 * shall generate the PKCE challenge specifically for each authorization request and securely bind the challenge to the client and the user agent in which the flow was started;
 * shall check the iss parameter in the authorization response according to [RFC9207] to prevent mix-up attacks;
 * should not use `nonce` parameter values longer than 64 characters;
-
-TBD: Should PAR be required at level SL1?
-
-* shall use Pushed Authorization Requests according to [RFC9126];
-* shall only send `client_id` and `request_uri` request parameters to the authorization endpoint (all other authorization request parameters are sent in the pushed authorization request according to [RFC9126]);
 
 
 # Security Considerations
