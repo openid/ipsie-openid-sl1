@@ -3,7 +3,7 @@ title: "IPSIE SL1 OpenID Connect Profile"
 abbrev: "IPSIE SL1"
 category: info
 
-docname: draft-openid-ipsie-sl1-profile-00
+docname: draft-openid-ipsie-sl1-profile-latest
 submissiontype: "independent"
 number:
 date:
