@@ -3,7 +3,7 @@ title: "IPSIE SL1 OpenID Connect Profile"
 abbrev: "IPSIE SL1"
 category: info
 
-docname: draft-openid-ipsie-sl1-profile-latest
+docname: draft-openid-ipsie-sl1-profile-00
 submissiontype: "independent"
 number:
 date:
@@ -18,8 +18,8 @@ venue:
   type: Working Group
   mail: openid-specs-ipsie@lists.openid.net
   arch: https://openid.net/wg/ipsie/
-  github: "aaronpk/ipsie-openid-sl1"
-  latest: "https://drafts.aaronpk.com/ipsie-openid-sl1/draft-openid-ipsie-sl1-profile.html"
+  github: "openid/ipsie-openid-sl1"
+  latest: "https://openid.github.io/ipsie-openid-sl1/draft-openid-ipsie-sl1-profile.html"
 
 author:
  -
@@ -242,3 +242,13 @@ This document has no IANA actions.
 {:numbered="false"}
 
 TODO acknowledge.
+
+
+# Document History
+
+[[ To be removed from the final specification ]]
+
+-00
+
+Initial draft
+
