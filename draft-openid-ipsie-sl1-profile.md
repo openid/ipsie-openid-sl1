@@ -236,12 +236,9 @@ For the authorization code flow, Relying Parties:
 This document has no IANA actions.
 
 
+
+
 --- back
-
-# Acknowledgments
-{:numbered="false"}
-
-TODO acknowledge.
 
 
 # Document History
@@ -251,4 +248,11 @@ TODO acknowledge.
 -00
 
 Initial draft
+
+
+# Acknowledgments
+{:numbered="false"}
+
+TODO acknowledge.
+
 
