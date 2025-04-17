@@ -4,8 +4,8 @@
 
 IPSIE Working Group                                           A. Parecki
 Internet-Draft                                                      Okta
-Intended status: Informational                              3 April 2025
-Expires: 5 October 2025
+Intended status: Informational                             17 April 2025
+Expires: 19 October 2025
 
 
                     IPSIE SL1 OpenID Connect Profile
@@ -22,7 +22,7 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://drafts.aaronpk.com/ipsie-openid-sl1/draft-openid-ipsie-
+   https://openid.github.io/ipsie-openid-sl1/draft-openid-ipsie-
    sl1-profile.html.  Status information for this document may be found
    at https://datatracker.ietf.org/doc/draft-openid-ipsie-sl1-profile/.
 
@@ -31,7 +31,7 @@ About This Document
    archived at https://openid.net/wg/ipsie/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/aaronpk/ipsie-openid-sl1.
+   https://github.com/openid/ipsie-openid-sl1.
 
 Status of This Memo
 
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 October 2025.
+   This Internet-Draft will expire on 19 October 2025.
 
 Copyright Notice
 
@@ -78,6 +78,7 @@ Table of Contents
    4.  Security Considerations
    5.  IANA Considerations
    6.  Normative References
+   Appendix A.  Document History
    Acknowledgments
    Author's Address
 
@@ -454,6 +455,14 @@ Table of Contents
               "Best Current Practice for OAuth 2.0 Security", BCP 240,
               RFC 9700, DOI 10.17487/RFC9700, January 2025,
               <https://www.rfc-editor.org/rfc/rfc9700>.
+
+Appendix A.  Document History
+
+   [[ To be removed from the final specification ]]
+
+   -00
+
+   Initial draft
 
 Acknowledgments
 
