@@ -29,6 +29,8 @@ author:
 
 normative:
   BCP195:
+  RFC2119:
+  RFC9174:
   RFC6749:
   RFC6750:
   RFC6797:
@@ -81,11 +83,7 @@ TODO Introduction
 
 # Conventions and Definitions
 
-The keywords "shall", "shall not", "should", "should not", "may", and "can" in
-this document are to be interpreted as described in ISO Directive Part 2
-[ISODIR2]. These keywords are not used as dictionary terms such that any
-occurrence of them shall be interpreted as keywords and are not to be
-interpreted with their natural language meanings.
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
 ## Roles
 
@@ -102,39 +100,39 @@ This document uses the term "Application" to refer to the "Relying Party" in [Op
 
 To protect against network attacks, clients, authorization servers, and resource servers
 
-* shall only offer TLS protected endpoints and shall establish connections to other servers using TLS;
-* shall set up TLS connections using TLS version 1.2 or later;
-* shall follow the recommendations for Secure Use of Transport Layer Security in [BCP195];
-* should use DNSSEC to protect against DNS spoofing attacks that can lead to the issuance of rogue domain-validated TLS certificates; and
-* shall perform a TLS server certificate check, as per [RFC9525].
+* MUST only offer TLS protected endpoints and MUST establish connections to other servers using TLS;
+* MUST set up TLS connections using TLS version 1.2 or later;
+* MUST follow the recommendations for Secure Use of Transport Layer Security in [BCP195];
+* SHOULD use DNSSEC to protect against DNS spoofing attacks that can lead to the issuance of rogue domain-validated TLS certificates; and
+* MUST perform a TLS server certificate check, as per [RFC9525].
 
 ### Requirements for endpoints not used by web browsers
 
 For server-to-server communication endpoints that are not used by web browsers, the following requirements apply:
 
-* When using TLS 1.2, servers shall only permit the cipher suites recommended in [BCP195];
-* When using TLS 1.2, clients should only permit the cipher suites recommended in [BCP195].
+* When using TLS 1.2, servers MUST only permit the cipher suites recommended in [BCP195];
+* When using TLS 1.2, clients SHOULD only permit the cipher suites recommended in [BCP195].
 
 ### Requirements for endpoints used by web browsers
 
 For endpoints that are used by web browsers, the following additional requirements apply:
 
-* Servers shall use methods to ensure that connections cannot be downgraded using TLS stripping attacks. A preloaded [preload] HTTP Strict Transport Security policy [RFC6797] can be used for this purpose. Some top-level domains, like .bank and .insurance, have set such a policy and therefore protect all second-level domains below them.
-* When using TLS 1.2, servers shall only use cipher suites allowed in [BCP195].
-* Servers shall not support [CORS] for the authorization endpoint, as clients must perform an HTTP redirect rather than access this endpoint directly.
+* Servers MUST use methods to ensure that connections cannot be downgraded using TLS stripping attacks. A preloaded [preload] HTTP Strict Transport Security policy [RFC6797] can be used for this purpose. Some top-level domains, like .bank and .insurance, have set such a policy and therefore protect all second-level domains below them.
+* When using TLS 1.2, servers MUST only use cipher suites allowed in [BCP195].
+* Servers MUST NOT support [CORS] for the authorization endpoint, as clients must perform an HTTP redirect rather than access this endpoint directly.
 
 
 ## Cryptography and Secrets
 
 The following requirements apply to cryptographic operations and secrets:
 
-* Authorization servers, clients, and resource servers when creating or processing JWTs shall:
+* Authorization servers, clients, and resource servers when creating or processing JWTs MUST:
   * adhere to [RFC8725];
   * use PS256, ES256, or EdDSA (using the Ed25519 variant) algorithms; and
-  * not use or accept the `none` algorithm.
-* RSA keys shall have a minimum length of 2048 bits.
-* Elliptic curve keys shall have a minimum length of 224 bits.
-* Credentials not intended for handling by end-users (e.g., access tokens, refresh tokens, authorization codes, etc.) shall be created with at least 128 bits of entropy such that an attacker correctly guessing the value is computationally infeasible ({{Section 10.10 of RFC6749}}).
+  * NOT use or accept the `none` algorithm.
+* RSA keys MUST have a minimum length of 2048 bits.
+* Elliptic curve keys MUST have a minimum length of 224 bits.
+* Credentials not intended for handling by end-users (e.g., access tokens, refresh tokens, authorization codes, etc.) MUST be created with at least 128 bits of entropy such that an attacker correctly guessing the value is computationally infeasible ({{Section 10.10 of RFC6749}}).
 
 ## OpenID Connect
 
@@ -153,26 +151,26 @@ In the following, a profile of the following technologies is defined:
 
 OpenID Providers:
 
-* shall distribute discovery metadata (such as the authorization endpoint) via the metadata document as specified in [OpenID.Discovery];
-* shall reject requests using the resource owner password credentials grant;
-* shall support public clients as defined in [RFC6749];
-* shall not expose open redirectors {{Section 4.11 of RFC9700}};
-* shall only accept its issuer identifier value (as defined in [RFC8414]) as a string in the `aud` claim received in client authentication assertions;
-* shall issue authorization codes with a maximum lifetime of 60 seconds;
-* shall require clients to be preregistered, and shall not support unauthenticated Dynamic Client Registration requests (see Note 1);
-* shall require clients to pre-register their redirect URIs
+* MUST distribute discovery metadata (such as the authorization endpoint) via the metadata document as specified in [OpenID.Discovery];
+* MUST reject requests using the resource owner password credentials grant;
+* MUST support public clients as defined in [RFC6749];
+* MUST NOT expose open redirectors {{Section 4.11 of RFC9700}};
+* MUST only accept its issuer identifier value (as defined in [RFC8414]) as a string in the `aud` claim received in client authentication assertions;
+* MUST issue authorization codes with a maximum lifetime of 60 seconds;
+* MUST require clients to be preregistered, and MUST NOT support unauthenticated Dynamic Client Registration requests (see Note 1);
+* MUST require clients to pre-register their redirect URIs
 
 Access Tokens issued by OpenID Providers:
 
-* shall only be used by the RP to retrieve identity claims at the OpenID Provider;
-* shall only issue sender-constrained access tokens using DPoP [RFC9449];
+* MUST only be used by the RP to retrieve identity claims at the OpenID Provider;
+* MUST only issue sender-constrained access tokens using DPoP [RFC9449];
 
 ID Tokens issued by OpenID Providers:
 
-* shall contain the OAuth Client ID of the RP as a single audience value as a string (see Note 2);
-* shall contain `acr` claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in Section 2 of [OpenID];
-* shall contain the `amr` claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of [OpenID];
-* shall indicate the expected lifetime of the RP session in the `session_lifetime` claim in seconds (see Note 3);
+* MUST contain the OAuth Client ID of the RP as a single audience value as a string (see Note 2);
+* MUST contain the `acr` claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in Section 2 of [OpenID];
+* MUST contain the `amr` claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of [OpenID];
+* MUST indicate the expected lifetime of the RP session in the `session_lifetime` claim in seconds (see Note 3);
 
 Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Trust Agreements" of [NIST.FAL].
 
@@ -183,17 +181,17 @@ Note 3: This claim is not currently defined in OpenID Connect, and should be pul
 
 For the authorization code flow, OpenID Providers:
 
-* shall require the value of `response_type` described in [RFC6749] to be `code`;
-* shall require PKCE [RFC7636] with S256 as the code challenge method (see Note 1 below);
-* shall require an exact match of a registered redirect URI as described in {{Section 2.1 of RFC9700}};
-* shall issue authorization codes with a maximum lifetime of 60 seconds;
-* shall support "Authorization Code Binding to DPoP Key" (as required by {{Section 10.1 of RFC9449}});
-* shall return an iss parameter in the authorization response according to [RFC9207];
-* shall not transmit authorization responses over unencrypted network connections, and, to this end, shall not allow redirect URIs that use the "http" scheme;
-* shall reject an authorization code (Section 1.3.1 of [RFC6749]) if it has been previously used;
-* shall not use the HTTP 307 status code when redirecting a request that contains user credentials to avoid forwarding the credentials to a third party accidentally (see {{Section 4.12 of RFC9700}});
-* should use the HTTP 303 status code when redirecting the user agent using status codes;
-* shall support `nonce` parameter values up to 64 characters in length, may reject `nonce` values longer than 64 characters.
+* MUST require the value of `response_type` described in [RFC6749] to be `code`;
+* MUST require PKCE [RFC7636] with S256 as the code challenge method (see Note 1 below);
+* MUST require an exact match of a registered redirect URI as described in {{Section 2.1 of RFC9700}};
+* MUST issue authorization codes with a maximum lifetime of 60 seconds;
+* MUST support "Authorization Code Binding to DPoP Key" (as required by {{Section 10.1 of RFC9449}});
+* MUST return an `iss` parameter in the authorization response according to [RFC9207];
+* MUST NOT transmit authorization responses over unencrypted network connections, and, to this end, MUST NOT allow redirect URIs that use the `http` scheme;
+* MUST reject an authorization code (Section 1.3.1 of [RFC6749]) if it has been previously used;
+* MUST NOT use the HTTP 307 status code when redirecting a request that contains user credentials to avoid forwarding the credentials to a third party accidentally (see {{Section 4.12 of RFC9700}});
+* SHOULD use the HTTP 303 status code when redirecting the user agent using status codes;
+* MUST support `nonce` parameter values up to 64 characters in length, and MAY reject `nonce` values longer than 64 characters.
 
 
 Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.
@@ -204,27 +202,27 @@ Note 1: while both nonce and PKCE can provide protection from authorization code
 
 OpenID Relying Parties:
 
-* shall support third-party initiated login as defined in Section 4 of [OpenID];
-* shall use the authorization server's issuer identifier value (as defined in [RFC8414]) in the `aud` claim in client authentication assertions. The issuer identifier value shall be sent as a string not as an item in an array;
-* shall not expose open redirectors (see {{Section 4.11 of RFC9700}});
-* shall only use authorization server metadata (such as the authorization endpoint) retrieved from the metadata document as specified in [OpenID.Discovery] and [RFC8414];
-* shall ensure that the issuer URL used as the basis for retrieving the authorization server metadata is obtained from an authoritative source and using a secure channel, such that it cannot be modified by an attacker;
-* shall ensure that this issuer URL and the issuer value in the obtained metadata match;
+* MUST support third-party initiated login as defined in Section 4 of [OpenID];
+* MUST use the authorization server's issuer identifier value (as defined in [RFC8414]) in the `aud` claim in client authentication assertions. The issuer identifier value shall be sent as a string not as an item in an array;
+* MUST NOT expose open redirectors (see {{Section 4.11 of RFC9700}});
+* MUST only use authorization server metadata (such as the authorization endpoint) retrieved from the metadata document as specified in [OpenID.Discovery] and [RFC8414];
+* MUST ensure that the issuer URL used as the basis for retrieving the authorization server metadata is obtained from an authoritative source and using a secure channel, such that it cannot be modified by an attacker;
+* MUST ensure that this issuer URL and the issuer value in the obtained metadata match;
 
 OpenID Relying Parties making resource requests to the OpenID Provider:
 
-* shall support sender-constrined access tokens using DPoP as described in [RFC9449];
-* shall support the server-provided nonce mechanism (as defined in {{Section 8 of RFC9449}});
-* shall send access tokens in the HTTP header as described in {{Section 7.1 of RFC9449}};
-* shall support refresh tokens and their rotation;
+* MUST support sender-constrined access tokens using DPoP as described in [RFC9449];
+* MUST support the server-provided nonce mechanism (as defined in {{Section 8 of RFC9449}});
+* MUST send access tokens in the HTTP header as described in {{Section 7.1 of RFC9449}};
+* MUST support refresh tokens and their rotation;
 
 For the authorization code flow, Relying Parties:
 
-* shall use the authorization code grant described in [RFC6749];
-* shall use PKCE [RFC7636] with S256 as the code challenge method;
-* shall generate the PKCE challenge specifically for each authorization request and securely bind the challenge to the client and the user agent in which the flow was started;
-* shall check the iss parameter in the authorization response according to [RFC9207] to prevent mix-up attacks;
-* should not use `nonce` parameter values longer than 64 characters;
+* MUST use the authorization code grant described in [RFC6749];
+* MUST use PKCE [RFC7636] with S256 as the code challenge method;
+* MUST generate the PKCE challenge specifically for each authorization request and securely bind the challenge to the client and the user agent in which the flow was started;
+* MUST check the `iss` parameter in the authorization response according to [RFC9207] to prevent mix-up attacks;
+* SHOULD NOT use `nonce` parameter values longer than 64 characters;
 
 
 # Security Considerations
@@ -286,6 +284,10 @@ specification.
 # Document History
 
 [[ To be removed from the final specification ]]
+
+-01
+
+* Replaced keywords with uppercase IETF keywords
 
 -00
 
