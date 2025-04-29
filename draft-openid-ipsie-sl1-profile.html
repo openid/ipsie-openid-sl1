@@ -1527,6 +1527,16 @@ svg :is([fill="white"], [fill^="#fff"]) {
               <p id="section-3.3.2-6.5.1">SHOULD NOT use <code>nonce</code> parameter values longer than 64 characters;<a href="#section-3.3.2-6.5.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
+<p id="section-3.3.2-7">In addition to the ID Token validation requirements described in Section 3.1.37 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>, Relying Parties:<a href="#section-3.3.2-7" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3.3.2-8.1">
+              <p id="section-3.3.2-8.1.1">MUST validate that the <code>aud</code> claim is a single string and matches the OAuth Client ID of the RP;<a href="#section-3.3.2-8.1.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-8.2">
+              <p id="section-3.3.2-8.2.1">MUST set the session lifetime of the session created to match the <code>session_lifetime</code> claim (see Note 1);<a href="#section-3.3.2-8.2.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
+<p id="section-3.3.2-9">Note 1: This claim is not currently defined in OpenID Connect, and should be pulled out into its own spec in OpenID Core instead of being defined here.<a href="#section-3.3.2-9" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>

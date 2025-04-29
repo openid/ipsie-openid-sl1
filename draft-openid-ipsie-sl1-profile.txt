@@ -362,6 +362,19 @@ Table of Contents
 
    *  SHOULD NOT use nonce parameter values longer than 64 characters;
 
+   In addition to the ID Token validation requirements described in
+   Section 3.1.37 of [OpenID], Relying Parties:
+
+   *  MUST validate that the aud claim is a single string and matches
+      the OAuth Client ID of the RP;
+
+   *  MUST set the session lifetime of the session created to match the
+      session_lifetime claim (see Note 1);
+
+   Note 1: This claim is not currently defined in OpenID Connect, and
+   should be pulled out into its own spec in OpenID Core instead of
+   being defined here.
+
 4.  Security Considerations
 
 5.  IANA Considerations
