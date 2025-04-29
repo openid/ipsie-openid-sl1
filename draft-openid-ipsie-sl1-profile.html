@@ -1049,7 +1049,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Parecki</td>
-<td class="center">Expires 20 October 2025</td>
+<td class="center">Expires 31 October 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1062,12 +1062,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-openid-ipsie-sl1-profile-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-04-18" class="published">18 April 2025</time>
+<time datetime="2025-04-29" class="published">29 April 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-10-20">20 October 2025</time></dd>
+<dd class="expires"><time datetime="2025-10-31">31 October 2025</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1116,7 +1116,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 20 October 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 31 October 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1224,11 +1224,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-conventions-and-definitions">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-conventions-and-definitions" class="section-name selfRef">Conventions and Definitions</a>
       </h2>
-<p id="section-2-1">The keywords "shall", "shall not", "should", "should not", "may", and "can" in
-this document are to be interpreted as described in ISO Directive Part 2
-[ISODIR2]. These keywords are not used as dictionary terms such that any
-occurrence of them shall be interpreted as keywords and are not to be
-interpreted with their natural language meanings.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 <span><a href="#RFC8174" class="internal xref">RFC2119</a> [<a href="#RFC8174" class="cite xref">RFC8174</a>]</span> when, and only when, they appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <div id="roles">
 <section id="section-2.1">
         <h3 id="name-roles">
@@ -1258,19 +1254,19 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
 <p id="section-3.1.1-1">To protect against network attacks, clients, authorization servers, and resource servers<a href="#section-3.1.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.1.1-2.1">
-              <p id="section-3.1.1-2.1.1">shall only offer TLS protected endpoints and shall establish connections to other servers using TLS;<a href="#section-3.1.1-2.1.1" class="pilcrow">¶</a></p>
+              <p id="section-3.1.1-2.1.1">MUST only offer TLS protected endpoints and MUST establish connections to other servers using TLS;<a href="#section-3.1.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.1.1-2.2">
-              <p id="section-3.1.1-2.2.1">shall set up TLS connections using TLS version 1.2 or later;<a href="#section-3.1.1-2.2.1" class="pilcrow">¶</a></p>
+              <p id="section-3.1.1-2.2.1">MUST set up TLS connections using TLS version 1.2 or later;<a href="#section-3.1.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.1.1-2.3">
-              <p id="section-3.1.1-2.3.1">shall follow the recommendations for Secure Use of Transport Layer Security in <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span>;<a href="#section-3.1.1-2.3.1" class="pilcrow">¶</a></p>
+              <p id="section-3.1.1-2.3.1">MUST follow the recommendations for Secure Use of Transport Layer Security in <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span>;<a href="#section-3.1.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.1.1-2.4">
-              <p id="section-3.1.1-2.4.1">should use DNSSEC to protect against DNS spoofing attacks that can lead to the issuance of rogue domain-validated TLS certificates; and<a href="#section-3.1.1-2.4.1" class="pilcrow">¶</a></p>
+              <p id="section-3.1.1-2.4.1">SHOULD use DNSSEC to protect against DNS spoofing attacks that can lead to the issuance of rogue domain-validated TLS certificates; and<a href="#section-3.1.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.1.1-2.5">
-              <p id="section-3.1.1-2.5.1">shall perform a TLS server certificate check, as per <span>[<a href="#RFC9525" class="cite xref">RFC9525</a>]</span>.<a href="#section-3.1.1-2.5.1" class="pilcrow">¶</a></p>
+              <p id="section-3.1.1-2.5.1">MUST perform a TLS server certificate check, as per <span>[<a href="#RFC9525" class="cite xref">RFC9525</a>]</span>.<a href="#section-3.1.1-2.5.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -1283,10 +1279,10 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
 <p id="section-3.1.2-1">For server-to-server communication endpoints that are not used by web browsers, the following requirements apply:<a href="#section-3.1.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.1.2-2.1">
-              <p id="section-3.1.2-2.1.1">When using TLS 1.2, servers shall only permit the cipher suites recommended in <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span>;<a href="#section-3.1.2-2.1.1" class="pilcrow">¶</a></p>
+              <p id="section-3.1.2-2.1.1">When using TLS 1.2, servers MUST only permit the cipher suites recommended in <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span>;<a href="#section-3.1.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.1.2-2.2">
-              <p id="section-3.1.2-2.2.1">When using TLS 1.2, clients should only permit the cipher suites recommended in <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span>.<a href="#section-3.1.2-2.2.1" class="pilcrow">¶</a></p>
+              <p id="section-3.1.2-2.2.1">When using TLS 1.2, clients SHOULD only permit the cipher suites recommended in <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span>.<a href="#section-3.1.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -1299,13 +1295,13 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
 <p id="section-3.1.3-1">For endpoints that are used by web browsers, the following additional requirements apply:<a href="#section-3.1.3-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.1.3-2.1">
-              <p id="section-3.1.3-2.1.1">Servers shall use methods to ensure that connections cannot be downgraded using TLS stripping attacks. A preloaded [preload] HTTP Strict Transport Security policy <span>[<a href="#RFC6797" class="cite xref">RFC6797</a>]</span> can be used for this purpose. Some top-level domains, like .bank and .insurance, have set such a policy and therefore protect all second-level domains below them.<a href="#section-3.1.3-2.1.1" class="pilcrow">¶</a></p>
+              <p id="section-3.1.3-2.1.1">Servers MUST use methods to ensure that connections cannot be downgraded using TLS stripping attacks. A preloaded [preload] HTTP Strict Transport Security policy <span>[<a href="#RFC6797" class="cite xref">RFC6797</a>]</span> can be used for this purpose. Some top-level domains, like .bank and .insurance, have set such a policy and therefore protect all second-level domains below them.<a href="#section-3.1.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.1.3-2.2">
-              <p id="section-3.1.3-2.2.1">When using TLS 1.2, servers shall only use cipher suites allowed in <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span>.<a href="#section-3.1.3-2.2.1" class="pilcrow">¶</a></p>
+              <p id="section-3.1.3-2.2.1">When using TLS 1.2, servers MUST only use cipher suites allowed in <span>[<a href="#BCP195" class="cite xref">BCP195</a>]</span>.<a href="#section-3.1.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.1.3-2.3">
-              <p id="section-3.1.3-2.3.1">Servers shall not support [CORS] for the authorization endpoint, as clients must perform an HTTP redirect rather than access this endpoint directly.<a href="#section-3.1.3-2.3.1" class="pilcrow">¶</a></p>
+              <p id="section-3.1.3-2.3.1">Servers MUST NOT support [CORS] for the authorization endpoint, as clients must perform an HTTP redirect rather than access this endpoint directly.<a href="#section-3.1.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -1320,27 +1316,27 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
 <p id="section-3.2-1">The following requirements apply to cryptographic operations and secrets:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.2-2.1">
-            <p id="section-3.2-2.1.1">Authorization servers, clients, and resource servers when creating or processing JWTs shall:<a href="#section-3.2-2.1.1" class="pilcrow">¶</a></p>
+            <p id="section-3.2-2.1.1">Authorization servers, clients, and resource servers when creating or processing JWTs:<a href="#section-3.2-2.1.1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.2-2.1.2.1">
-                <p id="section-3.2-2.1.2.1.1">adhere to <span>[<a href="#RFC8725" class="cite xref">RFC8725</a>]</span>;<a href="#section-3.2-2.1.2.1.1" class="pilcrow">¶</a></p>
+                <p id="section-3.2-2.1.2.1.1">MUST adhere to <span>[<a href="#RFC8725" class="cite xref">RFC8725</a>]</span>;<a href="#section-3.2-2.1.2.1.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-3.2-2.1.2.2">
-                <p id="section-3.2-2.1.2.2.1">use PS256, ES256, or EdDSA (using the Ed25519 variant) algorithms; and<a href="#section-3.2-2.1.2.2.1" class="pilcrow">¶</a></p>
+                <p id="section-3.2-2.1.2.2.1">MUST use PS256, ES256, or EdDSA (using the Ed25519 variant) algorithms; and<a href="#section-3.2-2.1.2.2.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-3.2-2.1.2.3">
-                <p id="section-3.2-2.1.2.3.1">not use or accept the <code>none</code> algorithm.<a href="#section-3.2-2.1.2.3.1" class="pilcrow">¶</a></p>
+                <p id="section-3.2-2.1.2.3.1">MUST NOT use or accept the <code>none</code> algorithm.<a href="#section-3.2-2.1.2.3.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
           <li class="normal" id="section-3.2-2.2">
-            <p id="section-3.2-2.2.1">RSA keys shall have a minimum length of 2048 bits.<a href="#section-3.2-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-3.2-2.2.1">RSA keys MUST have a minimum length of 2048 bits.<a href="#section-3.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-3.2-2.3">
-            <p id="section-3.2-2.3.1">Elliptic curve keys shall have a minimum length of 224 bits.<a href="#section-3.2-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-3.2-2.3.1">Elliptic curve keys MUST have a minimum length of 224 bits.<a href="#section-3.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-3.2-2.4">
-            <p id="section-3.2-2.4.1">Credentials not intended for handling by end-users (e.g., access tokens, refresh tokens, authorization codes, etc.) shall be created with at least 128 bits of entropy such that an attacker correctly guessing the value is computationally infeasible (<span><a href="https://rfc-editor.org/rfc/rfc6749#section-10.10" class="relref">Section 10.10</a> of [<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>).<a href="#section-3.2-2.4.1" class="pilcrow">¶</a></p>
+            <p id="section-3.2-2.4.1">Credentials not intended for handling by end-users (e.g., access tokens, refresh tokens, authorization codes, etc.) MUST be created with at least 128 bits of entropy such that an attacker correctly guessing the value is computationally infeasible (<span><a href="https://rfc-editor.org/rfc/rfc6749#section-10.10" class="relref">Section 10.10</a> of [<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>).<a href="#section-3.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -1382,52 +1378,52 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
 <p id="section-3.3.1-1">OpenID Providers:<a href="#section-3.3.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.3.1-2.1">
-              <p id="section-3.3.1-2.1.1">shall distribute discovery metadata (such as the authorization endpoint) via the metadata document as specified in <span>[<a href="#OpenID.Discovery" class="cite xref">OpenID.Discovery</a>]</span>;<a href="#section-3.3.1-2.1.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-2.1.1">MUST distribute discovery metadata (such as the authorization endpoint) via the metadata document as specified in <span>[<a href="#OpenID.Discovery" class="cite xref">OpenID.Discovery</a>]</span>;<a href="#section-3.3.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-2.2">
-              <p id="section-3.3.1-2.2.1">shall reject requests using the resource owner password credentials grant;<a href="#section-3.3.1-2.2.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-2.2.1">MUST reject requests using the resource owner password credentials grant;<a href="#section-3.3.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-2.3">
-              <p id="section-3.3.1-2.3.1">shall support public clients as defined in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>;<a href="#section-3.3.1-2.3.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-2.3.1">MUST support public clients as defined in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>;<a href="#section-3.3.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-2.4">
-              <p id="section-3.3.1-2.4.1">shall not expose open redirectors <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.11" class="relref">Section 4.11</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>;<a href="#section-3.3.1-2.4.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-2.4.1">MUST NOT expose open redirectors <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.11" class="relref">Section 4.11</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>;<a href="#section-3.3.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-2.5">
-              <p id="section-3.3.1-2.5.1">shall only accept its issuer identifier value (as defined in <span>[<a href="#RFC8414" class="cite xref">RFC8414</a>]</span>) as a string in the <code>aud</code> claim received in client authentication assertions;<a href="#section-3.3.1-2.5.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-2.5.1">MUST only accept its issuer identifier value (as defined in <span>[<a href="#RFC8414" class="cite xref">RFC8414</a>]</span>) as a string in the <code>aud</code> claim received in client authentication assertions;<a href="#section-3.3.1-2.5.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-2.6">
-              <p id="section-3.3.1-2.6.1">shall issue authorization codes with a maximum lifetime of 60 seconds;<a href="#section-3.3.1-2.6.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-2.6.1">MUST issue authorization codes with a maximum lifetime of 60 seconds;<a href="#section-3.3.1-2.6.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-2.7">
-              <p id="section-3.3.1-2.7.1">shall require clients to be preregistered, and shall not support unauthenticated Dynamic Client Registration requests (see Note 1);<a href="#section-3.3.1-2.7.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-2.7.1">MUST require clients to be preregistered, and MUST NOT support unauthenticated Dynamic Client Registration requests (see Note 1);<a href="#section-3.3.1-2.7.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-2.8">
-              <p id="section-3.3.1-2.8.1">shall require clients to pre-register their redirect URIs<a href="#section-3.3.1-2.8.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-2.8.1">MUST require clients to pre-register their redirect URIs<a href="#section-3.3.1-2.8.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 <p id="section-3.3.1-3">Access Tokens issued by OpenID Providers:<a href="#section-3.3.1-3" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.3.1-4.1">
-              <p id="section-3.3.1-4.1.1">shall only be used by the RP to retrieve identity claims at the OpenID Provider;<a href="#section-3.3.1-4.1.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-4.1.1">MUST only be used by the RP to retrieve identity claims at the OpenID Provider;<a href="#section-3.3.1-4.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-4.2">
-              <p id="section-3.3.1-4.2.1">shall only issue sender-constrained access tokens using DPoP <span>[<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>;<a href="#section-3.3.1-4.2.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-4.2.1">MUST only issue sender-constrained access tokens using DPoP <span>[<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>;<a href="#section-3.3.1-4.2.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 <p id="section-3.3.1-5">ID Tokens issued by OpenID Providers:<a href="#section-3.3.1-5" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.3.1-6.1">
-              <p id="section-3.3.1-6.1.1">shall contain the OAuth Client ID of the RP as a single audience value as a string (see Note 2);<a href="#section-3.3.1-6.1.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-6.1.1">MUST contain the OAuth Client ID of the RP as a single audience value as a string (see Note 2);<a href="#section-3.3.1-6.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-6.2">
-              <p id="section-3.3.1-6.2.1">shall contain <code>acr</code> claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in Section 2 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.1-6.2.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-6.2.1">MUST contain the <code>acr</code> claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in Section 2 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.1-6.2.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-6.3">
-              <p id="section-3.3.1-6.3.1">shall contain the <code>amr</code> claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.1-6.3.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-6.3.1">MUST contain the <code>amr</code> claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.1-6.3.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-6.4">
-              <p id="section-3.3.1-6.4.1">shall indicate the expected lifetime of the RP session in the <code>session_lifetime</code> claim in seconds (see Note 3);<a href="#section-3.3.1-6.4.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-6.4.1">MUST indicate the expected lifetime of the RP session in the <code>session_lifetime</code> claim in seconds (see Note 3);<a href="#section-3.3.1-6.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 <p id="section-3.3.1-7">Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Trust Agreements" of <span>[<a href="#NIST.FAL" class="cite xref">NIST.FAL</a>]</span>.<a href="#section-3.3.1-7" class="pilcrow">¶</a></p>
@@ -1436,37 +1432,37 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
 <p id="section-3.3.1-10">For the authorization code flow, OpenID Providers:<a href="#section-3.3.1-10" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.3.1-11.1">
-              <p id="section-3.3.1-11.1.1">shall require the value of <code>response_type</code> described in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span> to be <code>code</code>;<a href="#section-3.3.1-11.1.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-11.1.1">MUST require the value of <code>response_type</code> described in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span> to be <code>code</code>;<a href="#section-3.3.1-11.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-11.2">
-              <p id="section-3.3.1-11.2.1">shall require PKCE <span>[<a href="#RFC7636" class="cite xref">RFC7636</a>]</span> with S256 as the code challenge method (see Note 1 below);<a href="#section-3.3.1-11.2.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-11.2.1">MUST require PKCE <span>[<a href="#RFC7636" class="cite xref">RFC7636</a>]</span> with S256 as the code challenge method (see Note 1 below);<a href="#section-3.3.1-11.2.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-11.3">
-              <p id="section-3.3.1-11.3.1">shall require an exact match of a registered redirect URI as described in <span><a href="https://rfc-editor.org/rfc/rfc9700#section-2.1" class="relref">Section 2.1</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>;<a href="#section-3.3.1-11.3.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-11.3.1">MUST require an exact match of a registered redirect URI as described in <span><a href="https://rfc-editor.org/rfc/rfc9700#section-2.1" class="relref">Section 2.1</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>;<a href="#section-3.3.1-11.3.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-11.4">
-              <p id="section-3.3.1-11.4.1">shall issue authorization codes with a maximum lifetime of 60 seconds;<a href="#section-3.3.1-11.4.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-11.4.1">MUST issue authorization codes with a maximum lifetime of 60 seconds;<a href="#section-3.3.1-11.4.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-11.5">
-              <p id="section-3.3.1-11.5.1">shall support "Authorization Code Binding to DPoP Key" (as required by <span><a href="https://rfc-editor.org/rfc/rfc9449#section-10.1" class="relref">Section 10.1</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>);<a href="#section-3.3.1-11.5.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-11.5.1">MUST support "Authorization Code Binding to DPoP Key" (as required by <span><a href="https://rfc-editor.org/rfc/rfc9449#section-10.1" class="relref">Section 10.1</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>);<a href="#section-3.3.1-11.5.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-11.6">
-              <p id="section-3.3.1-11.6.1">shall return an iss parameter in the authorization response according to <span>[<a href="#RFC9207" class="cite xref">RFC9207</a>]</span>;<a href="#section-3.3.1-11.6.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-11.6.1">MUST return an <code>iss</code> parameter in the authorization response according to <span>[<a href="#RFC9207" class="cite xref">RFC9207</a>]</span>;<a href="#section-3.3.1-11.6.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-11.7">
-              <p id="section-3.3.1-11.7.1">shall not transmit authorization responses over unencrypted network connections, and, to this end, shall not allow redirect URIs that use the "http" scheme;<a href="#section-3.3.1-11.7.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-11.7.1">MUST NOT transmit authorization responses over unencrypted network connections, and, to this end, MUST NOT allow redirect URIs that use the <code>http</code> scheme;<a href="#section-3.3.1-11.7.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-11.8">
-              <p id="section-3.3.1-11.8.1">shall reject an authorization code (Section 1.3.1 of <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>) if it has been previously used;<a href="#section-3.3.1-11.8.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-11.8.1">MUST reject an authorization code (Section 1.3.1 of <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>) if it has been previously used;<a href="#section-3.3.1-11.8.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-11.9">
-              <p id="section-3.3.1-11.9.1">shall not use the HTTP 307 status code when redirecting a request that contains user credentials to avoid forwarding the credentials to a third party accidentally (see <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.12" class="relref">Section 4.12</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>);<a href="#section-3.3.1-11.9.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-11.9.1">MUST NOT use the HTTP 307 status code when redirecting a request that contains user credentials to avoid forwarding the credentials to a third party accidentally (see <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.12" class="relref">Section 4.12</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>);<a href="#section-3.3.1-11.9.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-11.10">
-              <p id="section-3.3.1-11.10.1">should use the HTTP 303 status code when redirecting the user agent using status codes;<a href="#section-3.3.1-11.10.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-11.10.1">SHOULD use the HTTP 303 status code when redirecting the user agent using status codes;<a href="#section-3.3.1-11.10.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-11.11">
-              <p id="section-3.3.1-11.11.1">shall support <code>nonce</code> parameter values up to 64 characters in length, may reject <code>nonce</code> values longer than 64 characters.<a href="#section-3.3.1-11.11.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-11.11.1">MUST support <code>nonce</code> parameter values up to 64 characters in length, and MAY reject <code>nonce</code> values longer than 64 characters.<a href="#section-3.3.1-11.11.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 <p id="section-3.3.1-12">Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.<a href="#section-3.3.1-12" class="pilcrow">¶</a></p>
@@ -1480,55 +1476,55 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
 <p id="section-3.3.2-1">OpenID Relying Parties:<a href="#section-3.3.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.3.2-2.1">
-              <p id="section-3.3.2-2.1.1">shall support third-party initiated login as defined in Section 4 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.2-2.1.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-2.1.1">MUST support third-party initiated login as defined in Section 4 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.2-2.2">
-              <p id="section-3.3.2-2.2.1">shall use the authorization server's issuer identifier value (as defined in <span>[<a href="#RFC8414" class="cite xref">RFC8414</a>]</span>) in the <code>aud</code> claim in client authentication assertions. The issuer identifier value shall be sent as a string not as an item in an array;<a href="#section-3.3.2-2.2.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-2.2.1">MUST use the authorization server's issuer identifier value (as defined in <span>[<a href="#RFC8414" class="cite xref">RFC8414</a>]</span>) in the <code>aud</code> claim in client authentication assertions. The issuer identifier value shall be sent as a string not as an item in an array;<a href="#section-3.3.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.2-2.3">
-              <p id="section-3.3.2-2.3.1">shall not expose open redirectors (see <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.11" class="relref">Section 4.11</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>);<a href="#section-3.3.2-2.3.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-2.3.1">MUST NOT expose open redirectors (see <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.11" class="relref">Section 4.11</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>);<a href="#section-3.3.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.2-2.4">
-              <p id="section-3.3.2-2.4.1">shall only use authorization server metadata (such as the authorization endpoint) retrieved from the metadata document as specified in <span>[<a href="#OpenID.Discovery" class="cite xref">OpenID.Discovery</a>]</span> and <span>[<a href="#RFC8414" class="cite xref">RFC8414</a>]</span>;<a href="#section-3.3.2-2.4.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-2.4.1">MUST only use authorization server metadata (such as the authorization endpoint) retrieved from the metadata document as specified in <span>[<a href="#OpenID.Discovery" class="cite xref">OpenID.Discovery</a>]</span> and <span>[<a href="#RFC8414" class="cite xref">RFC8414</a>]</span>;<a href="#section-3.3.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.2-2.5">
-              <p id="section-3.3.2-2.5.1">shall ensure that the issuer URL used as the basis for retrieving the authorization server metadata is obtained from an authoritative source and using a secure channel, such that it cannot be modified by an attacker;<a href="#section-3.3.2-2.5.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-2.5.1">MUST ensure that the issuer URL used as the basis for retrieving the authorization server metadata is obtained from an authoritative source and using a secure channel, such that it cannot be modified by an attacker;<a href="#section-3.3.2-2.5.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.2-2.6">
-              <p id="section-3.3.2-2.6.1">shall ensure that this issuer URL and the issuer value in the obtained metadata match;<a href="#section-3.3.2-2.6.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-2.6.1">MUST ensure that this issuer URL and the issuer value in the obtained metadata match;<a href="#section-3.3.2-2.6.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 <p id="section-3.3.2-3">OpenID Relying Parties making resource requests to the OpenID Provider:<a href="#section-3.3.2-3" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.3.2-4.1">
-              <p id="section-3.3.2-4.1.1">shall support sender-constrined access tokens using DPoP as described in <span>[<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>;<a href="#section-3.3.2-4.1.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-4.1.1">MUST support sender-constrined access tokens using DPoP as described in <span>[<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>;<a href="#section-3.3.2-4.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.2-4.2">
-              <p id="section-3.3.2-4.2.1">shall support the server-provided nonce mechanism (as defined in <span><a href="https://rfc-editor.org/rfc/rfc9449#section-8" class="relref">Section 8</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>);<a href="#section-3.3.2-4.2.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-4.2.1">MUST support the server-provided nonce mechanism (as defined in <span><a href="https://rfc-editor.org/rfc/rfc9449#section-8" class="relref">Section 8</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>);<a href="#section-3.3.2-4.2.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.2-4.3">
-              <p id="section-3.3.2-4.3.1">shall send access tokens in the HTTP header as described in <span><a href="https://rfc-editor.org/rfc/rfc9449#section-7.1" class="relref">Section 7.1</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>;<a href="#section-3.3.2-4.3.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-4.3.1">MUST send access tokens in the HTTP header as described in <span><a href="https://rfc-editor.org/rfc/rfc9449#section-7.1" class="relref">Section 7.1</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>;<a href="#section-3.3.2-4.3.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.2-4.4">
-              <p id="section-3.3.2-4.4.1">shall support refresh tokens and their rotation;<a href="#section-3.3.2-4.4.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-4.4.1">MUST support refresh tokens and their rotation;<a href="#section-3.3.2-4.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 <p id="section-3.3.2-5">For the authorization code flow, Relying Parties:<a href="#section-3.3.2-5" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.3.2-6.1">
-              <p id="section-3.3.2-6.1.1">shall use the authorization code grant described in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>;<a href="#section-3.3.2-6.1.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-6.1.1">MUST use the authorization code grant described in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>;<a href="#section-3.3.2-6.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.2-6.2">
-              <p id="section-3.3.2-6.2.1">shall use PKCE <span>[<a href="#RFC7636" class="cite xref">RFC7636</a>]</span> with S256 as the code challenge method;<a href="#section-3.3.2-6.2.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-6.2.1">MUST use PKCE <span>[<a href="#RFC7636" class="cite xref">RFC7636</a>]</span> with S256 as the code challenge method;<a href="#section-3.3.2-6.2.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.2-6.3">
-              <p id="section-3.3.2-6.3.1">shall generate the PKCE challenge specifically for each authorization request and securely bind the challenge to the client and the user agent in which the flow was started;<a href="#section-3.3.2-6.3.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-6.3.1">MUST generate the PKCE challenge specifically for each authorization request and securely bind the challenge to the client and the user agent in which the flow was started;<a href="#section-3.3.2-6.3.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.2-6.4">
-              <p id="section-3.3.2-6.4.1">shall check the iss parameter in the authorization response according to <span>[<a href="#RFC9207" class="cite xref">RFC9207</a>]</span> to prevent mix-up attacks;<a href="#section-3.3.2-6.4.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-6.4.1">MUST check the <code>iss</code> parameter in the authorization response according to <span>[<a href="#RFC9207" class="cite xref">RFC9207</a>]</span> to prevent mix-up attacks;<a href="#section-3.3.2-6.4.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.2-6.5">
-              <p id="section-3.3.2-6.5.1">should not use <code>nonce</code> parameter values longer than 64 characters;<a href="#section-3.3.2-6.5.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-6.5.1">SHOULD NOT use <code>nonce</code> parameter values longer than 64 characters;<a href="#section-3.3.2-6.5.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -1580,6 +1576,10 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
       <dd>
 <span class="refAuthor">Sakimura, N.</span>, <span class="refAuthor">Bradley, J.</span>, <span class="refAuthor">Jones, M.</span>, and <span class="refAuthor">E. Jay</span>, <span class="refTitle">"OpenID Connect Discovery 1.0 incorporating errata set 2"</span>, <time datetime="2023-12" class="refDate">December 2023</time>, <span>&lt;<a href="https://openid.net/specs/openid-connect-discovery-1_0.html">https://openid.net/specs/openid-connect-discovery-1_0.html</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="RFC2119">[RFC2119]</dt>
+      <dd>
+<span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC6749">[RFC6749]</dt>
       <dd>
 <span class="refAuthor">Hardt, D., Ed.</span>, <span class="refTitle">"The OAuth 2.0 Authorization Framework"</span>, <span class="seriesInfo">RFC 6749</span>, <span class="seriesInfo">DOI 10.17487/RFC6749</span>, <time datetime="2012-10" class="refDate">October 2012</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6749">https://www.rfc-editor.org/rfc/rfc6749</a>&gt;</span>. </dd>
@@ -1595,6 +1595,10 @@ interpreted with their natural language meanings.<a href="#section-2-1" class="p
 <dt id="RFC7636">[RFC7636]</dt>
       <dd>
 <span class="refAuthor">Sakimura, N., Ed.</span>, <span class="refAuthor">Bradley, J.</span>, and <span class="refAuthor">N. Agarwal</span>, <span class="refTitle">"Proof Key for Code Exchange by OAuth Public Clients"</span>, <span class="seriesInfo">RFC 7636</span>, <span class="seriesInfo">DOI 10.17487/RFC7636</span>, <time datetime="2015-09" class="refDate">September 2015</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7636">https://www.rfc-editor.org/rfc/rfc7636</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8174">[RFC8174]</dt>
+      <dd>
+<span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8252">[RFC8252]</dt>
       <dd>
@@ -1679,8 +1683,14 @@ specification.<a href="#appendix-A-3" class="pilcrow">¶</a></p>
 <a href="#appendix-B" class="section-number selfRef">Appendix B. </a><a href="#name-document-history" class="section-name selfRef">Document History</a>
       </h2>
 <p id="appendix-B-1">[[ To be removed from the final specification ]]<a href="#appendix-B-1" class="pilcrow">¶</a></p>
-<p id="appendix-B-2">-00<a href="#appendix-B-2" class="pilcrow">¶</a></p>
-<p id="appendix-B-3">Initial draft<a href="#appendix-B-3" class="pilcrow">¶</a></p>
+<p id="appendix-B-2">-01<a href="#appendix-B-2" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="appendix-B-3.1">
+          <p id="appendix-B-3.1.1">Replaced keywords with uppercase IETF keywords<a href="#appendix-B-3.1.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="appendix-B-4">-00<a href="#appendix-B-4" class="pilcrow">¶</a></p>
+<p id="appendix-B-5">Initial draft<a href="#appendix-B-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="acknowledgments">
