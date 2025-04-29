@@ -226,7 +226,7 @@ For the authorization code flow, Relying Parties:
 * shall check the iss parameter in the authorization response according to [RFC9207] to prevent mix-up attacks;
 * should not use `nonce` parameter values longer than 64 characters;
 
-In addition to the ID Token validation requirements described in {{Section 3.1.37 of OpenID}}, Relying Parties:
+In addition to the ID Token validation requirements described in Section 3.1.37 of [OpenID], Relying Parties:
 
 * MUST validate that the `aud` claim is a single string and matches the OAuth Client ID of the RP;
 * MUST set the session lifetime of the session created to match the `session_lifetime` claim (see Note 1);
