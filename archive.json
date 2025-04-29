@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-27T01:09:14.871051+00:00",
+  "timestamp": "2025-04-29T01:05:10.199600+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -50,5 +50,58 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOOE2vos6UPt6u",
+      "title": "Replaced keywords with uppercase IETF keywords",
+      "url": "https://github.com/openid/ipsie-openid-sl1/pull/1",
+      "state": "OPEN",
+      "author": "aaronpk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "closes https://github.com/openid/ipsie/issues/68",
+      "createdAt": "2025-04-28T22:26:16Z",
+      "updatedAt": "2025-04-28T22:26:16Z",
+      "baseRepository": "openid/ipsie-openid-sl1",
+      "baseRefName": "main",
+      "baseRefOid": "8cfd4e19c2e56bf0cc8d494c0a77e0968049fac3",
+      "headRepository": "openid/ipsie-openid-sl1",
+      "headRefName": "iso-to-ietf-keywords",
+      "headRefOid": "963645107a42c4699ad6ff09b8b4dd89be6f232d",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOOE2vos6UQU8N",
+      "title": "add ID token validation requirements",
+      "url": "https://github.com/openid/ipsie-openid-sl1/pull/2",
+      "state": "OPEN",
+      "author": "aaronpk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "closes https://github.com/openid/ipsie/issues/64",
+      "createdAt": "2025-04-29T00:08:32Z",
+      "updatedAt": "2025-04-29T00:08:32Z",
+      "baseRepository": "openid/ipsie-openid-sl1",
+      "baseRefName": "main",
+      "baseRefOid": "8cfd4e19c2e56bf0cc8d494c0a77e0968049fac3",
+      "headRepository": "openid/ipsie-openid-sl1",
+      "headRefName": "id-token-validation",
+      "headRefOid": "a65c7581e1105903854bfc39955ea5b41b204b75",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
