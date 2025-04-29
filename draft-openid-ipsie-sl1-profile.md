@@ -30,7 +30,7 @@ author:
 normative:
   BCP195:
   RFC2119:
-  RFC9174:
+  RFC8174:
   RFC6749:
   RFC6750:
   RFC6797:
@@ -126,10 +126,10 @@ For endpoints that are used by web browsers, the following additional requiremen
 
 The following requirements apply to cryptographic operations and secrets:
 
-* Authorization servers, clients, and resource servers when creating or processing JWTs MUST:
-  * adhere to [RFC8725];
-  * use PS256, ES256, or EdDSA (using the Ed25519 variant) algorithms; and
-  * NOT use or accept the `none` algorithm.
+* Authorization servers, clients, and resource servers when creating or processing JWTs:
+  * MUST adhere to [RFC8725];
+  * MUST use PS256, ES256, or EdDSA (using the Ed25519 variant) algorithms; and
+  * MUST NOT use or accept the `none` algorithm.
 * RSA keys MUST have a minimum length of 2048 bits.
 * Elliptic curve keys MUST have a minimum length of 224 bits.
 * Credentials not intended for handling by end-users (e.g., access tokens, refresh tokens, authorization codes, etc.) MUST be created with at least 128 bits of entropy such that an attacker correctly guessing the value is computationally infeasible ({{Section 10.10 of RFC6749}}).
