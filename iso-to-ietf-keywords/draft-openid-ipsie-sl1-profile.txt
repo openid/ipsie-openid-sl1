@@ -4,8 +4,8 @@
 
 IPSIE Working Group                                           A. Parecki
 Internet-Draft                                                      Okta
-Intended status: Informational                             28 April 2025
-Expires: 30 October 2025
+Intended status: Informational                             29 April 2025
+Expires: 31 October 2025
 
 
                     IPSIE SL1 OpenID Connect Profile
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 October 2025.
+   This Internet-Draft will expire on 31 October 2025.
 
 Copyright Notice
 
@@ -92,7 +92,7 @@ Table of Contents
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
    "OPTIONAL" in this document are to be interpreted as described in BCP
-   14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   14 RFC2119 [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
 2.1.  Roles
@@ -163,14 +163,14 @@ Table of Contents
    secrets:
 
    *  Authorization servers, clients, and resource servers when creating
-      or processing JWTs MUST:
+      or processing JWTs:
 
-      -  adhere to [RFC8725];
+      -  MUST adhere to [RFC8725];
 
-      -  use PS256, ES256, or EdDSA (using the Ed25519 variant)
+      -  MUST use PS256, ES256, or EdDSA (using the Ed25519 variant)
          algorithms; and
 
-      -  NOT use or accept the none algorithm.
+      -  MUST NOT use or accept the none algorithm.
 
    *  RSA keys MUST have a minimum length of 2048 bits.
 
@@ -423,6 +423,10 @@ Table of Contents
               DOI 10.17487/RFC7636, September 2015,
               <https://www.rfc-editor.org/rfc/rfc7636>.
 
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
    [RFC8252]  Denniss, W. and J. Bradley, "OAuth 2.0 for Native Apps",
               BCP 212, RFC 8252, DOI 10.17487/RFC8252, October 2017,
               <https://www.rfc-editor.org/rfc/rfc8252>.
@@ -441,11 +445,6 @@ Table of Contents
               and F. Skokan, "OAuth 2.0 Pushed Authorization Requests",
               RFC 9126, DOI 10.17487/RFC9126, September 2021,
               <https://www.rfc-editor.org/rfc/rfc9126>.
-
-   [RFC9174]  Sipos, B., Demmer, M., Ott, J., and S. Perreault, "Delay-
-              Tolerant Networking TCP Convergence-Layer Protocol Version
-              4", RFC 9174, DOI 10.17487/RFC9174, January 2022,
-              <https://www.rfc-editor.org/rfc/rfc9174>.
 
    [RFC9207]  Meyer zu Selhausen, K. and D. Fett, "OAuth 2.0
               Authorization Server Issuer Identification", RFC 9207,
