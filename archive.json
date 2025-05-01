@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-29T01:05:10.199600+00:00",
+  "timestamp": "2025-05-01T01:11:50.189811+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -56,52 +56,271 @@
       "id": "PR_kwDOOE2vos6UPt6u",
       "title": "Replaced keywords with uppercase IETF keywords",
       "url": "https://github.com/openid/ipsie-openid-sl1/pull/1",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "aaronpk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "closes https://github.com/openid/ipsie/issues/68",
       "createdAt": "2025-04-28T22:26:16Z",
-      "updatedAt": "2025-04-28T22:26:16Z",
+      "updatedAt": "2025-04-29T18:03:10Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "8cfd4e19c2e56bf0cc8d494c0a77e0968049fac3",
       "headRepository": "openid/ipsie-openid-sl1",
       "headRefName": "iso-to-ietf-keywords",
-      "headRefOid": "963645107a42c4699ad6ff09b8b4dd89be6f232d",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "224475a61f2ea32c67ce1b8d7f303da5653605ca",
+      "closedAt": "2025-04-29T18:03:07Z",
+      "mergedAt": "2025-04-29T18:03:07Z",
+      "mergedBy": "aaronpk",
+      "mergeCommit": {
+        "oid": "021be89ec4c2c3037c9f8fa97199f03b56692b66"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOE2vos6nKOGe",
+          "commit": {
+            "abbreviatedOid": "9636451"
+          },
+          "author": "deansaxe",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T17:36:44Z",
+          "updatedAt": "2025-04-29T17:36:44Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Delay tolerant networking? https://datatracker.ietf.org/doc/html/rfc9174. I need to look through the remainder of the doc to find where this is referenced.",
+              "createdAt": "2025-04-29T17:36:44Z",
+              "updatedAt": "2025-04-29T17:36:44Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos6nKOgB",
+          "commit": {
+            "abbreviatedOid": "9636451"
+          },
+          "author": "deansaxe",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T17:37:28Z",
+          "updatedAt": "2025-04-29T17:37:28Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Looks like this was a mistype - https://datatracker.ietf.org/doc/html/rfc8174 RFC 8174 is the proper reference.",
+              "createdAt": "2025-04-29T17:37:28Z",
+              "updatedAt": "2025-04-29T17:37:28Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos6nKQYh",
+          "commit": {
+            "abbreviatedOid": "9636451"
+          },
+          "author": "deansaxe",
+          "authorAssociation": "NONE",
+          "state": "CHANGES_REQUESTED",
+          "body": "@aaronpk please fix line 33 swapping 9174 for 8174.  Please also address the comment on line 129.  The other comments are immaterial to this PR and will need later follow up.  I'll write a quick issue on them.",
+          "createdAt": "2025-04-29T17:40:48Z",
+          "updatedAt": "2025-04-29T17:47:07Z",
+          "comments": [
+            {
+              "originalPosition": 70,
+              "body": "This NOT is separated from the MUST on line 129 - is this acceptable and clear for readers?  Consider moving the MUST on 129 to each subordinate bullet point for more clarity.",
+              "createdAt": "2025-04-29T17:40:48Z",
+              "updatedAt": "2025-04-29T17:47:07Z"
+            },
+            {
+              "originalPosition": 143,
+              "body": "the MAY clause could create interop issues.  I won't reject this due to this issue, rather, we should work to clarify this, perhaps by stating a min/max length.",
+              "createdAt": "2025-04-29T17:44:05Z",
+              "updatedAt": "2025-04-29T17:47:07Z"
+            },
+            {
+              "originalPosition": 186,
+              "body": "Align the nonce length here with the length in line 195.",
+              "createdAt": "2025-04-29T17:45:43Z",
+              "updatedAt": "2025-04-29T17:47:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos6nKV0E",
+          "commit": {
+            "abbreviatedOid": "9636451"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T17:50:41Z",
+          "updatedAt": "2025-04-29T17:50:41Z",
+          "comments": [
+            {
+              "originalPosition": 143,
+              "body": "Yeah let's discuss this in a separate issue since this PR doesn't change this requirement",
+              "createdAt": "2025-04-29T17:50:41Z",
+              "updatedAt": "2025-04-29T17:50:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos6nKWJ7",
+          "commit": {
+            "abbreviatedOid": "9636451"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T17:51:17Z",
+          "updatedAt": "2025-04-29T17:51:18Z",
+          "comments": [
+            {
+              "originalPosition": 186,
+              "body": "This PR doesn't change this requirement, let's open an issue to discuss both `nonce` requirements (they were copied from FAPI so we have some prior discussions to dig into)",
+              "createdAt": "2025-04-29T17:51:18Z",
+              "updatedAt": "2025-04-29T17:51:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos6nKWnX",
+          "commit": {
+            "abbreviatedOid": "9636451"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T17:52:04Z",
+          "updatedAt": "2025-04-29T17:52:04Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "yep that should be 8174",
+              "createdAt": "2025-04-29T17:52:04Z",
+              "updatedAt": "2025-04-29T17:52:04Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos6nKW3i",
+          "commit": {
+            "abbreviatedOid": "9636451"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T17:52:30Z",
+          "updatedAt": "2025-04-29T17:52:30Z",
+          "comments": [
+            {
+              "originalPosition": 70,
+              "body": "yeah I agree it would read better that way, I'll add it to each bullet",
+              "createdAt": "2025-04-29T17:52:30Z",
+              "updatedAt": "2025-04-29T17:52:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos6nKXlQ",
+          "commit": {
+            "abbreviatedOid": "9636451"
+          },
+          "author": "dhs-BI",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T17:53:48Z",
+          "updatedAt": "2025-04-29T17:53:48Z",
+          "comments": [
+            {
+              "originalPosition": 186,
+              "body": "https://github.com/openid/ipsie/issues/70 was opened to address this.",
+              "createdAt": "2025-04-29T17:53:48Z",
+              "updatedAt": "2025-04-29T17:53:48Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos6nKZje",
+          "commit": {
+            "abbreviatedOid": "224475a"
+          },
+          "author": "dhs-BI",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "LGTM.",
+          "createdAt": "2025-04-29T17:57:28Z",
+          "updatedAt": "2025-04-29T17:57:28Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 2,
       "id": "PR_kwDOOE2vos6UQU8N",
       "title": "add ID token validation requirements",
       "url": "https://github.com/openid/ipsie-openid-sl1/pull/2",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "aaronpk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "closes https://github.com/openid/ipsie/issues/64",
       "createdAt": "2025-04-29T00:08:32Z",
-      "updatedAt": "2025-04-29T00:08:32Z",
+      "updatedAt": "2025-04-29T18:06:13Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "8cfd4e19c2e56bf0cc8d494c0a77e0968049fac3",
       "headRepository": "openid/ipsie-openid-sl1",
       "headRefName": "id-token-validation",
-      "headRefOid": "a65c7581e1105903854bfc39955ea5b41b204b75",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "headRefOid": "89c3ccfbd434c88e68633f8af47c6cd8bbf2c530",
+      "closedAt": "2025-04-29T18:05:57Z",
+      "mergedAt": "2025-04-29T18:05:57Z",
+      "mergedBy": "aaronpk",
+      "mergeCommit": {
+        "oid": "78b99c0990cd7c726e83c30162fb9659e39d292d"
+      },
+      "comments": [
+        {
+          "author": "dhs-BI",
+          "authorAssociation": "NONE",
+          "body": "@aaronpk Build appears to fail on:\r\n\r\n`/github/workspace/draft-openid-ipsie-sl1-profile.xml(324): Error: Cannot build a href for <xref target=\"OpenID\"> with a section= attribute without also having a relative= attribute.`",
+          "createdAt": "2025-04-29T17:56:47Z",
+          "updatedAt": "2025-04-29T17:56:47Z"
+        },
+        {
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "ah, I thought I could do a section reference like the RFCs, but I guess not `{{Section 3.1.37 of OpenID}}`. I'll update it to `Section 3.1.37 of [OpenID]` until I can sort out how to do that.",
+          "createdAt": "2025-04-29T18:04:44Z",
+          "updatedAt": "2025-04-29T18:04:44Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOE2vos6nKYJy",
+          "commit": {
+            "abbreviatedOid": "a65c758"
+          },
+          "author": "dhs-BI",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "lgtm",
+          "createdAt": "2025-04-29T17:54:53Z",
+          "updatedAt": "2025-04-29T17:54:53Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
