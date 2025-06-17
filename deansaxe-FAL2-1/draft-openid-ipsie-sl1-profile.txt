@@ -4,8 +4,8 @@
 
 IPSIE Working Group                                           A. Parecki
 Internet-Draft                                                      Okta
-Intended status: Informational                             29 April 2025
-Expires: 31 October 2025
+Intended status: Informational                              17 June 2025
+Expires: 19 December 2025
 
 
                     IPSIE SL1 OpenID Connect Profile
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 31 October 2025.
+   This Internet-Draft will expire on 19 December 2025.
 
 Copyright Notice
 
@@ -253,6 +253,9 @@ Table of Contents
    *  MUST indicate the expected lifetime of the RP session in the
       session_lifetime claim in seconds (see Note 3);
 
+   *  MUST contain the auth_time claim to describe when end user
+      authentication last occurred (see Note 4);
+
    Note 1: The requirement for preregistered clients corresponds to
    Section 3.4 "Trust Agreements" of [NIST.FAL].
 
@@ -262,6 +265,9 @@ Table of Contents
    Note 3: This claim is not currently defined in OpenID Connect, and
    should be pulled out into its own spec in OpenID Core instead of
    being defined here.
+
+   Note 4: This claim is required to satisfy the requirements in
+   Section 4.7 of [NIST.FAL].
 
    For the authorization code flow, OpenID Providers:
 
@@ -361,6 +367,24 @@ Table of Contents
       according to [RFC9207] to prevent mix-up attacks;
 
    *  SHOULD NOT use nonce parameter values longer than 64 characters;
+
+   *  MUST use the max_age parameter in the authentication request to
+      specify the maximum allowable authentication age to the OP in
+      seconds.  The max_age parameter SHOULD be less than 600 seconds,
+      but may vary based upon business needs;
+
+   In addition to the ID Token validation requirements described in
+   Section 3.1.37 of [OpenID], Relying Parties:
+
+   *  MUST validate that the aud claim is a single string and matches
+      the OAuth Client ID of the RP;
+
+   *  MUST set the session lifetime of the session created to match the
+      session_lifetime claim (see Note 1);
+
+   Note 1: This claim is not currently defined in OpenID Connect, and
+   should be pulled out into its own spec in OpenID Core instead of
+   being defined here.
 
 4.  Security Considerations
 
