@@ -171,12 +171,15 @@ ID Tokens issued by OpenID Providers:
 * MUST contain the `acr` claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in Section 2 of [OpenID];
 * MUST contain the `amr` claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of [OpenID];
 * MUST indicate the expected lifetime of the RP session in the `session_lifetime` claim in seconds (see Note 3);
+* MUST contain the `auth_time` claim to describe when end user authentication last occurred (see Note 4);
 
 Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Trust Agreements" of [NIST.FAL].
 
 Note 2: The audience value must be a single string to meet the audience restriction of [NIST.FAL].
 
 Note 3: This claim is not currently defined in OpenID Connect, and should be pulled out into its own spec in OpenID Core instead of being defined here.
+
+Note 4: This claim is required to satisfy the requirements in Section 4.7 of [NIST.FAL].
 
 
 For the authorization code flow, OpenID Providers:
@@ -223,6 +226,7 @@ For the authorization code flow, Relying Parties:
 * MUST generate the PKCE challenge specifically for each authorization request and securely bind the challenge to the client and the user agent in which the flow was started;
 * MUST check the `iss` parameter in the authorization response according to [RFC9207] to prevent mix-up attacks;
 * SHOULD NOT use `nonce` parameter values longer than 64 characters;
+* MUST use the `max_age` parameter in the authentication request to specify the maximum allowable authentication age to the OP in seconds.  The `max_age` parameter SHOULD be less than 600 seconds, but may vary based upon business needs;
 
 In addition to the ID Token validation requirements described in Section 3.1.37 of [OpenID], Relying Parties:
 
