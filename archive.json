@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-15T01:16:40.285700+00:00",
+  "timestamp": "2025-06-17T01:09:36.840396+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -321,6 +321,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOOE2vos6ay2Pn",
+      "title": "Update to clarify use of OIDC SL1",
+      "url": "https://github.com/openid/ipsie-openid-sl1/pull/3",
+      "state": "OPEN",
+      "author": "deansaxe",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Added clarifications in the intro. See https://github.com/openid/ipsie/issues/73 for context.",
+      "createdAt": "2025-06-16T22:00:14Z",
+      "updatedAt": "2025-06-16T22:00:15Z",
+      "baseRepository": "openid/ipsie-openid-sl1",
+      "baseRefName": "main",
+      "baseRefOid": "78b99c0990cd7c726e83c30162fb9659e39d292d",
+      "headRepository": "deansaxe/ipsie-openid-sl1",
+      "headRefName": "patch-1",
+      "headRefOid": "27dd720aaa57f99c46eae11fb3629286c0feecdc",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
