@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-17T01:09:36.840396+00:00",
+  "timestamp": "2025-06-19T01:09:42.292519+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -341,6 +341,70 @@
       "headRepository": "deansaxe/ipsie-openid-sl1",
       "headRefName": "patch-1",
       "headRefOid": "27dd720aaa57f99c46eae11fb3629286c0feecdc",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDOOE2vos6a7cK0",
+      "title": "max_age and auth_time",
+      "url": "https://github.com/openid/ipsie-openid-sl1/pull/4",
+      "state": "OPEN",
+      "author": "deansaxe",
+      "authorAssociation": "NONE",
+      "assignees": [
+        "deansaxe"
+      ],
+      "labels": [],
+      "body": "Updated to address needs of FAL2 in https://github.com/openid/ipsie/issues/90 and https://github.com/openid/ipsie/issues/89.",
+      "createdAt": "2025-06-17T15:59:10Z",
+      "updatedAt": "2025-06-17T20:42:26Z",
+      "baseRepository": "openid/ipsie-openid-sl1",
+      "baseRefName": "main",
+      "baseRefOid": "78b99c0990cd7c726e83c30162fb9659e39d292d",
+      "headRepository": "openid/ipsie-openid-sl1",
+      "headRefName": "deansaxe-FAL2-1",
+      "headRefOid": "272633593f5e249c3e89ce4dad3e8c961cb95c33",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "ttripp",
+          "authorAssociation": "NONE",
+          "body": "For reference:\r\n\r\nmax_age\r\nOPTIONAL. Maximum Authentication Age. Specifies the allowable elapsed time in seconds since the last time the End-User was actively authenticated by the OP. If the elapsed time is greater than this value, the OP MUST attempt to actively re-authenticate the End-User. (The max_age request parameter corresponds to the OpenID 2.0 [PAPE](https://openid.net/specs/openid-connect-core-1_0.html#OpenID.PAPE) [OpenID.PAPE] max_auth_age request parameter.) When max_age is used, the ID Token returned MUST include an auth_time Claim Value. Note that max_age=0 is equivalent to prompt=login.\r\n\r\nhttps://openid.net/specs/openid-connect-core-1_0.html",
+          "createdAt": "2025-06-17T16:40:28Z",
+          "updatedAt": "2025-06-17T16:40:28Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOOE2vos6bH1vH",
+      "title": "Update draft-openid-ipsie-sl1-profile.md to fix session_expiry claim",
+      "url": "https://github.com/openid/ipsie-openid-sl1/pull/5",
+      "state": "OPEN",
+      "author": "deansaxe",
+      "authorAssociation": "NONE",
+      "assignees": [
+        "deansaxe"
+      ],
+      "labels": [],
+      "body": "Changed session_lifetime to session_expiry to match the work in AB connect.",
+      "createdAt": "2025-06-18T18:00:04Z",
+      "updatedAt": "2025-06-18T18:00:05Z",
+      "baseRepository": "openid/ipsie-openid-sl1",
+      "baseRefName": "main",
+      "baseRefOid": "78b99c0990cd7c726e83c30162fb9659e39d292d",
+      "headRepository": "openid/ipsie-openid-sl1",
+      "headRefName": "deansaxe-expiry-1",
+      "headRefOid": "f2ba9dfa80e7ef412c5799911c49e93321f5d036",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
