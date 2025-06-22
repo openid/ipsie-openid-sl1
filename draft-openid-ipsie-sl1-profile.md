@@ -226,7 +226,7 @@ For the authorization code flow, Relying Parties:
 * MUST generate the PKCE challenge specifically for each authorization request and securely bind the challenge to the client and the user agent in which the flow was started;
 * MUST check the `iss` parameter in the authorization response according to [RFC9207] to prevent mix-up attacks;
 * SHOULD NOT use `nonce` parameter values longer than 64 characters;
-* MUST use the `max_age` parameter in the authentication request to specify the maximum allowable authentication age to the OP in seconds.  The `max_age` parameter value MAY be determined based upon the business rules of the RP.
+* SHOULD use the `max_age` parameter in the authentication request to specify the maximum allowable authentication age to the OP in seconds.  The value of the `max_age` parameter MAY be determined based upon the business rules of the RP.
 
 In addition to the ID Token validation requirements described in Section 3.1.37 of [OpenID], Relying Parties:
 
