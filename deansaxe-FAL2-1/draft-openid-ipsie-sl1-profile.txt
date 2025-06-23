@@ -4,8 +4,8 @@
 
 IPSIE Working Group                                           A. Parecki
 Internet-Draft                                                      Okta
-Intended status: Informational                              17 June 2025
-Expires: 19 December 2025
+Intended status: Informational                              23 June 2025
+Expires: 25 December 2025
 
 
                     IPSIE SL1 OpenID Connect Profile
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 December 2025.
+   This Internet-Draft will expire on 25 December 2025.
 
 Copyright Notice
 
@@ -226,7 +226,7 @@ Table of Contents
    *  MUST require clients to be preregistered, and MUST NOT support
       unauthenticated Dynamic Client Registration requests (see Note 1);
 
-   *  MUST require clients to pre-register their redirect URIs
+   *  MUST require clients to pre-register their redirect URIs;
 
    Access Tokens issued by OpenID Providers:
 
@@ -306,6 +306,14 @@ Table of Contents
    *  MUST support nonce parameter values up to 64 characters in length,
       and MAY reject nonce values longer than 64 characters.
 
+   *  MUST support the max_age parameter with a values representing the
+      maximum number of seconds allowable since the user was
+      authenticated by the OP.  If the elapsed time since authentication
+      is less than this value, the OP MAY choose to actively
+      reauthenticate the user.  If the elapsed time since authentication
+      is greater than this value, the OP MUST actively reauthenticate
+      the user.
+
    Note 1: while both nonce and PKCE can provide protection from
    authorization code injection, nonce relies on the client (RP) to
    implement and enforce the check, and the IdP is unable to verify that
@@ -368,10 +376,10 @@ Table of Contents
 
    *  SHOULD NOT use nonce parameter values longer than 64 characters;
 
-   *  MUST use the max_age parameter in the authentication request to
+   *  SHOULD use the max_age parameter in the authentication request to
       specify the maximum allowable authentication age to the OP in
-      seconds.  The max_age parameter SHOULD be less than 600 seconds,
-      but may vary based upon business needs;
+      seconds.  The value of the max_age parameter MAY be determined
+      based upon the business rules of the RP.
 
    In addition to the ID Token validation requirements described in
    Section 3.1.37 of [OpenID], Relying Parties:
