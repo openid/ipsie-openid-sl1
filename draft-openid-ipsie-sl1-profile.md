@@ -158,7 +158,7 @@ OpenID Providers:
 * MUST only accept its issuer identifier value (as defined in [RFC8414]) as a string in the `aud` claim received in client authentication assertions;
 * MUST issue authorization codes with a maximum lifetime of 60 seconds;
 * MUST require clients to be preregistered, and MUST NOT support unauthenticated Dynamic Client Registration requests (see Note 1);
-* MUST require clients to pre-register their redirect URIs
+* MUST require clients to pre-register their redirect URIs;
 
 Access Tokens issued by OpenID Providers:
 
@@ -179,7 +179,7 @@ Note 2: The audience value must be a single string to meet the audience restrict
 
 Note 3: This claim is not currently defined in OpenID Connect, and should be pulled out into its own spec in OpenID Core instead of being defined here.
 
-Note 4: This claim is required to satisfy the requirements in Section 4.7 of [NIST.FAL].  
+Note 4: This claim is required to satisfy the requirements in Section 4.7 of [NIST.FAL].
 
 
 For the authorization code flow, OpenID Providers:
