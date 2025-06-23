@@ -158,7 +158,7 @@ OpenID Providers:
 * MUST only accept its issuer identifier value (as defined in [RFC8414]) as a string in the `aud` claim received in client authentication assertions;
 * MUST issue authorization codes with a maximum lifetime of 60 seconds;
 * MUST require clients to be preregistered, and MUST NOT support unauthenticated Dynamic Client Registration requests (see Note 1);
-* MUST require clients to pre-register their redirect URIs
+* MUST require clients to pre-register their redirect URIs;
 
 Access Tokens issued by OpenID Providers:
 
@@ -171,12 +171,15 @@ ID Tokens issued by OpenID Providers:
 * MUST contain the `acr` claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in Section 2 of [OpenID];
 * MUST contain the `amr` claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of [OpenID];
 * MUST indicate the expected lifetime of the RP session in the `session_lifetime` claim in seconds (see Note 3);
+* MUST contain the `auth_time` claim to describe when end user authentication last occurred (see Note 4);
 
 Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Trust Agreements" of [NIST.FAL].
 
 Note 2: The audience value must be a single string to meet the audience restriction of [NIST.FAL].
 
 Note 3: This claim is not currently defined in OpenID Connect, and should be pulled out into its own spec in OpenID Core instead of being defined here.
+
+Note 4: This claim is required to satisfy the requirements in Section 4.7 of [NIST.FAL].
 
 
 For the authorization code flow, OpenID Providers:
@@ -192,7 +195,7 @@ For the authorization code flow, OpenID Providers:
 * MUST NOT use the HTTP 307 status code when redirecting a request that contains user credentials to avoid forwarding the credentials to a third party accidentally (see {{Section 4.12 of RFC9700}});
 * SHOULD use the HTTP 303 status code when redirecting the user agent using status codes;
 * MUST support `nonce` parameter values up to 64 characters in length, and MAY reject `nonce` values longer than 64 characters.
-
+* MUST support the `max_age` parameter with a values representing the maximum number of seconds allowable since the user was authenticated by the OP. If the elapsed time since authentication is less than this value, the OP MAY choose to actively reauthenticate the user.  If the elapsed time since authentication is greater than this value, the OP MUST actively reauthenticate the user.
 
 Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.
 
@@ -223,6 +226,7 @@ For the authorization code flow, Relying Parties:
 * MUST generate the PKCE challenge specifically for each authorization request and securely bind the challenge to the client and the user agent in which the flow was started;
 * MUST check the `iss` parameter in the authorization response according to [RFC9207] to prevent mix-up attacks;
 * SHOULD NOT use `nonce` parameter values longer than 64 characters;
+* SHOULD use the `max_age` parameter in the authentication request to specify the maximum allowable authentication age to the OP in seconds.  The value of the `max_age` parameter MAY be determined based upon the business rules of the RP.
 
 In addition to the ID Token validation requirements described in Section 3.1.37 of [OpenID], Relying Parties:
 
