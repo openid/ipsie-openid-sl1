@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-22T01:16:02.947406+00:00",
+  "timestamp": "2025-06-24T01:09:59.424788+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -362,13 +362,13 @@
       "labels": [],
       "body": "Updated to address needs of FAL2 in https://github.com/openid/ipsie/issues/90 and https://github.com/openid/ipsie/issues/89.",
       "createdAt": "2025-06-17T15:59:10Z",
-      "updatedAt": "2025-06-17T20:42:26Z",
+      "updatedAt": "2025-06-23T21:20:12Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "78b99c0990cd7c726e83c30162fb9659e39d292d",
       "headRepository": "openid/ipsie-openid-sl1",
       "headRefName": "deansaxe-FAL2-1",
-      "headRefOid": "272633593f5e249c3e89ce4dad3e8c961cb95c33",
+      "headRefOid": "43ea81a72d1cf744f82169ec9278abd338ba65d9",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -398,7 +398,7 @@
       "labels": [],
       "body": "Changed session_lifetime to session_expiry to match the work in AB connect.",
       "createdAt": "2025-06-18T18:00:04Z",
-      "updatedAt": "2025-06-18T18:00:05Z",
+      "updatedAt": "2025-06-23T21:26:44Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "78b99c0990cd7c726e83c30162fb9659e39d292d",
@@ -410,7 +410,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOE2vos6v7Zze",
+          "commit": {
+            "abbreviatedOid": "f2ba9df"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-06-23T21:26:44Z",
+          "updatedAt": "2025-06-23T21:26:44Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
