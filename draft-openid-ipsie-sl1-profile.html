@@ -9,23 +9,23 @@
 <meta content="
        The IPSIE SL1 OpenID Connect Profile is a profile of OpenID Connect intended to meet the security and interoperability requirements of enterprise integrations using OpenID Connect. 
     " name="description">
-<meta content="xml2rfc 3.28.1" name="generator">
+<meta content="xml2rfc 3.29.0" name="generator">
 <meta content="openid" name="keyword">
 <meta content="ipsie" name="keyword">
 <meta content="draft-openid-ipsie-sl1-profile-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.28.1
-    Python 3.12.10
+  xml2rfc 3.29.0
+    Python 3.12.11
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.6
-    lxml 5.3.0
-    platformdirs 4.3.7
+    lxml 5.3.1
+    platformdirs 4.3.8
     pycountry 24.6.1
     PyYAML 6.0.2
-    requests 2.32.3
-    setuptools 70.3.0
+    requests 2.32.4
+    setuptools 80.9.0
     wcwidth 0.2.13
 -->
 <link href="draft-openid-ipsie-sl1-profile.xml" rel="alternate" type="application/rfc+xml">
@@ -1045,11 +1045,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">IPSIE SL1</td>
-<td class="right">April 2025</td>
+<td class="right">June 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Parecki</td>
-<td class="center">Expires 31 October 2025</td>
+<td class="center">Expires 1 January 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1062,12 +1062,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-openid-ipsie-sl1-profile-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-04-29" class="published">29 April 2025</time>
+<time datetime="2025-06-30" class="published">30 June 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-10-31">31 October 2025</time></dd>
+<dd class="expires"><time datetime="2026-01-01">1 January 2026</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1116,7 +1116,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 31 October 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 1 January 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1423,12 +1423,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
               <p id="section-3.3.1-6.3.1">MUST contain the <code>amr</code> claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.1-6.3.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-6.4">
-              <p id="section-3.3.1-6.4.1">MUST indicate the expected lifetime of the RP session in the <code>session_lifetime</code> claim in seconds (see Note 3);<a href="#section-3.3.1-6.4.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-6.4.1">MUST indicate the expected expiration time of the RP session in the <code>session_expiry</code> claim as a JSON integer that represents the Unix timestamp (seconds since epoch). (see Note 3);<a href="#section-3.3.1-6.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 <p id="section-3.3.1-7">Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Trust Agreements" of <span>[<a href="#NIST.FAL" class="cite xref">NIST.FAL</a>]</span>.<a href="#section-3.3.1-7" class="pilcrow">¶</a></p>
 <p id="section-3.3.1-8">Note 2: The audience value must be a single string to meet the audience restriction of <span>[<a href="#NIST.FAL" class="cite xref">NIST.FAL</a>]</span>.<a href="#section-3.3.1-8" class="pilcrow">¶</a></p>
-<p id="section-3.3.1-9">Note 3: This claim is not currently defined in OpenID Connect, and should be pulled out into its own spec in OpenID Core instead of being defined here.<a href="#section-3.3.1-9" class="pilcrow">¶</a></p>
+<p id="section-3.3.1-9">Note 3: This claim is currently being defined in the AB Connect WG.  See the latest draft at https://openid.github.io/connect-enterprise-extensions/main.html.<a href="#section-3.3.1-9" class="pilcrow">¶</a></p>
 <p id="section-3.3.1-10">For the authorization code flow, OpenID Providers:<a href="#section-3.3.1-10" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.3.1-11.1">
@@ -1533,10 +1533,10 @@ svg :is([fill="white"], [fill^="#fff"]) {
               <p id="section-3.3.2-8.1.1">MUST validate that the <code>aud</code> claim is a single string and matches the OAuth Client ID of the RP;<a href="#section-3.3.2-8.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.2-8.2">
-              <p id="section-3.3.2-8.2.1">MUST set the session lifetime of the session created to match the <code>session_lifetime</code> claim (see Note 1);<a href="#section-3.3.2-8.2.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.2-8.2.1">MUST set the session expiration of the session created to match the <code>session_expiry</code> claim (see Note 1);<a href="#section-3.3.2-8.2.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
-<p id="section-3.3.2-9">Note 1: This claim is not currently defined in OpenID Connect, and should be pulled out into its own spec in OpenID Core instead of being defined here.<a href="#section-3.3.2-9" class="pilcrow">¶</a></p>
+<p id="section-3.3.2-9">Note 1: This claim is currently being defined in the AB Connect WG.  See the latest draft at https://openid.github.io/connect-enterprise-extensions/main.html.<a href="#section-3.3.2-9" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
