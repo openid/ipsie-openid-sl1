@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-29T01:17:39.984373+00:00",
+  "timestamp": "2025-07-01T01:17:51.956441+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -329,23 +329,33 @@
       "url": "https://github.com/openid/ipsie-openid-sl1/pull/3",
       "state": "OPEN",
       "author": "deansaxe",
-      "authorAssociation": "NONE",
-      "assignees": [],
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "deansaxe"
+      ],
       "labels": [],
       "body": "Added clarifications in the intro. See https://github.com/openid/ipsie/issues/73 for context.",
       "createdAt": "2025-06-16T22:00:14Z",
-      "updatedAt": "2025-06-24T16:12:26Z",
+      "updatedAt": "2025-06-30T18:26:30Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "78b99c0990cd7c726e83c30162fb9659e39d292d",
       "headRepository": "deansaxe/ipsie-openid-sl1",
       "headRefName": "patch-1",
-      "headRefOid": "27dd720aaa57f99c46eae11fb3629286c0feecdc",
+      "headRefOid": "cf20254a15a33ee671dd11967707cbc88aba629d",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "deansaxe",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "We will review this on the 2025-07-01 call.  If we're at consensus on the call, we will merge this change.",
+          "createdAt": "2025-06-30T18:26:30Z",
+          "updatedAt": "2025-06-30T18:26:30Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOOE2vos6wGl95",
@@ -364,6 +374,26 @@
               "body": "The IPSIE OpenID Connect SL1 Profile is an implementation of the IPSIE SL1 requirements for the OpenID Connect protocol. This specification is intended to meet the ...",
               "createdAt": "2025-06-24T16:12:26Z",
               "updatedAt": "2025-06-24T16:12:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos6xKLNk",
+          "commit": {
+            "abbreviatedOid": "27dd720"
+          },
+          "author": "deansaxe",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-30T18:25:22Z",
+          "updatedAt": "2025-06-30T18:25:22Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "Updated the PR to include your language.  Resolving this comment.",
+              "createdAt": "2025-06-30T18:25:22Z",
+              "updatedAt": "2025-06-30T18:25:22Z"
             }
           ]
         }
@@ -410,26 +440,28 @@
       "id": "PR_kwDOOE2vos6bH1vH",
       "title": "Update draft-openid-ipsie-sl1-profile.md to fix session_expiry claim",
       "url": "https://github.com/openid/ipsie-openid-sl1/pull/5",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "deansaxe",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [
         "deansaxe"
       ],
       "labels": [],
       "body": "Changed session_lifetime to session_expiry to match the work in AB connect.",
       "createdAt": "2025-06-18T18:00:04Z",
-      "updatedAt": "2025-06-23T21:26:44Z",
+      "updatedAt": "2025-06-30T23:37:38Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "78b99c0990cd7c726e83c30162fb9659e39d292d",
       "headRepository": "openid/ipsie-openid-sl1",
       "headRefName": "deansaxe-expiry-1",
       "headRefOid": "f2ba9dfa80e7ef412c5799911c49e93321f5d036",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-06-30T23:37:35Z",
+      "mergedAt": "2025-06-30T23:37:35Z",
+      "mergedBy": "aaronpk",
+      "mergeCommit": {
+        "oid": "85a3801a520bc2d99b8d03f1a719553d4591ca62"
+      },
       "comments": [],
       "reviews": [
         {
