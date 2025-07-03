@@ -78,7 +78,7 @@ TBD
 
 # Introduction
 
-The IPSIE OpenID Connect SL1 Profile is an implementation of the IPSIE SL1 requirements for the OpenID Connect protocol. This specification is intended to meet the security and interoperability requirements of enterprise integrations using OpenID Connect.  This profile is designed to provide federated authentication with a profile of OpenID Connect, enabling the application to obtain additional claims from the OIDC UserInfo endpoint.  Broad-based, generic API access is not in scope for the OIDC SL1 profile below which obviates the need for the issuance of OAuth refresh tokens and OAuth DPoP (demonstrating proof of posession) [RFC9449].
+The IPSIE OpenID Connect SL1 Profile is an implementation of the IPSIE SL1 requirements for the OpenID Connect protocol. This specification is intended to meet the security and interoperability requirements of enterprise integrations using OpenID Connect.  This profile is designed to provide federated authentication with a profile of OpenID Connect, enabling the application to obtain additional claims from the OIDC UserInfo endpoint with an access token and optional refresh token to reduce the session lifetime at the relying party.  The access and refresh tokens are limited in scope and are not designed to enable broad-based, generic API access in this profile.  
 
 
 # Conventions and Definitions
