@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-01T01:17:51.956441+00:00",
+  "timestamp": "2025-07-03T01:10:12.575389+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -336,7 +336,7 @@
       "labels": [],
       "body": "Added clarifications in the intro. See https://github.com/openid/ipsie/issues/73 for context.",
       "createdAt": "2025-06-16T22:00:14Z",
-      "updatedAt": "2025-06-30T18:26:30Z",
+      "updatedAt": "2025-07-02T19:18:27Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "78b99c0990cd7c726e83c30162fb9659e39d292d",
@@ -354,6 +354,13 @@
           "body": "We will review this on the 2025-07-01 call.  If we're at consensus on the call, we will merge this change.",
           "createdAt": "2025-06-30T18:26:30Z",
           "updatedAt": "2025-06-30T18:26:30Z"
+        },
+        {
+          "author": "deansaxe",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "See feedback from 7/1/2025 to update the text.\r\n\r\n",
+          "createdAt": "2025-07-01T16:15:43Z",
+          "updatedAt": "2025-07-01T16:15:43Z"
         }
       ],
       "reviews": [
@@ -396,6 +403,26 @@
               "updatedAt": "2025-06-30T18:25:22Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos6xpL8O",
+          "commit": {
+            "abbreviatedOid": "cf20254"
+          },
+          "author": "gffletch",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-07-02T19:18:27Z",
+          "updatedAt": "2025-07-02T19:18:27Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "Claude re-write proposal:\r\n\r\nThis specification defines how to implement OpenID Connect to meet IPSIE's SL1 requirements for enterprise integrations. The profile establishes security and interoperability standards for federated authentication, allowing applications to authenticate users and retrieve additional user claims from the OpenID Connect UserInfo endpoint.\r\nThis profile focuses specifically on authentication scenarios and does not cover broad API access use cases. As a result, it does not require OAuth refresh tokens or OAuth DPoP (Demonstration of Proof of Possession) as specified in RFC 9449.",
+              "createdAt": "2025-07-02T19:18:27Z",
+              "updatedAt": "2025-07-02T19:18:27Z"
+            }
+          ]
         }
       ]
     },
@@ -406,14 +433,14 @@
       "url": "https://github.com/openid/ipsie-openid-sl1/pull/4",
       "state": "OPEN",
       "author": "deansaxe",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [
         "deansaxe"
       ],
       "labels": [],
       "body": "Updated to address needs of FAL2 in https://github.com/openid/ipsie/issues/90 and https://github.com/openid/ipsie/issues/89.",
       "createdAt": "2025-06-17T15:59:10Z",
-      "updatedAt": "2025-06-23T21:20:12Z",
+      "updatedAt": "2025-07-02T20:50:13Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "78b99c0990cd7c726e83c30162fb9659e39d292d",
@@ -431,9 +458,44 @@
           "body": "For reference:\r\n\r\nmax_age\r\nOPTIONAL. Maximum Authentication Age. Specifies the allowable elapsed time in seconds since the last time the End-User was actively authenticated by the OP. If the elapsed time is greater than this value, the OP MUST attempt to actively re-authenticate the End-User. (The max_age request parameter corresponds to the OpenID 2.0 [PAPE](https://openid.net/specs/openid-connect-core-1_0.html#OpenID.PAPE) [OpenID.PAPE] max_auth_age request parameter.) When max_age is used, the ID Token returned MUST include an auth_time Claim Value. Note that max_age=0 is equivalent to prompt=login.\r\n\r\nhttps://openid.net/specs/openid-connect-core-1_0.html",
           "createdAt": "2025-06-17T16:40:28Z",
           "updatedAt": "2025-06-17T16:40:28Z"
+        },
+        {
+          "author": "gffletch",
+          "authorAssociation": "NONE",
+          "body": "I missed the call on Jul 1 so don't know if this is resolved or not. I think we need to define what is meant my \"end user authentication\" (i.e. did the user need to do something? or is a silent authentication sufficient?). The OpenID Connect spec text also seems to imply ensuring that the authentication ensures the End-User is the same human who originally authenticated. I'm not sure we have good ways to do that other than biometric based challenges.\r\n\r\nMaybe we can define this to mean that sufficient verification is performed by the OP to ensure that authentication methods bound to the identity associated with the session have been successfully completed.",
+          "createdAt": "2025-07-02T19:26:29Z",
+          "updatedAt": "2025-07-02T19:26:29Z"
+        },
+        {
+          "author": "deansaxe",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@gffletch see the [notes](https://github.com/openid/ipsie/wiki/2025%E2%80%9007%E2%80%9001) from July 1.\r\n\r\nWe determined that the `auth_time` claim and `amr` claims should be paired.  However, that doesn't resolve the issue of the `auth_time` if `amr` has multiple values.  @aaronpk and I spoke this morning, we think there needs to be an extension to the core spec which enables the RP to determine the `auth_time` for each `amr` value.  At first glance, a JSON array such as follows would meet the need.\r\n\r\n```\"auth_time\": 1311280969,\r\n\"amr\": \"phr, rba\"\r\n\"auth_time_amr\" : [\r\n  {\"auth_time\": 1311280969, \"amr\": \"rba\"} \r\n  {\"auth_time\": 1311280000, \"amr\": \"phr\"}\r\n] \r\n```\r\n\r\nThis is an example and may not be acceptable syntax, but it should give you an idea of what we're thinking about.  I'm open to other ideas of how to represent the mapping of 2.._n_ `amr` claims to the `auth_time` of each claim.",
+          "createdAt": "2025-07-02T20:49:48Z",
+          "updatedAt": "2025-07-02T20:50:13Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOE2vos6xpNS7",
+          "commit": {
+            "abbreviatedOid": "43ea81a"
+          },
+          "author": "gffletch",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-07-02T19:20:59Z",
+          "updatedAt": "2025-07-02T19:20:59Z",
+          "comments": [
+            {
+              "originalPosition": 31,
+              "body": "I think `values` should be singular",
+              "createdAt": "2025-07-02T19:20:59Z",
+              "updatedAt": "2025-07-02T19:20:59Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 5,
