@@ -1400,7 +1400,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
               <p id="section-3.3.1-2.7.1">MUST require clients to be preregistered, and MUST NOT support unauthenticated Dynamic Client Registration requests (see Note 1);<a href="#section-3.3.1-2.7.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-2.8">
-              <p id="section-3.3.1-2.8.1">MUST require clients to pre-register their redirect URIs<a href="#section-3.3.1-2.8.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-2.8.1">MUST require clients to pre-register their redirect URIs;<a href="#section-3.3.1-2.8.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 <p id="section-3.3.1-3">Access Tokens issued by OpenID Providers:<a href="#section-3.3.1-3" class="pilcrow">¶</a></p>
@@ -1424,49 +1424,59 @@ svg :is([fill="white"], [fill^="#fff"]) {
               <p id="section-3.3.1-6.3.1">MUST contain the <code>amr</code> claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>;<a href="#section-3.3.1-6.3.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-6.4">
-              <p id="section-3.3.1-6.4.1">MUST indicate the expected expiration time of the RP session in the <code>session_expiry</code> claim as a JSON integer that represents the Unix timestamp (seconds since epoch). (see Note 3);<a href="#section-3.3.1-6.4.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-6.4.1">MUST indicate the expected lifetime of the RP session in the <code>session_lifetime</code> claim in seconds (see Note 3);<a href="#section-3.3.1-6.4.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.1-6.5">
+              <p id="section-3.3.1-6.5.1">MUST contain the <code>auth_time</code> claim to describe when end user authentication last occurred (see Note 4);<a href="#section-3.3.1-6.5.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.1-6.6">
+              <p id="section-3.3.1-6.6.1">MUST indicate the expected expiration time of the RP session in the <code>session_expiry</code> claim as a JSON integer that represents the Unix timestamp (seconds since epoch). (see Note 3);<a href="#section-3.3.1-6.6.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 <p id="section-3.3.1-7">Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Trust Agreements" of <span>[<a href="#NIST.FAL" class="cite xref">NIST.FAL</a>]</span>.<a href="#section-3.3.1-7" class="pilcrow">¶</a></p>
 <p id="section-3.3.1-8">Note 2: The audience value must be a single string to meet the audience restriction of <span>[<a href="#NIST.FAL" class="cite xref">NIST.FAL</a>]</span>.<a href="#section-3.3.1-8" class="pilcrow">¶</a></p>
 <p id="section-3.3.1-9">Note 3: This claim is currently being defined in the AB Connect WG.  See the latest draft at https://openid.github.io/connect-enterprise-extensions/main.html.<a href="#section-3.3.1-9" class="pilcrow">¶</a></p>
-<p id="section-3.3.1-10">For the authorization code flow, OpenID Providers:<a href="#section-3.3.1-10" class="pilcrow">¶</a></p>
+<p id="section-3.3.1-10">Note 4: This claim is required to satisfy the requirements in Section 4.7 of <span>[<a href="#NIST.FAL" class="cite xref">NIST.FAL</a>]</span>.<a href="#section-3.3.1-10" class="pilcrow">¶</a></p>
+<p id="section-3.3.1-11">For the authorization code flow, OpenID Providers:<a href="#section-3.3.1-11" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.3.1-11.1">
-              <p id="section-3.3.1-11.1.1">MUST require the value of <code>response_type</code> described in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span> to be <code>code</code>;<a href="#section-3.3.1-11.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-3.3.1-12.1">
+              <p id="section-3.3.1-12.1.1">MUST require the value of <code>response_type</code> described in <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span> to be <code>code</code>;<a href="#section-3.3.1-12.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-3.3.1-11.2">
-              <p id="section-3.3.1-11.2.1">MUST require PKCE <span>[<a href="#RFC7636" class="cite xref">RFC7636</a>]</span> with S256 as the code challenge method (see Note 1 below);<a href="#section-3.3.1-11.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-12.2">
+              <p id="section-3.3.1-12.2.1">MUST require PKCE <span>[<a href="#RFC7636" class="cite xref">RFC7636</a>]</span> with S256 as the code challenge method (see Note 1 below);<a href="#section-3.3.1-12.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-3.3.1-11.3">
-              <p id="section-3.3.1-11.3.1">MUST require an exact match of a registered redirect URI as described in <span><a href="https://rfc-editor.org/rfc/rfc9700#section-2.1" class="relref">Section 2.1</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>;<a href="#section-3.3.1-11.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-12.3">
+              <p id="section-3.3.1-12.3.1">MUST require an exact match of a registered redirect URI as described in <span><a href="https://rfc-editor.org/rfc/rfc9700#section-2.1" class="relref">Section 2.1</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>;<a href="#section-3.3.1-12.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-3.3.1-11.4">
-              <p id="section-3.3.1-11.4.1">MUST issue authorization codes with a maximum lifetime of 60 seconds;<a href="#section-3.3.1-11.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-12.4">
+              <p id="section-3.3.1-12.4.1">MUST issue authorization codes with a maximum lifetime of 60 seconds;<a href="#section-3.3.1-12.4.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-3.3.1-11.5">
-              <p id="section-3.3.1-11.5.1">MUST support "Authorization Code Binding to DPoP Key" (as required by <span><a href="https://rfc-editor.org/rfc/rfc9449#section-10.1" class="relref">Section 10.1</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>);<a href="#section-3.3.1-11.5.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-12.5">
+              <p id="section-3.3.1-12.5.1">MUST support "Authorization Code Binding to DPoP Key" (as required by <span><a href="https://rfc-editor.org/rfc/rfc9449#section-10.1" class="relref">Section 10.1</a> of [<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>);<a href="#section-3.3.1-12.5.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-3.3.1-11.6">
-              <p id="section-3.3.1-11.6.1">MUST return an <code>iss</code> parameter in the authorization response according to <span>[<a href="#RFC9207" class="cite xref">RFC9207</a>]</span>;<a href="#section-3.3.1-11.6.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-12.6">
+              <p id="section-3.3.1-12.6.1">MUST return an <code>iss</code> parameter in the authorization response according to <span>[<a href="#RFC9207" class="cite xref">RFC9207</a>]</span>;<a href="#section-3.3.1-12.6.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-3.3.1-11.7">
-              <p id="section-3.3.1-11.7.1">MUST NOT transmit authorization responses over unencrypted network connections, and, to this end, MUST NOT allow redirect URIs that use the <code>http</code> scheme;<a href="#section-3.3.1-11.7.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-12.7">
+              <p id="section-3.3.1-12.7.1">MUST NOT transmit authorization responses over unencrypted network connections, and, to this end, MUST NOT allow redirect URIs that use the <code>http</code> scheme;<a href="#section-3.3.1-12.7.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-3.3.1-11.8">
-              <p id="section-3.3.1-11.8.1">MUST reject an authorization code (Section 1.3.1 of <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>) if it has been previously used;<a href="#section-3.3.1-11.8.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-12.8">
+              <p id="section-3.3.1-12.8.1">MUST reject an authorization code (Section 1.3.1 of <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>) if it has been previously used;<a href="#section-3.3.1-12.8.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-3.3.1-11.9">
-              <p id="section-3.3.1-11.9.1">MUST NOT use the HTTP 307 status code when redirecting a request that contains user credentials to avoid forwarding the credentials to a third party accidentally (see <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.12" class="relref">Section 4.12</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>);<a href="#section-3.3.1-11.9.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-12.9">
+              <p id="section-3.3.1-12.9.1">MUST NOT use the HTTP 307 status code when redirecting a request that contains user credentials to avoid forwarding the credentials to a third party accidentally (see <span><a href="https://rfc-editor.org/rfc/rfc9700#section-4.12" class="relref">Section 4.12</a> of [<a href="#RFC9700" class="cite xref">RFC9700</a>]</span>);<a href="#section-3.3.1-12.9.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-3.3.1-11.10">
-              <p id="section-3.3.1-11.10.1">SHOULD use the HTTP 303 status code when redirecting the user agent using status codes;<a href="#section-3.3.1-11.10.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-12.10">
+              <p id="section-3.3.1-12.10.1">SHOULD use the HTTP 303 status code when redirecting the user agent using status codes;<a href="#section-3.3.1-12.10.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-3.3.1-11.11">
-              <p id="section-3.3.1-11.11.1">MUST support <code>nonce</code> parameter values up to 64 characters in length, and MAY reject <code>nonce</code> values longer than 64 characters.<a href="#section-3.3.1-11.11.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-3.3.1-12.11">
+              <p id="section-3.3.1-12.11.1">MUST support <code>nonce</code> parameter values up to 64 characters in length, and MAY reject <code>nonce</code> values longer than 64 characters.<a href="#section-3.3.1-12.11.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.1-12.12">
+              <p id="section-3.3.1-12.12.1">MUST support the <code>max_age</code> parameter with a values representing the maximum number of seconds allowable since the user was authenticated by the OP. If the elapsed time since authentication is less than this value, the OP MAY choose to actively reauthenticate the user.  If the elapsed time since authentication is greater than this value, the OP MUST actively reauthenticate the user.<a href="#section-3.3.1-12.12.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
-<p id="section-3.3.1-12">Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.<a href="#section-3.3.1-12" class="pilcrow">¶</a></p>
+<p id="section-3.3.1-13">Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.<a href="#section-3.3.1-13" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="requirements-for-openid-relying-parties">
@@ -1526,6 +1536,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </li>
             <li class="normal" id="section-3.3.2-6.5">
               <p id="section-3.3.2-6.5.1">SHOULD NOT use <code>nonce</code> parameter values longer than 64 characters;<a href="#section-3.3.2-6.5.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.3.2-6.6">
+              <p id="section-3.3.2-6.6.1">SHOULD use the <code>max_age</code> parameter in the authentication request to specify the maximum allowable authentication age to the OP in seconds.  The value of the <code>max_age</code> parameter MAY be determined based upon the business rules of the RP.<a href="#section-3.3.2-6.6.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 <p id="section-3.3.2-7">In addition to the ID Token validation requirements described in Section 3.1.37 of <span>[<a href="#OpenID" class="cite xref">OpenID</a>]</span>, Relying Parties:<a href="#section-3.3.2-7" class="pilcrow">¶</a></p>

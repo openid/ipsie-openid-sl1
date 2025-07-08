@@ -234,7 +234,7 @@ Table of Contents
    *  MUST require clients to be preregistered, and MUST NOT support
       unauthenticated Dynamic Client Registration requests (see Note 1);
 
-   *  MUST require clients to pre-register their redirect URIs
+   *  MUST require clients to pre-register their redirect URIs;
 
    Access Tokens issued by OpenID Providers:
 
@@ -258,6 +258,12 @@ Table of Contents
       from those registered in the IANA Authentication Method Reference
       Values registry, as described in Section 2 of [OpenID];
 
+   *  MUST indicate the expected lifetime of the RP session in the
+      session_lifetime claim in seconds (see Note 3);
+
+   *  MUST contain the auth_time claim to describe when end user
+      authentication last occurred (see Note 4);
+
    *  MUST indicate the expected expiration time of the RP session in
       the session_expiry claim as a JSON integer that represents the
       Unix timestamp (seconds since epoch). (see Note 3);
@@ -271,6 +277,9 @@ Table of Contents
    Note 3: This claim is currently being defined in the AB Connect WG.
    See the latest draft at https://openid.github.io/connect-enterprise-
    extensions/main.html.
+
+   Note 4: This claim is required to satisfy the requirements in
+   Section 4.7 of [NIST.FAL].
 
    For the authorization code flow, OpenID Providers:
 
@@ -308,6 +317,14 @@ Table of Contents
 
    *  MUST support nonce parameter values up to 64 characters in length,
       and MAY reject nonce values longer than 64 characters.
+
+   *  MUST support the max_age parameter with a values representing the
+      maximum number of seconds allowable since the user was
+      authenticated by the OP.  If the elapsed time since authentication
+      is less than this value, the OP MAY choose to actively
+      reauthenticate the user.  If the elapsed time since authentication
+      is greater than this value, the OP MUST actively reauthenticate
+      the user.
 
    Note 1: while both nonce and PKCE can provide protection from
    authorization code injection, nonce relies on the client (RP) to
@@ -370,6 +387,11 @@ Table of Contents
       according to [RFC9207] to prevent mix-up attacks;
 
    *  SHOULD NOT use nonce parameter values longer than 64 characters;
+
+   *  SHOULD use the max_age parameter in the authentication request to
+      specify the maximum allowable authentication age to the OP in
+      seconds.  The value of the max_age parameter MAY be determined
+      based upon the business rules of the RP.
 
    In addition to the ID Token validation requirements described in
    Section 3.1.37 of [OpenID], Relying Parties:
