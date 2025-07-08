@@ -4,8 +4,8 @@
 
 IPSIE Working Group                                           A. Parecki
 Internet-Draft                                                      Okta
-Intended status: Informational                              30 June 2025
-Expires: 1 January 2026
+Intended status: Informational                               8 July 2025
+Expires: 9 January 2026
 
 
                     IPSIE SL1 OpenID Connect Profile
@@ -13,9 +13,7 @@ Expires: 1 January 2026
 
 Abstract
 
-   The IPSIE SL1 OpenID Connect Profile is a profile of OpenID Connect
-   intended to meet the security and interoperability requirements of
-   enterprise integrations using OpenID Connect.
+   TBD
 
 About This Document
 
@@ -48,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 January 2026.
+   This Internet-Draft will expire on 9 January 2026.
 
 Copyright Notice
 
@@ -85,7 +83,17 @@ Table of Contents
 
 1.  Introduction
 
-   TODO Introduction
+   This specification defines how to implement OpenID Connect to meet
+   IPSIE's SL1 requirements for enterprise integrations.  The profile
+   establishes security and interoperability standards for federated
+   authentication, allowing applications to authenticate users and
+   retrieve additional user claims from the OpenID Connect UserInfo
+   endpoint.
+
+   This profile focuses specifically on authentication scenarios and
+   does not cover broad API access use cases.  As a result, the use of
+   refresh tokens and / or OAuth DPoP (Demonstration of Proof of
+   Possession) are optional.
 
 2.  Conventions and Definitions
 
