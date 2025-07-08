@@ -72,14 +72,15 @@ informative:
 
 --- abstract
 
-The IPSIE SL1 OpenID Connect Profile is a profile of OpenID Connect intended to meet the security and interoperability requirements of enterprise integrations using OpenID Connect.
+TBD
 
 --- middle
 
 # Introduction
 
-TODO Introduction
+This specification defines how to implement OpenID Connect to meet IPSIE's SL1 requirements for enterprise integrations. The profile establishes security and interoperability standards for federated authentication, allowing applications to authenticate users and retrieve additional user claims from the OpenID Connect UserInfo endpoint.
 
+This profile focuses specifically on authentication scenarios and does not cover broad API access use cases. As a result, the use of refresh tokens and / or OAuth DPoP (Demonstration of Proof of Possession) are optional.
 
 # Conventions and Definitions
 
@@ -172,12 +173,13 @@ ID Tokens issued by OpenID Providers:
 * MUST contain the `amr` claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of [OpenID];
 * MUST indicate the expected lifetime of the RP session in the `session_lifetime` claim in seconds (see Note 3);
 * MUST contain the `auth_time` claim to describe when end user authentication last occurred (see Note 4);
+* MUST indicate the expected expiration time of the RP session in the `session_expiry` claim as a JSON integer that represents the Unix timestamp (seconds since epoch). (see Note 3);
 
 Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Trust Agreements" of [NIST.FAL].
 
 Note 2: The audience value must be a single string to meet the audience restriction of [NIST.FAL].
 
-Note 3: This claim is not currently defined in OpenID Connect, and should be pulled out into its own spec in OpenID Core instead of being defined here.
+Note 3: This claim is currently being defined in the AB Connect WG.  See the latest draft at https://openid.github.io/connect-enterprise-extensions/main.html.
 
 Note 4: This claim is required to satisfy the requirements in Section 4.7 of [NIST.FAL].
 
@@ -231,9 +233,9 @@ For the authorization code flow, Relying Parties:
 In addition to the ID Token validation requirements described in Section 3.1.37 of [OpenID], Relying Parties:
 
 * MUST validate that the `aud` claim is a single string and matches the OAuth Client ID of the RP;
-* MUST set the session lifetime of the session created to match the `session_lifetime` claim (see Note 1);
+* MUST set the session expiration of the session created to match the `session_expiry` claim (see Note 1);
 
-Note 1: This claim is not currently defined in OpenID Connect, and should be pulled out into its own spec in OpenID Core instead of being defined here.
+Note 1: This claim is currently being defined in the AB Connect WG.  See the latest draft at https://openid.github.io/connect-enterprise-extensions/main.html.
 
 
 # Security Considerations
