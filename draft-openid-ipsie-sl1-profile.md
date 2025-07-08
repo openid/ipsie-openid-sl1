@@ -79,6 +79,7 @@ TBD
 # Introduction
 
 This specification defines how to implement OpenID Connect to meet IPSIE's SL1 requirements for enterprise integrations. The profile establishes security and interoperability standards for federated authentication, allowing applications to authenticate users and retrieve additional user claims from the OpenID Connect UserInfo endpoint.
+
 This profile focuses specifically on authentication scenarios and does not cover broad API access use cases. As a result, the use of refresh tokens and / or OAuth DPoP (Demonstration of Proof of Possession) are optional.
 
 # Conventions and Definitions
