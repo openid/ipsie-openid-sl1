@@ -164,7 +164,7 @@ OpenID Providers:
 Access Tokens issued by OpenID Providers:
 
 * MUST only be used by the RP to retrieve identity claims at the OpenID Provider;
-* MUST only issue sender-constrained access tokens using DPoP [RFC9449];
+* SHOULD only issue sender-constrained access tokens using DPoP [RFC9449];
 
 ID Tokens issued by OpenID Providers:
 
