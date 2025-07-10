@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-08T01:10:47.762518+00:00",
+  "timestamp": "2025-07-10T01:11:29.585341+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -327,7 +327,7 @@
       "id": "PR_kwDOOE2vos6ay2Pn",
       "title": "Update to clarify use of OIDC SL1",
       "url": "https://github.com/openid/ipsie-openid-sl1/pull/3",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "deansaxe",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [
@@ -336,17 +336,19 @@
       "labels": [],
       "body": "Added clarifications in the intro. See https://github.com/openid/ipsie/issues/73 for context.",
       "createdAt": "2025-06-16T22:00:14Z",
-      "updatedAt": "2025-07-03T16:27:47Z",
+      "updatedAt": "2025-07-08T16:36:04Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "78b99c0990cd7c726e83c30162fb9659e39d292d",
       "headRepository": "deansaxe/ipsie-openid-sl1",
       "headRefName": "patch-1",
-      "headRefOid": "91580edd318dd07533e97338ebdc0802d6e335a9",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "bb8f75e5722aa528a9859eae1cf7268b9d908e54",
+      "closedAt": "2025-07-08T16:36:04Z",
+      "mergedAt": "2025-07-08T16:36:04Z",
+      "mergedBy": "aaronpk",
+      "mergeCommit": {
+        "oid": "4eb2da9ba5a1977d0689d97c13edebd222bf0da2"
+      },
       "comments": [
         {
           "author": "deansaxe",
@@ -443,6 +445,26 @@
               "updatedAt": "2025-07-03T16:26:21Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos6yt3qr",
+          "commit": {
+            "abbreviatedOid": "a5763dd"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-07-08T16:35:27Z",
+          "updatedAt": "2025-07-08T16:35:28Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "```suggestion\r\n\r\nThis profile focuses specifically on authentication scenarios and does not cover broad API access use cases. As a result, the use of refresh tokens and / or OAuth DPoP (Demonstration of Proof of Possession) are optional.\r\n```",
+              "createdAt": "2025-07-08T16:35:27Z",
+              "updatedAt": "2025-07-08T16:35:28Z"
+            }
+          ]
         }
       ]
     },
@@ -451,7 +473,7 @@
       "id": "PR_kwDOOE2vos6a7cK0",
       "title": "max_age and auth_time",
       "url": "https://github.com/openid/ipsie-openid-sl1/pull/4",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "deansaxe",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [
@@ -460,17 +482,19 @@
       "labels": [],
       "body": "Updated to address needs of FAL2 in https://github.com/openid/ipsie/issues/90 and https://github.com/openid/ipsie/issues/89.",
       "createdAt": "2025-06-17T15:59:10Z",
-      "updatedAt": "2025-07-02T20:50:13Z",
+      "updatedAt": "2025-07-08T16:54:34Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
-      "baseRefOid": "78b99c0990cd7c726e83c30162fb9659e39d292d",
+      "baseRefOid": "4eb2da9ba5a1977d0689d97c13edebd222bf0da2",
       "headRepository": "openid/ipsie-openid-sl1",
       "headRefName": "deansaxe-FAL2-1",
-      "headRefOid": "43ea81a72d1cf744f82169ec9278abd338ba65d9",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "37b0806e451df8788f284fc3b81efd6400f15f18",
+      "closedAt": "2025-07-08T16:48:53Z",
+      "mergedAt": "2025-07-08T16:48:53Z",
+      "mergedBy": "aaronpk",
+      "mergeCommit": {
+        "oid": "d1524113dc0c7d9cd99989f62464c85a7fb205c1"
+      },
       "comments": [
         {
           "author": "ttripp",
@@ -514,6 +538,19 @@
               "updatedAt": "2025-07-02T19:20:59Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos6yt40j",
+          "commit": {
+            "abbreviatedOid": "37b0806"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-07-08T16:37:00Z",
+          "updatedAt": "2025-07-08T16:37:00Z",
+          "comments": []
         }
       ]
     },
@@ -560,6 +597,34 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOOE2vos6eL1f5",
+      "title": "DPoP on access tokens",
+      "url": "https://github.com/openid/ipsie-openid-sl1/pull/6",
+      "state": "OPEN",
+      "author": "deansaxe",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "deansaxe"
+      ],
+      "labels": [],
+      "body": "Updated to make DPoP optional per https://github.com/openid/ipsie/issues/69.",
+      "createdAt": "2025-07-09T20:24:28Z",
+      "updatedAt": "2025-07-09T20:24:29Z",
+      "baseRepository": "openid/ipsie-openid-sl1",
+      "baseRefName": "main",
+      "baseRefOid": "d1524113dc0c7d9cd99989f62464c85a7fb205c1",
+      "headRepository": "openid/ipsie-openid-sl1",
+      "headRefName": "deansaxe-patch-1",
+      "headRefOid": "26722ead9ad5979c4139e26485bc93bcafb39f62",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
