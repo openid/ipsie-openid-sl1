@@ -171,7 +171,6 @@ ID Tokens issued by OpenID Providers:
 * MUST contain the OAuth Client ID of the RP as a single audience value as a string (see Note 2);
 * MUST contain the `acr` claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in Section 2 of [OpenID];
 * MUST contain the `amr` claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of [OpenID];
-* MUST indicate the expected lifetime of the RP session in the `session_lifetime` claim in seconds (see Note 3);
 * MUST contain the `auth_time` claim to describe when end user authentication last occurred (see Note 4);
 * MUST indicate the expected expiration time of the RP session in the `session_expiry` claim as a JSON integer that represents the Unix timestamp (seconds since epoch). (see Note 3);
 
