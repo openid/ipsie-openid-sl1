@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-10T01:11:29.585341+00:00",
+  "timestamp": "2025-07-13T01:18:45.179550+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -619,6 +619,34 @@
       "headRepository": "openid/ipsie-openid-sl1",
       "headRefName": "deansaxe-patch-1",
       "headRefOid": "26722ead9ad5979c4139e26485bc93bcafb39f62",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOOE2vos6eXHjD",
+      "title": "Fix outdated reference to session_lifetime",
+      "url": "https://github.com/openid/ipsie-openid-sl1/pull/7",
+      "state": "OPEN",
+      "author": "deansaxe",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "deansaxe"
+      ],
+      "labels": [],
+      "body": "Thanks to Daniel Stinson-Diess for catching this error.  I removed the line referencing session_lifetime since it's been replaced by session_expiry to follow the enterprise extensions draft in the AB Connect WG.",
+      "createdAt": "2025-07-10T18:59:25Z",
+      "updatedAt": "2025-07-10T18:59:25Z",
+      "baseRepository": "openid/ipsie-openid-sl1",
+      "baseRefName": "main",
+      "baseRefOid": "d1524113dc0c7d9cd99989f62464c85a7fb205c1",
+      "headRepository": "openid/ipsie-openid-sl1",
+      "headRefName": "deansaxe-session-lifetime",
+      "headRefOid": "39e0423764be0e9b7107b33153533991cff2d973",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
