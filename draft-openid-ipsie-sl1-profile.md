@@ -190,7 +190,6 @@ For the authorization code flow, OpenID Providers:
 * MUST require PKCE [RFC7636] with S256 as the code challenge method (see Note 1 below);
 * MUST require an exact match of a registered redirect URI as described in {{Section 2.1 of RFC9700}};
 * MUST issue authorization codes with a maximum lifetime of 60 seconds;
-* MUST support "Authorization Code Binding to DPoP Key" (as required by {{Section 10.1 of RFC9449}});
 * MUST return an `iss` parameter in the authorization response according to [RFC9207];
 * MUST NOT transmit authorization responses over unencrypted network connections, and, to this end, MUST NOT allow redirect URIs that use the `http` scheme;
 * MUST reject an authorization code (Section 1.3.1 of [RFC6749]) if it has been previously used;
