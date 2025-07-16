@@ -4,8 +4,8 @@
 
 IPSIE Working Group                                           A. Parecki
 Internet-Draft                                                      Okta
-Intended status: Informational                               8 July 2025
-Expires: 9 January 2026
+Intended status: Informational                              16 July 2025
+Expires: 17 January 2026
 
 
                     IPSIE SL1 OpenID Connect Profile
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 January 2026.
+   This Internet-Draft will expire on 17 January 2026.
 
 Copyright Notice
 
@@ -257,9 +257,6 @@ Table of Contents
       identifiers for authentication methods used in the authentication
       from those registered in the IANA Authentication Method Reference
       Values registry, as described in Section 2 of [OpenID];
-
-   *  MUST indicate the expected lifetime of the RP session in the
-      session_lifetime claim in seconds (see Note 3);
 
    *  MUST contain the auth_time claim to describe when end user
       authentication last occurred (see Note 4);
