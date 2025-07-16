@@ -4,8 +4,8 @@
 
 IPSIE Working Group                                           A. Parecki
 Internet-Draft                                                      Okta
-Intended status: Informational                              15 July 2025
-Expires: 16 January 2026
+Intended status: Informational                              16 July 2025
+Expires: 17 January 2026
 
 
                     IPSIE SL1 OpenID Connect Profile
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 January 2026.
+   This Internet-Draft will expire on 17 January 2026.
 
 Copyright Notice
 
@@ -327,7 +327,8 @@ Table of Contents
       the user.
 
    *  MUST support the prompt=login parameter by requiring user-
-      interactive reauthentication of the user.
+      interactive reauthentication of the user when this parameter is
+      sent from the RP.
 
    Note 1: while both nonce and PKCE can provide protection from
    authorization code injection, nonce relies on the client (RP) to
