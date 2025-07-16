@@ -1476,7 +1476,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
               <p id="section-3.3.1-12.12.1">MUST support the <code>max_age</code> parameter with a values representing the maximum number of seconds allowable since the user was authenticated by the OP. If the elapsed time since authentication is less than this value, the OP MAY choose to actively reauthenticate the user.  If the elapsed time since authentication is greater than this value, the OP MUST actively reauthenticate the user.<a href="#section-3.3.1-12.12.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.3.1-12.13">
-              <p id="section-3.3.1-12.13.1">MUST support the <code>prompt=login</code> parameter by requiring user-interactive reauthentication of the user when this parameter is sent from the RP.<a href="#section-3.3.1-12.13.1" class="pilcrow">¶</a></p>
+              <p id="section-3.3.1-12.13.1">MUST support the <code>prompt=login</code> parameter by requiring user-interactive reauthentication of the user when this parameter is received from the RP.<a href="#section-3.3.1-12.13.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 <p id="section-3.3.1-13">Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.<a href="#section-3.3.1-13" class="pilcrow">¶</a></p>

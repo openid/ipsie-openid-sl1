@@ -328,7 +328,7 @@ Table of Contents
 
    *  MUST support the prompt=login parameter by requiring user-
       interactive reauthentication of the user when this parameter is
-      sent from the RP.
+      received from the RP.
 
    Note 1: while both nonce and PKCE can provide protection from
    authorization code injection, nonce relies on the client (RP) to
