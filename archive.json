@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-15T01:15:21.982022+00:00",
+  "timestamp": "2025-07-17T01:14:02.596898+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -612,18 +612,26 @@
       "labels": [],
       "body": "Updated to make DPoP optional per https://github.com/openid/ipsie/issues/69.",
       "createdAt": "2025-07-09T20:24:28Z",
-      "updatedAt": "2025-07-09T20:24:29Z",
+      "updatedAt": "2025-07-16T18:48:32Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "d1524113dc0c7d9cd99989f62464c85a7fb205c1",
       "headRepository": "openid/ipsie-openid-sl1",
       "headRefName": "deansaxe-patch-1",
-      "headRefOid": "26722ead9ad5979c4139e26485bc93bcafb39f62",
+      "headRefOid": "3299c7bc7575d76ccbfbd41280111fdd10141e95",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "deansaxe",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Updated to remove \"MUST support \"Authorization Code Binding to DPoP Key\" (as required by {{Section 10.1 of RFC9449}});\" following https://github.com/openid/ipsie/issues/69#issuecomment-3062629806.",
+          "createdAt": "2025-07-16T18:48:31Z",
+          "updatedAt": "2025-07-16T18:48:31Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -631,7 +639,7 @@
       "id": "PR_kwDOOE2vos6eXHjD",
       "title": "Fix outdated reference to session_lifetime",
       "url": "https://github.com/openid/ipsie-openid-sl1/pull/7",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "deansaxe",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [
@@ -640,13 +648,43 @@
       "labels": [],
       "body": "Thanks to Daniel Stinson-Diess for catching this error.  I removed the line referencing session_lifetime since it's been replaced by session_expiry to follow the enterprise extensions draft in the AB Connect WG.",
       "createdAt": "2025-07-10T18:59:25Z",
-      "updatedAt": "2025-07-10T18:59:25Z",
+      "updatedAt": "2025-07-16T18:06:23Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "d1524113dc0c7d9cd99989f62464c85a7fb205c1",
       "headRepository": "openid/ipsie-openid-sl1",
       "headRefName": "deansaxe-session-lifetime",
       "headRefOid": "39e0423764be0e9b7107b33153533991cff2d973",
+      "closedAt": "2025-07-16T18:06:23Z",
+      "mergedAt": "2025-07-16T18:06:23Z",
+      "mergedBy": "aaronpk",
+      "mergeCommit": {
+        "oid": "a0b5c64f2b4ad5df891557b25056e8458742ecd6"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOOE2vos6fCB-x",
+      "title": "Added mandatory support of prompt=login",
+      "url": "https://github.com/openid/ipsie-openid-sl1/pull/8",
+      "state": "OPEN",
+      "author": "deansaxe",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "deansaxe"
+      ],
+      "labels": [],
+      "body": "Following discussion on July 15, 2025 IPSIE call, new language has been added to require support for `prompt=login`.  Related to https://github.com/openid/ipsie/issues/92.",
+      "createdAt": "2025-07-15T17:18:02Z",
+      "updatedAt": "2025-07-16T18:46:01Z",
+      "baseRepository": "openid/ipsie-openid-sl1",
+      "baseRefName": "main",
+      "baseRefOid": "d1524113dc0c7d9cd99989f62464c85a7fb205c1",
+      "headRepository": "openid/ipsie-openid-sl1",
+      "headRefName": "deansaxe-prompt-login",
+      "headRefOid": "eafbde0503cdf7b4878d3390a7b1432a435e2a5d",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
