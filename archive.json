@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-17T01:14:02.596898+00:00",
+  "timestamp": "2025-07-20T01:20:26.920121+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -685,6 +685,34 @@
       "headRepository": "openid/ipsie-openid-sl1",
       "headRefName": "deansaxe-prompt-login",
       "headRefOid": "eafbde0503cdf7b4878d3390a7b1432a435e2a5d",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 9,
+      "id": "PR_kwDOOE2vos6fbY6_",
+      "title": "Anchor auth_time claim to the last interactive user authentication",
+      "url": "https://github.com/openid/ipsie-openid-sl1/pull/9",
+      "state": "OPEN",
+      "author": "deansaxe",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [
+        "deansaxe"
+      ],
+      "labels": [],
+      "body": "Update the ID token requirements to ensure the auth_time represents the time of the last interactive user authentication. Related to https://github.com/openid/ipsie/issues/96.",
+      "createdAt": "2025-07-17T18:14:35Z",
+      "updatedAt": "2025-07-17T18:14:36Z",
+      "baseRepository": "openid/ipsie-openid-sl1",
+      "baseRefName": "main",
+      "baseRefOid": "a0b5c64f2b4ad5df891557b25056e8458742ecd6",
+      "headRepository": "openid/ipsie-openid-sl1",
+      "headRefName": "deansaxe-auth_time-interactive-authN",
+      "headRefOid": "30c435d634d77fb7451b1ddf738b540cd0fffde7",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
