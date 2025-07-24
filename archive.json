@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-22T01:13:53.366409+00:00",
+  "timestamp": "2025-07-24T01:14:06.599172+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -678,7 +678,7 @@
       "labels": [],
       "body": "Following discussion on July 15, 2025 IPSIE call, new language has been added to require support for `prompt=login`.  Related to https://github.com/openid/ipsie/issues/92.",
       "createdAt": "2025-07-15T17:18:02Z",
-      "updatedAt": "2025-07-16T18:46:01Z",
+      "updatedAt": "2025-07-22T16:27:37Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "d1524113dc0c7d9cd99989f62464c85a7fb205c1",
@@ -689,7 +689,22 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "deansaxe",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@deansaxe to review https://openid.net/specs/openid-connect-rpinitiated-1_0.html and update the wording if necessary to accommodate sessions.",
+          "createdAt": "2025-07-22T16:25:18Z",
+          "updatedAt": "2025-07-22T16:25:18Z"
+        },
+        {
+          "author": "deansaxe",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Is there any expectation that the IdP session identifier remains static on reauthentication?  (See notes from July 22 2025 meeting.)",
+          "createdAt": "2025-07-22T16:27:37Z",
+          "updatedAt": "2025-07-22T16:27:37Z"
+        }
+      ],
       "reviews": []
     },
     {
