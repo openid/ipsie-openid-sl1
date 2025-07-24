@@ -4,8 +4,8 @@
 
 IPSIE Working Group                                           A. Parecki
 Internet-Draft                                                      Okta
-Intended status: Informational                              18 June 2025
-Expires: 20 December 2025
+Intended status: Informational                              24 July 2025
+Expires: 25 January 2026
 
 
                     IPSIE SL1 OpenID Connect Profile
@@ -13,9 +13,7 @@ Expires: 20 December 2025
 
 Abstract
 
-   The IPSIE SL1 OpenID Connect Profile is a profile of OpenID Connect
-   intended to meet the security and interoperability requirements of
-   enterprise integrations using OpenID Connect.
+   TBD
 
 About This Document
 
@@ -48,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 December 2025.
+   This Internet-Draft will expire on 25 January 2026.
 
 Copyright Notice
 
@@ -67,14 +65,10 @@ Table of Contents
    2.  Conventions and Definitions
      2.1.  Roles
    3.  Profile
-     3.1.  Network Layer Requirements
-       3.1.1.  Requirements for all endpoints
-       3.1.2.  Requirements for endpoints not used by web browsers
-       3.1.3.  Requirements for endpoints used by web browsers
-     3.2.  Cryptography and Secrets
-     3.3.  OpenID Connect
-       3.3.1.  Requirements for OpenID Providers
-       3.3.2.  Requirements for OpenID Relying Parties
+     3.1.  Common Requirements
+     3.2.  OpenID Connect
+       3.2.1.  Requirements for OpenID Providers
+       3.2.2.  Requirements for OpenID Relying Parties
    4.  Security Considerations
    5.  IANA Considerations
    6.  Normative References
@@ -85,7 +79,17 @@ Table of Contents
 
 1.  Introduction
 
-   TODO Introduction
+   This specification defines how to implement OpenID Connect to meet
+   IPSIE's SL1 requirements for enterprise integrations.  The profile
+   establishes security and interoperability standards for federated
+   authentication, allowing applications to authenticate users and
+   retrieve additional user claims from the OpenID Connect UserInfo
+   endpoint.
+
+   This profile focuses specifically on authentication scenarios and
+   does not cover broad API access use cases.  As a result, the use of
+   refresh tokens and / or OAuth DPoP (Demonstration of Proof of
+   Possession) are optional.
 
 2.  Conventions and Definitions
 
@@ -106,83 +110,13 @@ Table of Contents
 
 3.  Profile
 
-3.1.  Network Layer Requirements
+3.1.  Common Requirements
 
-3.1.1.  Requirements for all endpoints
+   Applications and Identity Providers MUST follow all of the
+   requirements in the IPSIE Common Requirements Profile
+   [OpenID.IPSIE-Common-Requirements].
 
-   To protect against network attacks, clients, authorization servers,
-   and resource servers
-
-   *  MUST only offer TLS protected endpoints and MUST establish
-      connections to other servers using TLS;
-
-   *  MUST set up TLS connections using TLS version 1.2 or later;
-
-   *  MUST follow the recommendations for Secure Use of Transport Layer
-      Security in [BCP195];
-
-   *  SHOULD use DNSSEC to protect against DNS spoofing attacks that can
-      lead to the issuance of rogue domain-validated TLS certificates;
-      and
-
-   *  MUST perform a TLS server certificate check, as per [RFC9525].
-
-3.1.2.  Requirements for endpoints not used by web browsers
-
-   For server-to-server communication endpoints that are not used by web
-   browsers, the following requirements apply:
-
-   *  When using TLS 1.2, servers MUST only permit the cipher suites
-      recommended in [BCP195];
-
-   *  When using TLS 1.2, clients SHOULD only permit the cipher suites
-      recommended in [BCP195].
-
-3.1.3.  Requirements for endpoints used by web browsers
-
-   For endpoints that are used by web browsers, the following additional
-   requirements apply:
-
-   *  Servers MUST use methods to ensure that connections cannot be
-      downgraded using TLS stripping attacks.  A preloaded [preload]
-      HTTP Strict Transport Security policy [RFC6797] can be used for
-      this purpose.  Some top-level domains, like .bank and .insurance,
-      have set such a policy and therefore protect all second-level
-      domains below them.
-
-   *  When using TLS 1.2, servers MUST only use cipher suites allowed in
-      [BCP195].
-
-   *  Servers MUST NOT support [CORS] for the authorization endpoint, as
-      clients must perform an HTTP redirect rather than access this
-      endpoint directly.
-
-3.2.  Cryptography and Secrets
-
-   The following requirements apply to cryptographic operations and
-   secrets:
-
-   *  Authorization servers, clients, and resource servers when creating
-      or processing JWTs:
-
-      -  MUST adhere to [RFC8725];
-
-      -  MUST use PS256, ES256, or EdDSA (using the Ed25519 variant)
-         algorithms; and
-
-      -  MUST NOT use or accept the none algorithm.
-
-   *  RSA keys MUST have a minimum length of 2048 bits.
-
-   *  Elliptic curve keys MUST have a minimum length of 224 bits.
-
-   *  Credentials not intended for handling by end-users (e.g., access
-      tokens, refresh tokens, authorization codes, etc.)  MUST be
-      created with at least 128 bits of entropy such that an attacker
-      correctly guessing the value is computationally infeasible
-      (Section 10.10 of [RFC6749]).
-
-3.3.  OpenID Connect
+3.2.  OpenID Connect
 
    In the following, a profile of the following technologies is defined:
 
@@ -201,7 +135,7 @@ Table of Contents
 
    *  OAuth 2.0 Authorization Server Issuer Identification [RFC9207]
 
-3.3.1.  Requirements for OpenID Providers
+3.2.1.  Requirements for OpenID Providers
 
    OpenID Providers:
 
@@ -226,7 +160,7 @@ Table of Contents
    *  MUST require clients to be preregistered, and MUST NOT support
       unauthenticated Dynamic Client Registration requests (see Note 1);
 
-   *  MUST require clients to pre-register their redirect URIs
+   *  MUST require clients to pre-register their redirect URIs;
 
    Access Tokens issued by OpenID Providers:
 
@@ -250,6 +184,9 @@ Table of Contents
       from those registered in the IANA Authentication Method Reference
       Values registry, as described in Section 2 of [OpenID];
 
+   *  MUST contain the auth_time claim to describe when end user
+      authentication last occurred (see Note 4);
+
    *  MUST indicate the expected expiration time of the RP session in
       the session_expiry claim as a JSON integer that represents the
       Unix timestamp (seconds since epoch). (see Note 3);
@@ -263,6 +200,9 @@ Table of Contents
    Note 3: This claim is currently being defined in the AB Connect WG.
    See the latest draft at https://openid.github.io/connect-enterprise-
    extensions/main.html.
+
+   Note 4: This claim is required to satisfy the requirements in
+   Section 4.7 of [NIST.FAL].
 
    For the authorization code flow, OpenID Providers:
 
@@ -301,6 +241,14 @@ Table of Contents
    *  MUST support nonce parameter values up to 64 characters in length,
       and MAY reject nonce values longer than 64 characters.
 
+   *  MUST support the max_age parameter with a values representing the
+      maximum number of seconds allowable since the user was
+      authenticated by the OP.  If the elapsed time since authentication
+      is less than this value, the OP MAY choose to actively
+      reauthenticate the user.  If the elapsed time since authentication
+      is greater than this value, the OP MUST actively reauthenticate
+      the user.
+
    Note 1: while both nonce and PKCE can provide protection from
    authorization code injection, nonce relies on the client (RP) to
    implement and enforce the check, and the IdP is unable to verify that
@@ -308,7 +256,7 @@ Table of Contents
    tokens have already been issued.  Instead, PKCE is enforced by the
    IdP and stops the attack before tokens are issued.
 
-3.3.2.  Requirements for OpenID Relying Parties
+3.2.2.  Requirements for OpenID Relying Parties
 
    OpenID Relying Parties:
 
@@ -363,6 +311,11 @@ Table of Contents
 
    *  SHOULD NOT use nonce parameter values longer than 64 characters;
 
+   *  SHOULD use the max_age parameter in the authentication request to
+      specify the maximum allowable authentication age to the OP in
+      seconds.  The value of the max_age parameter MAY be determined
+      based upon the business rules of the RP.
+
    In addition to the ID Token validation requirements described in
    Section 3.1.37 of [OpenID], Relying Parties:
 
@@ -412,6 +365,12 @@ Table of Contents
               Connect Discovery 1.0 incorporating errata set 2",
               December 2023, <https://openid.net/specs/openid-connect-
               discovery-1_0.html>.
+
+   [OpenID.IPSIE-Common-Requirements]
+              Saxe, D. H., "IPSIE Common Requirements Profile", July
+              2025, <https://deansaxe.github.io/draft-saxe-ipsie-common-
+              requirements-profile/draft-saxe-ipsie-common-requirements-
+              profile.html>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -525,6 +484,9 @@ Appendix B.  Document History
    -01
 
    *  Replaced keywords with uppercase IETF keywords
+
+   *  Removed common requirements and referenced from the new IPSIE
+      Common Requirements draft
 
    -00
 
