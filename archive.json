@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-07T01:16:25.388831+00:00",
+  "timestamp": "2025-08-10T01:19:40.232916+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -747,26 +747,42 @@
       "id": "PR_kwDOOE2vos6gfh_B",
       "title": "Removed common requirements and referenced from the new IPSIE Common Requirements Profile",
       "url": "https://github.com/openid/ipsie-openid-sl1/pull/10",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "aaronpk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "\u2026Requirements draft",
       "createdAt": "2025-07-24T17:00:15Z",
-      "updatedAt": "2025-07-24T17:00:15Z",
+      "updatedAt": "2025-08-07T19:46:36Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "a0b5c64f2b4ad5df891557b25056e8458742ecd6",
       "headRepository": "openid/ipsie-openid-sl1",
       "headRefName": "aaronpk/common-requirements",
       "headRefOid": "c0c330a30a908e672b8aa973d507575ac8f0f74b",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-08-07T19:46:36Z",
+      "mergedAt": "2025-08-07T19:46:36Z",
+      "mergedBy": "deansaxe",
+      "mergeCommit": {
+        "oid": "34ae45fa7fee23b55de88cd59f0d09b14dd90a41"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOE2vos64r9le",
+          "commit": {
+            "abbreviatedOid": "c0c330a"
+          },
+          "author": "deansaxe",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-07T19:46:10Z",
+          "updatedAt": "2025-08-07T19:46:10Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
