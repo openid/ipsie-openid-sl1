@@ -166,6 +166,7 @@ For the authorization code flow, OpenID Providers:
 * SHOULD use the HTTP 303 status code when redirecting the user agent using status codes;
 * MUST support `nonce` parameter values up to 64 characters in length, and MAY reject `nonce` values longer than 64 characters.
 * MUST support the `max_age` parameter with a values representing the maximum number of seconds allowable since the user was authenticated by the OP. If the elapsed time since authentication is less than this value, the OP MAY choose to actively reauthenticate the user.  If the elapsed time since authentication is greater than this value, the OP MUST actively reauthenticate the user.
+* MUST support the `prompt=login` parameter by requiring user-interactive reauthentication of the user when this parameter is received from the RP.
 
 Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.
 
