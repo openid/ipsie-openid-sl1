@@ -4,8 +4,8 @@
 
 IPSIE Working Group                                           A. Parecki
 Internet-Draft                                                      Okta
-Intended status: Informational                             7 August 2025
-Expires: 8 February 2026
+Intended status: Informational                            13 August 2025
+Expires: 14 February 2026
 
 
                     IPSIE SL1 OpenID Connect Profile
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 February 2026.
+   This Internet-Draft will expire on 14 February 2026.
 
 Copyright Notice
 
@@ -167,7 +167,7 @@ Table of Contents
    *  MUST only be used by the RP to retrieve identity claims at the
       OpenID Provider;
 
-   *  MUST only issue sender-constrained access tokens using DPoP
+   *  SHOULD only issue sender-constrained access tokens using DPoP
       [RFC9449];
 
    ID Tokens issued by OpenID Providers:
@@ -217,9 +217,6 @@ Table of Contents
 
    *  MUST issue authorization codes with a maximum lifetime of 60
       seconds;
-
-   *  MUST support "Authorization Code Binding to DPoP Key" (as required
-      by Section 10.1 of [RFC9449]);
 
    *  MUST return an iss parameter in the authorization response
       according to [RFC9207];
