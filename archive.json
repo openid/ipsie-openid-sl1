@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-12T01:08:59.805897+00:00",
+  "timestamp": "2025-08-14T01:10:56.348457+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -603,7 +603,7 @@
       "id": "PR_kwDOOE2vos6eL1f5",
       "title": "DPoP on access tokens",
       "url": "https://github.com/openid/ipsie-openid-sl1/pull/6",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "deansaxe",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [
@@ -612,17 +612,19 @@
       "labels": [],
       "body": "Updated to make DPoP optional per https://github.com/openid/ipsie/issues/69.",
       "createdAt": "2025-07-09T20:24:28Z",
-      "updatedAt": "2025-07-16T18:48:32Z",
+      "updatedAt": "2025-08-13T18:22:16Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "d1524113dc0c7d9cd99989f62464c85a7fb205c1",
       "headRepository": "openid/ipsie-openid-sl1",
       "headRefName": "deansaxe-patch-1",
       "headRefOid": "3299c7bc7575d76ccbfbd41280111fdd10141e95",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-08-13T18:22:11Z",
+      "mergedAt": "2025-08-13T18:22:11Z",
+      "mergedBy": "aaronpk",
+      "mergeCommit": {
+        "oid": "47f8557533eeef47e9a30d0d6489b90cfd4e632b"
+      },
       "comments": [
         {
           "author": "deansaxe",
@@ -632,7 +634,21 @@
           "updatedAt": "2025-07-16T18:48:31Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOE2vos65zK2k",
+          "commit": {
+            "abbreviatedOid": "3299c7b"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-13T18:22:05Z",
+          "updatedAt": "2025-08-13T18:22:05Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 7,
@@ -678,7 +694,7 @@
       "labels": [],
       "body": "Following discussion on July 15, 2025 IPSIE call, new language has been added to require support for `prompt=login`.  Related to https://github.com/openid/ipsie/issues/92.",
       "createdAt": "2025-07-15T17:18:02Z",
-      "updatedAt": "2025-08-04T17:35:55Z",
+      "updatedAt": "2025-08-13T18:22:38Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "d1524113dc0c7d9cd99989f62464c85a7fb205c1",
@@ -712,7 +728,21 @@
           "updatedAt": "2025-08-04T17:35:55Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOE2vos65zLOo",
+          "commit": {
+            "abbreviatedOid": "eafbde0"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-13T18:22:38Z",
+          "updatedAt": "2025-08-13T18:22:38Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 9,
