@@ -4,8 +4,8 @@
 
 IPSIE Working Group                                           A. Parecki
 Internet-Draft                                                      Okta
-Intended status: Informational                              17 July 2025
-Expires: 18 January 2026
+Intended status: Informational                            18 August 2025
+Expires: 19 February 2026
 
 
                     IPSIE SL1 OpenID Connect Profile
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 18 January 2026.
+   This Internet-Draft will expire on 19 February 2026.
 
 Copyright Notice
 
@@ -65,14 +65,10 @@ Table of Contents
    2.  Conventions and Definitions
      2.1.  Roles
    3.  Profile
-     3.1.  Network Layer Requirements
-       3.1.1.  Requirements for all endpoints
-       3.1.2.  Requirements for endpoints not used by web browsers
-       3.1.3.  Requirements for endpoints used by web browsers
-     3.2.  Cryptography and Secrets
-     3.3.  OpenID Connect
-       3.3.1.  Requirements for OpenID Providers
-       3.3.2.  Requirements for OpenID Relying Parties
+     3.1.  Common Requirements
+     3.2.  OpenID Connect
+       3.2.1.  Requirements for OpenID Providers
+       3.2.2.  Requirements for OpenID Relying Parties
    4.  Security Considerations
    5.  IANA Considerations
    6.  Normative References
@@ -114,83 +110,13 @@ Table of Contents
 
 3.  Profile
 
-3.1.  Network Layer Requirements
+3.1.  Common Requirements
 
-3.1.1.  Requirements for all endpoints
+   Applications and Identity Providers MUST follow all of the
+   requirements in the IPSIE Common Requirements Profile
+   [OpenID.IPSIE-Common-Requirements].
 
-   To protect against network attacks, clients, authorization servers,
-   and resource servers
-
-   *  MUST only offer TLS protected endpoints and MUST establish
-      connections to other servers using TLS;
-
-   *  MUST set up TLS connections using TLS version 1.2 or later;
-
-   *  MUST follow the recommendations for Secure Use of Transport Layer
-      Security in [BCP195];
-
-   *  SHOULD use DNSSEC to protect against DNS spoofing attacks that can
-      lead to the issuance of rogue domain-validated TLS certificates;
-      and
-
-   *  MUST perform a TLS server certificate check, as per [RFC9525].
-
-3.1.2.  Requirements for endpoints not used by web browsers
-
-   For server-to-server communication endpoints that are not used by web
-   browsers, the following requirements apply:
-
-   *  When using TLS 1.2, servers MUST only permit the cipher suites
-      recommended in [BCP195];
-
-   *  When using TLS 1.2, clients SHOULD only permit the cipher suites
-      recommended in [BCP195].
-
-3.1.3.  Requirements for endpoints used by web browsers
-
-   For endpoints that are used by web browsers, the following additional
-   requirements apply:
-
-   *  Servers MUST use methods to ensure that connections cannot be
-      downgraded using TLS stripping attacks.  A preloaded [preload]
-      HTTP Strict Transport Security policy [RFC6797] can be used for
-      this purpose.  Some top-level domains, like .bank and .insurance,
-      have set such a policy and therefore protect all second-level
-      domains below them.
-
-   *  When using TLS 1.2, servers MUST only use cipher suites allowed in
-      [BCP195].
-
-   *  Servers MUST NOT support [CORS] for the authorization endpoint, as
-      clients must perform an HTTP redirect rather than access this
-      endpoint directly.
-
-3.2.  Cryptography and Secrets
-
-   The following requirements apply to cryptographic operations and
-   secrets:
-
-   *  Authorization servers, clients, and resource servers when creating
-      or processing JWTs:
-
-      -  MUST adhere to [RFC8725];
-
-      -  MUST use PS256, ES256, or EdDSA (using the Ed25519 variant)
-         algorithms; and
-
-      -  MUST NOT use or accept the none algorithm.
-
-   *  RSA keys MUST have a minimum length of 2048 bits.
-
-   *  Elliptic curve keys MUST have a minimum length of 224 bits.
-
-   *  Credentials not intended for handling by end-users (e.g., access
-      tokens, refresh tokens, authorization codes, etc.)  MUST be
-      created with at least 128 bits of entropy such that an attacker
-      correctly guessing the value is computationally infeasible
-      (Section 10.10 of [RFC6749]).
-
-3.3.  OpenID Connect
+3.2.  OpenID Connect
 
    In the following, a profile of the following technologies is defined:
 
@@ -209,7 +135,7 @@ Table of Contents
 
    *  OAuth 2.0 Authorization Server Issuer Identification [RFC9207]
 
-3.3.1.  Requirements for OpenID Providers
+3.2.1.  Requirements for OpenID Providers
 
    OpenID Providers:
 
@@ -241,7 +167,7 @@ Table of Contents
    *  MUST only be used by the RP to retrieve identity claims at the
       OpenID Provider;
 
-   *  MUST only issue sender-constrained access tokens using DPoP
+   *  SHOULD only issue sender-constrained access tokens using DPoP
       [RFC9449];
 
    ID Tokens issued by OpenID Providers:
@@ -258,24 +184,8 @@ Table of Contents
       from those registered in the IANA Authentication Method Reference
       Values registry, as described in Section 2 of [OpenID];
 
-   *  MUST contain the auth_time claim to describe when interactive end
-      user authentication last occurred (see Note 4);
-
-      -  OpenID Providers that refresh the user session with non-
-         interactive authentication mechanisms SHALL NOT update the
-         auth_time claim when performing risk-based reauthentication
-         during a user's session with the provider.
-
-      -  If a user session is refreshed with non-interactive
-         authentication mechanisms the array of amr claims MUST include
-         claims for the last interactive user authentication and SHOULD
-         include additional claims, such as rba, to indicate risk based
-         authentication.  For example, if the initial user
-         authentication is performed with multifactor authentication,
-         the claim amr=mfa is presented in the ID token.  When the
-         user's session is refreshed with risk based authentication, the
-         ID token may be updated to include the claim amr=mfa,rba, while
-         retaining the original auth_time claim.
+   *  MUST contain the auth_time claim to describe when end user
+      authentication last occurred (see Note 4);
 
    *  MUST indicate the expected expiration time of the RP session in
       the session_expiry claim as a JSON integer that represents the
@@ -307,9 +217,6 @@ Table of Contents
 
    *  MUST issue authorization codes with a maximum lifetime of 60
       seconds;
-
-   *  MUST support "Authorization Code Binding to DPoP Key" (as required
-      by Section 10.1 of [RFC9449]);
 
    *  MUST return an iss parameter in the authorization response
       according to [RFC9207];
@@ -346,7 +253,7 @@ Table of Contents
    tokens have already been issued.  Instead, PKCE is enforced by the
    IdP and stops the attack before tokens are issued.
 
-3.3.2.  Requirements for OpenID Relying Parties
+3.2.2.  Requirements for OpenID Relying Parties
 
    OpenID Relying Parties:
 
@@ -383,8 +290,6 @@ Table of Contents
 
    *  MUST send access tokens in the HTTP header as described in
       Section 7.1 of [RFC9449];
-
-   *  MUST support refresh tokens and their rotation;
 
    For the authorization code flow, Relying Parties:
 
@@ -455,6 +360,12 @@ Table of Contents
               Connect Discovery 1.0 incorporating errata set 2",
               December 2023, <https://openid.net/specs/openid-connect-
               discovery-1_0.html>.
+
+   [OpenID.IPSIE-Common-Requirements]
+              Saxe, D. H., "IPSIE Common Requirements Profile", July
+              2025, <https://deansaxe.github.io/draft-saxe-ipsie-common-
+              requirements-profile/draft-saxe-ipsie-common-requirements-
+              profile.html>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -568,6 +479,9 @@ Appendix B.  Document History
    -01
 
    *  Replaced keywords with uppercase IETF keywords
+
+   *  Removed common requirements and referenced from the new IPSIE
+      Common Requirements draft
 
    -00
 
