@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-17T01:15:52.055188+00:00",
+  "timestamp": "2025-08-19T01:07:44.245908+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -813,6 +813,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 11,
+      "id": "PR_kwDOOE2vos6kJRUy",
+      "title": "Removed requirement to support refresh tokens",
+      "url": "https://github.com/openid/ipsie-openid-sl1/pull/11",
+      "state": "OPEN",
+      "author": "deansaxe",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "See https://github.com/openid/ipsie/issues/104 for details.",
+      "createdAt": "2025-08-18T16:38:15Z",
+      "updatedAt": "2025-08-18T16:38:15Z",
+      "baseRepository": "openid/ipsie-openid-sl1",
+      "baseRefName": "main",
+      "baseRefOid": "47f8557533eeef47e9a30d0d6489b90cfd4e632b",
+      "headRepository": "openid/ipsie-openid-sl1",
+      "headRefName": "deansaxe-refresh-tokens",
+      "headRefOid": "533a8898e31bbd9b61c62dc7a883e0ef4e92eb55",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
