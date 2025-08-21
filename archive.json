@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-19T01:07:44.245908+00:00",
+  "timestamp": "2025-08-21T01:04:36.984239+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -826,7 +826,7 @@
       "labels": [],
       "body": "See https://github.com/openid/ipsie/issues/104 for details.",
       "createdAt": "2025-08-18T16:38:15Z",
-      "updatedAt": "2025-08-18T16:38:15Z",
+      "updatedAt": "2025-08-19T16:48:09Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "47f8557533eeef47e9a30d0d6489b90cfd4e632b",
@@ -837,7 +837,15 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "deansaxe",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Review this text along with https://github.com/openid/ipsie/issues/60 and https://github.com/openid/ipsie/issues/74 before merging the PR.  ",
+          "createdAt": "2025-08-19T16:48:09Z",
+          "updatedAt": "2025-08-19T16:48:09Z"
+        }
+      ],
       "reviews": []
     }
   ]
