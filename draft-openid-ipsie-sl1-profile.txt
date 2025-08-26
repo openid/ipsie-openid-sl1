@@ -4,8 +4,8 @@
 
 IPSIE Working Group                                           A. Parecki
 Internet-Draft                                                      Okta
-Intended status: Informational                            13 August 2025
-Expires: 14 February 2026
+Intended status: Informational                            26 August 2025
+Expires: 27 February 2026
 
 
                     IPSIE SL1 OpenID Connect Profile
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 14 February 2026.
+   This Internet-Draft will expire on 27 February 2026.
 
 Copyright Notice
 
@@ -290,8 +290,6 @@ Table of Contents
 
    *  MUST send access tokens in the HTTP header as described in
       Section 7.1 of [RFC9449];
-
-   *  MUST support refresh tokens and their rotation;
 
    For the authorization code flow, Relying Parties:
 
