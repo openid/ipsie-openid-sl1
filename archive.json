@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-26T01:06:39.618134+00:00",
+  "timestamp": "2025-08-28T01:03:31.747607+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -819,24 +819,26 @@
       "id": "PR_kwDOOE2vos6kJRUy",
       "title": "Removed requirement to support refresh tokens",
       "url": "https://github.com/openid/ipsie-openid-sl1/pull/11",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "deansaxe",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "See https://github.com/openid/ipsie/issues/104 for details.",
       "createdAt": "2025-08-18T16:38:15Z",
-      "updatedAt": "2025-08-19T16:48:09Z",
+      "updatedAt": "2025-08-26T22:40:23Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "47f8557533eeef47e9a30d0d6489b90cfd4e632b",
       "headRepository": "openid/ipsie-openid-sl1",
       "headRefName": "deansaxe-refresh-tokens",
       "headRefOid": "533a8898e31bbd9b61c62dc7a883e0ef4e92eb55",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-08-26T22:40:08Z",
+      "mergedAt": "2025-08-26T22:40:08Z",
+      "mergedBy": "aaronpk",
+      "mergeCommit": {
+        "oid": "ab8088a6f75460d1691e882e8ab5f7330244fc71"
+      },
       "comments": [
         {
           "author": "deansaxe",
@@ -844,9 +846,97 @@
           "body": "Review this text along with https://github.com/openid/ipsie/issues/60 and https://github.com/openid/ipsie/issues/74 before merging the PR.  ",
           "createdAt": "2025-08-19T16:48:09Z",
           "updatedAt": "2025-08-19T16:48:09Z"
+        },
+        {
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Discussed on the Aug 26 call.",
+          "createdAt": "2025-08-26T22:40:18Z",
+          "updatedAt": "2025-08-26T22:40:18Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOE2vos68IouF",
+          "commit": {
+            "abbreviatedOid": "533a889"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-08-26T16:10:34Z",
+          "updatedAt": "2025-08-26T16:10:34Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "id": "PR_kwDOOE2vos6lqx3H",
+      "title": "Add additional requirements/options for OPs and RPs regarding re-auth\u2026",
+      "url": "https://github.com/openid/ipsie-openid-sl1/pull/12",
+      "state": "OPEN",
+      "author": "gffletch",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "\u2026entication\r\n\r\nAddresses issue #92\r\n\r\nAdded mandatory requirements to the OP requirements \r\n\r\nOutlined options for the RP in driving the desired behavior for re-authentication",
+      "createdAt": "2025-08-27T19:48:12Z",
+      "updatedAt": "2025-08-27T19:55:02Z",
+      "baseRepository": "openid/ipsie-openid-sl1",
+      "baseRefName": "main",
+      "baseRefOid": "ab8088a6f75460d1691e882e8ab5f7330244fc71",
+      "headRepository": "gffletch/ipsie-openid-sl1",
+      "headRefName": "re-auth",
+      "headRefOid": "5de6b9e09eeb35b94d6ebccdbad5703374e88736",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOE2vos68cYaI",
+          "commit": {
+            "abbreviatedOid": "5de6b9e"
+          },
+          "author": "seanmillerrsa",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-27T19:53:08Z",
+          "updatedAt": "2025-08-27T19:53:08Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "did you mean 'value' instead of 'values'?  Rest reads great",
+              "createdAt": "2025-08-27T19:53:08Z",
+              "updatedAt": "2025-08-27T19:53:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos68cZl6",
+          "commit": {
+            "abbreviatedOid": "5de6b9e"
+          },
+          "author": "seanmillerrsa",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-27T19:55:02Z",
+          "updatedAt": "2025-08-27T19:55:02Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "to match the prompt=login requirement above, suggest we change the order in this sentence to \"SHOULD use `prompt=none` and `max_age`\"\r\n\r\nNote the typo right now user instead of use",
+              "createdAt": "2025-08-27T19:55:02Z",
+              "updatedAt": "2025-08-27T19:55:02Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
