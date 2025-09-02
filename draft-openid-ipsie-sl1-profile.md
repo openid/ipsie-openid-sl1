@@ -200,7 +200,7 @@ For the authorization code flow, Relying Parties:
 In addition to the ID Token validation requirements described in Section 3.1.37 of [OpenID], Relying Parties:
 
 * MUST validate that the `aud` claim is a single string and matches the OAuth Client ID of the RP;
-* MUST set the session expiration of the session created to match the `session_expiry` claim (see Note 1);
+* MUST re-authenticate the user through the OpenID Provider after the time indicated in the `session_expiry` claim, by either initiating a new authorization code flow, or by requesting a new ID token using a previously obtained refresh token (see Note 1);
 
 Note 1: This claim is currently being defined in the AB Connect WG.  See the latest draft at https://openid.github.io/connect-enterprise-extensions/main.html.
 
