@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-02T01:04:44.459959+00:00",
+  "timestamp": "2025-09-04T01:00:29.227213+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -883,13 +883,13 @@
       "labels": [],
       "body": "\u2026entication\r\n\r\nAddresses issue #92\r\n\r\nAdded mandatory requirements to the OP requirements \r\n\r\nOutlined options for the RP in driving the desired behavior for re-authentication",
       "createdAt": "2025-08-27T19:48:12Z",
-      "updatedAt": "2025-08-27T19:55:02Z",
+      "updatedAt": "2025-09-02T16:12:40Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "ab8088a6f75460d1691e882e8ab5f7330244fc71",
       "headRepository": "gffletch/ipsie-openid-sl1",
       "headRefName": "re-auth",
-      "headRefOid": "5de6b9e09eeb35b94d6ebccdbad5703374e88736",
+      "headRefOid": "cbf29a51c3ecf932f3bebb544401a5ad872790e7",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -935,8 +935,64 @@
               "updatedAt": "2025-08-27T19:55:02Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos69YU1X",
+          "commit": {
+            "abbreviatedOid": "5de6b9e"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-02T16:12:26Z",
+          "updatedAt": "2025-09-02T16:12:27Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "```suggestion\r\n* MUST support the `max_age` parameter with a value representing the maximum number of seconds allowable since the user was authenticated by the OP. If the elapsed time since authentication is less than the specified value OR the OP can silently authenticate the user and issue a new `auth_time` within the required `max_age`, then no user visible authentication is required. The OP MAY choose to explicitly (re)authenticate the user regardless.\r\n```",
+              "createdAt": "2025-09-02T16:12:27Z",
+              "updatedAt": "2025-09-02T16:12:27Z"
+            }
+          ]
         }
       ]
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDOOE2vos6me6hc",
+      "title": "update session expiry description",
+      "url": "https://github.com/openid/ipsie-openid-sl1/pull/13",
+      "state": "MERGED",
+      "author": "aaronpk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Syncs the language to match the levels doc: https://github.com/openid/ipsie/blob/main/ipsie-levels.md#ipsie-session-lifecycle-sl1---single-sign-on--session-lifetime-controls\r\n\r\nThis should close https://github.com/openid/ipsie/issues/74",
+      "createdAt": "2025-09-02T15:34:49Z",
+      "updatedAt": "2025-09-02T16:10:53Z",
+      "baseRepository": "openid/ipsie-openid-sl1",
+      "baseRefName": "main",
+      "baseRefOid": "ab8088a6f75460d1691e882e8ab5f7330244fc71",
+      "headRepository": "openid/ipsie-openid-sl1",
+      "headRefName": "aaronpk/session-expiry",
+      "headRefOid": "d322ccf62970e2eb23a507d96c7119cc7a518df2",
+      "closedAt": "2025-09-02T16:10:53Z",
+      "mergedAt": "2025-09-02T16:10:53Z",
+      "mergedBy": "aaronpk",
+      "mergeCommit": {
+        "oid": "5238d9f14cd07ce3ce0e0488d33f7d00e65e8ab9"
+      },
+      "comments": [
+        {
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Discussed on the Sep 2 call",
+          "createdAt": "2025-09-02T16:10:45Z",
+          "updatedAt": "2025-09-02T16:10:45Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
