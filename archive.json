@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-09T01:03:08.763327+00:00",
+  "timestamp": "2025-09-11T01:02:54.391097+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -970,7 +970,7 @@
       "labels": [],
       "body": "Syncs the language to match the levels doc: https://github.com/openid/ipsie/blob/main/ipsie-levels.md#ipsie-session-lifecycle-sl1---single-sign-on--session-lifetime-controls\r\n\r\nThis should close https://github.com/openid/ipsie/issues/74",
       "createdAt": "2025-09-02T15:34:49Z",
-      "updatedAt": "2025-09-02T16:10:53Z",
+      "updatedAt": "2025-09-09T14:35:42Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "ab8088a6f75460d1691e882e8ab5f7330244fc71",
