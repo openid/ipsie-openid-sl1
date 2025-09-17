@@ -141,7 +141,9 @@ ID Tokens issued by OpenID Providers:
 * MUST contain the OAuth Client ID of the RP as a single audience value as a string (see Note 2);
 * MUST contain the `acr` claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in Section 2 of [OpenID];
 * MUST contain the `amr` claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of [OpenID];
-* MUST contain the `auth_time` claim to describe when end user authentication last occurred (see Note 4);
+* MUST contain the `auth_time` claim to describe when interactive end user authentication last occurred (see Note 4);
+  * OpenID Providers that refresh the user session with non-interactive authentication mechanisms SHALL NOT update the `auth_time` claim when performing risk-based reauthentication during a user's session with the provider.
+  * If a user session is refreshed with non-interactive authentication mechanisms the array of `amr` claims MUST include claims for the last interactive user authentication and SHOULD include additional claims, such as `rba`, to indicate risk based authentication. For example, if the initial user authentication is performed with multifactor authentication, the claim `amr=mfa` is presented in the ID token. When the user's session is refreshed with risk based authentication, the ID token may be updated to include the claim `amr=mfa,rba`, while retaining the original `auth_time` claim.
 * MUST indicate the expected expiration time of the RP session in the `session_expiry` claim as a JSON integer that represents the Unix timestamp (seconds since epoch). (see Note 3);
 
 Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Trust Agreements" of [NIST.FAL].
