@@ -199,7 +199,7 @@ For the authorization code flow, Relying Parties:
 * SHOULD NOT use `nonce` parameter values longer than 64 characters;
 * SHOULD use `prompt=login` if the RP wants to ensure that the user is visibly challenged for (re)authentication
 * SHOULD use the `max_age` parameter in the authentication request to specify the maximum allowable authentication age to the OP in seconds.  The value of the `max_age` parameter MAY be determined based upon the business rules of the RP.
-* SHOULD user `max_age` and `prompt=none` if the RP wants to ensure that the user is not visibly challenged for (re)authentication.
+* SHOULD use `prompt=none` and `max_age` if the RP wants to ensure that the user is not visibly challenged for (re)authentication.
 
 In addition to the ID Token validation requirements described in Section 3.1.37 of [OpenID], Relying Parties:
 
