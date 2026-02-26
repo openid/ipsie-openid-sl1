@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-02-24T01:41:46.295187+00:00",
+  "timestamp": "2026-02-26T01:27:21.241492+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -883,13 +883,13 @@
       "labels": [],
       "body": "\u2026entication\r\n\r\nAddresses issue #92\r\n\r\nAdded mandatory requirements to the OP requirements \r\n\r\nOutlined options for the RP in driving the desired behavior for re-authentication",
       "createdAt": "2025-08-27T19:48:12Z",
-      "updatedAt": "2025-09-02T16:12:40Z",
+      "updatedAt": "2026-02-25T14:25:48Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
-      "baseRefOid": "ab8088a6f75460d1691e882e8ab5f7330244fc71",
+      "baseRefOid": "5238d9f14cd07ce3ce0e0488d33f7d00e65e8ab9",
       "headRepository": "gffletch/ipsie-openid-sl1",
       "headRefName": "re-auth",
-      "headRefOid": "cbf29a51c3ecf932f3bebb544401a5ad872790e7",
+      "headRefOid": "a147aab0c29a95ce3def62ce221194adb513a7f5",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
