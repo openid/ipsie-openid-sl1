@@ -184,7 +184,7 @@ OpenID Relying Parties:
 
 OpenID Relying Parties making resource requests to the OpenID Provider:
 
-* MUST support sender-constrined access tokens using DPoP as described in [RFC9449];
+* MUST support sender-constrained access tokens using DPoP as described in [RFC9449];
 * MUST support the server-provided nonce mechanism (as defined in {{Section 8 of RFC9449}});
 * MUST send access tokens in the HTTP header as described in {{Section 7.1 of RFC9449}};
 
