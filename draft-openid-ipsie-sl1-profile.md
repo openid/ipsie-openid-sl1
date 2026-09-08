@@ -88,6 +88,12 @@ This specification defines how to implement OpenID Connect to meet IPSIE's SL1 r
 
 This profile focuses specifically on authentication scenarios and does not cover broad API access use cases. As a result, the use of refresh tokens and / or OAuth DPoP (Demonstration of Proof of Possession) are optional.
 
+## Relationship to NIST 800-63-4 FAL2
+
+This profile specifies the protocol-level requirements that enable an Application and an OpenID Provider to interoperate such that each party is able to meet the requirements of Federation Assurance Level 2 (FAL2) in [NIST.FAL] that apply to it. Where [NIST.FAL] places a requirement on one party that can only be met using information supplied by the other party, this profile requires that information to be supplied.
+
+Requirements that are internal to either party are out of scope of this profile. This includes business agreements, data handling policies, and each party's own decisions about access to the protected resources it controls. For example, [NIST.FAL] requires the Application to establish and enforce a minimum acceptable Authentication Assurance Level before releasing its protected resources. Because those resources reside within the Application, that enforcement decision is not constrained by this profile; instead, this profile requires the OpenID Provider to honor an Authentication Context Class requested by the Application and to accurately report the Authentication Context Class that was satisfied, so that an Application seeking to meet FAL2 has the information it needs.
+
 # Conventions and Definitions
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
@@ -109,7 +115,7 @@ Applications and Identity Providers MUST follow all of the requirements in the I
 
 In the following, a profile of the following technologies is defined:
 
-* OpenID Connect Core 1.0 incorporating errata set 2 [OpenID.Discovery]
+* OpenID Connect Core 1.0 incorporating errata set 2 [OpenID]
 * OpenID Connect Discovery [OpenID.Discovery]
 * OAuth 2.0 Authorization Framework [RFC6749]
 * Proof Key for Code Exchange (PKCE) [RFC7636]
@@ -127,7 +133,6 @@ OpenID Providers:
 * MUST support public clients as defined in [RFC6749];
 * MUST NOT expose open redirectors {{Section 4.11 of RFC9700}};
 * MUST only accept its issuer identifier value (as defined in [RFC8414]) as a string in the `aud` claim received in client authentication assertions;
-* MUST issue authorization codes with a maximum lifetime of 60 seconds;
 * MUST require clients to be preregistered, and MUST NOT support unauthenticated Dynamic Client Registration requests (see Note 1);
 * MUST require clients to pre-register their redirect URIs;
 
@@ -139,10 +144,10 @@ Access Tokens issued by OpenID Providers:
 ID Tokens issued by OpenID Providers:
 
 * MUST contain the OAuth Client ID of the RP as a single audience value as a string (see Note 2);
-* MUST contain the `acr` claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in Section 2 of [OpenID];
+* MUST contain the `acr` claim as a string that identifies the Authentication Context Class that the authentication performed satisfied, as described in Section 2 of [OpenID]. The value MUST reflect the Authentication Context Class that was actually satisfied, including when the authentication request specified an Authentication Context Class that was not satisfied (see Note 5);
 * MUST contain the `amr` claim as an array of strings indicating identifiers for authentication methods used in the authentication from those registered in the IANA Authentication Method Reference Values registry, as described in Section 2 of [OpenID];
 * MUST contain the `auth_time` claim to describe when end user authentication last occurred (see Note 4);
-* MUST indicate the expected expiration time of the RP session in the `session_expiry` claim as a JSON integer that represents the Unix timestamp (seconds since epoch). (see Note 3);
+* MUST indicate the expected expiration time of the RP session in the `session_expiry` claim as a JSON integer that represents the Unix timestamp (seconds since epoch). The value MUST NOT be less than 300 seconds (5 minutes) after the value of the `iat` claim of the ID Token. (see Note 3);
 
 Note 1: The requirement for preregistered clients corresponds to Section 3.4 "Trust Agreements" of [NIST.FAL].
 
@@ -151,6 +156,8 @@ Note 2: The audience value must be a single string to meet the audience restrict
 Note 3: This claim is currently being defined in the AB Connect WG.  See the latest draft at https://openid.github.io/connect-enterprise-extensions/main.html.
 
 Note 4: This claim is required to satisfy the requirements in Section 4.7 of [NIST.FAL].
+
+Note 5: Section 2.5 of [NIST.FAL] requires the assurance level that was reached to be reported even when the requested assurance level was not met. An Application cannot make its own decision about whether to grant access unless the OpenID Provider reports the Authentication Context Class accurately.
 
 
 For the authorization code flow, OpenID Providers:
@@ -165,7 +172,10 @@ For the authorization code flow, OpenID Providers:
 * MUST NOT use the HTTP 307 status code when redirecting a request that contains user credentials to avoid forwarding the credentials to a third party accidentally (see {{Section 4.12 of RFC9700}});
 * SHOULD use the HTTP 303 status code when redirecting the user agent using status codes;
 * MUST support `nonce` parameter values up to 64 characters in length, and MAY reject `nonce` values longer than 64 characters.
-* MUST support the `max_age` parameter with a values representing the maximum number of seconds allowable since the user was authenticated by the OP. If the elapsed time since authentication is less than this value, the OP MAY choose to actively reauthenticate the user.  If the elapsed time since authentication is greater than this value, the OP MUST actively reauthenticate the user.
+* MUST support the `max_age` parameter with a values representing the maximum number of seconds allowable since the user last interactively authenticated at the OP. If the elapsed time since interactive authentication is less than this value, the OP MAY choose to actively reauthenticate the user.  If the elapsed time since interactive authentication is greater than this value, the OP MUST actively reauthenticate the user.
+* MUST support the `acr_values` parameter as described in Section 3.1.2.1 of [OpenID];
+* MUST be able to satisfy a request for an Authentication Context Class that requires the user to authenticate with two or more distinct authentication factors;
+* MUST, when the authentication request contains `acr_values`, either authenticate the user in a manner that satisfies one of the requested Authentication Context Class values, or return an error response.
 
 Note 1: while both nonce and PKCE can provide protection from authorization code injection, nonce relies on the client (RP) to implement and enforce the check, and the IdP is unable to verify that it has been implemented correctly, and only stops the attack after tokens have already been issued. Instead, PKCE is enforced by the IdP and stops the attack before tokens are issued.
 
@@ -195,14 +205,16 @@ For the authorization code flow, Relying Parties:
 * MUST generate the PKCE challenge specifically for each authorization request and securely bind the challenge to the client and the user agent in which the flow was started;
 * MUST check the `iss` parameter in the authorization response according to [RFC9207] to prevent mix-up attacks;
 * SHOULD NOT use `nonce` parameter values longer than 64 characters;
-* SHOULD use the `max_age` parameter in the authentication request to specify the maximum allowable authentication age to the OP in seconds.  The value of the `max_age` parameter MAY be determined based upon the business rules of the RP.
+* SHOULD use the `max_age` parameter in the authentication request to specify the maximum allowable time since the user last interactively authenticated at the OP in seconds.  The value of the `max_age` parameter MAY be determined based upon the business rules of the RP.
+* MAY use the `acr_values` parameter in the authentication request to request a minimum Authentication Context Class.
 
-In addition to the ID Token validation requirements described in Section 3.1.37 of [OpenID], Relying Parties:
+In addition to the ID Token validation requirements described in Section 3.1.3.7 of [OpenID], Relying Parties:
 
 * MUST validate that the `aud` claim is a single string and matches the OAuth Client ID of the RP;
+* MUST validate the `auth_time` claim against the requested `max_age` value when the authentication request included the `max_age` parameter;
 * MUST re-authenticate the user through the OpenID Provider after the time indicated in the `session_expiry` claim, by either initiating a new authorization code flow, or by requesting a new ID token using a previously obtained refresh token (see Note 1);
 
-Note 1: This claim is currently being defined in the AB Connect WG.  See the latest draft at https://openid.github.io/connect-enterprise-extensions/main.html.
+Note 1: The `session_expiry` claim is currently being defined in the AB Connect WG.  See the latest draft at https://openid.github.io/connect-enterprise-extensions/main.html.
 
 
 # Security Considerations
@@ -222,7 +234,7 @@ This document has no IANA actions.
 
 # Notices
 
-Copyright (c) 2025 The OpenID Foundation.
+Copyright (c) 2026 The OpenID Foundation.
 
 The OpenID Foundation (OIDF) grants to any Contributor, developer,
 implementer, or other interested party a non-exclusive, royalty free,
@@ -269,6 +281,14 @@ specification.
 
 * Replaced keywords with uppercase IETF keywords
 * Removed common requirements and referenced from the new IPSIE Common Requirements draft
+* Added a section describing the relationship of this profile to FAL2 in NIST 800-63-4
+* Added requirements for OpenID Providers to support `acr_values`, to be able to satisfy a request for multi-factor authentication, and to either satisfy a requested Authentication Context Class or return an error
+* Clarified that the `acr` claim reports the Authentication Context Class that was actually satisfied
+* Added a minimum value of 5 minutes for the `session_expiry` claim
+* Added a Relying Party requirement to validate `auth_time` against a requested `max_age`
+* Clarified that `max_age` measures time since the user last interactively authenticated
+* Fixed an incorrect reference to OpenID Connect Discovery, an incorrect section number for ID Token validation, and a duplicated authorization code lifetime requirement
+
 
 -00
 
