@@ -286,7 +286,7 @@ specification.
 * Clarified that the `acr` claim reports the Authentication Context Class that was actually satisfied
 * Added a minimum value of 5 minutes for the `session_expiry` claim
 * Added a Relying Party requirement to validate `auth_time` against a requested `max_age`
-* Clarified that `max_age` measures time since the user last interactively authenticated
+* Clarified that `max_age` is about the time since the user last interactively authenticated, not just bounced through the IdP
 * Fixed an incorrect reference to OpenID Connect Discovery, an incorrect section number for ID Token validation, and a duplicated authorization code lifetime requirement
 
 
