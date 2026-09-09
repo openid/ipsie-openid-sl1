@@ -270,7 +270,7 @@ Table of Contents
    *  MUST support nonce parameter values up to 64 characters in length,
       and MAY reject nonce values longer than 64 characters.
 
-   *  MUST support the max_age parameter with a values representing the
+   *  MUST support the max_age parameter with a value representing the
       maximum number of seconds allowable since the user last
       interactively authenticated at the OP.  If the elapsed time since
       interactive authentication is less than this value, the OP MAY
