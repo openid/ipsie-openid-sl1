@@ -4,8 +4,8 @@
 
 IPSIE Working Group                                           A. Parecki
 Internet-Draft                                                      Okta
-Intended status: Informational                          8 September 2026
-Expires: 12 March 2027
+Intended status: Informational                          9 September 2026
+Expires: 13 March 2027
 
 
                     IPSIE SL1 OpenID Connect Profile
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 March 2027.
+   This Internet-Draft will expire on 13 March 2027.
 
 Copyright Notice
 
@@ -553,8 +553,8 @@ Appendix B.  Document History
    *  Added a Relying Party requirement to validate auth_time against a
       requested max_age
 
-   *  Clarified that max_age measures time since the user last
-      interactively authenticated
+   *  Clarified that max_age is about the time since the user last
+      interactively authenticated, not just bounced through the IdP
 
    *  Fixed an incorrect reference to OpenID Connect Discovery, an
       incorrect section number for ID Token validation, and a duplicated
