@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-08T02:30:59.595796+00:00",
+  "timestamp": "2026-09-10T02:34:02.367800+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -993,6 +993,226 @@
         }
       ],
       "reviews": []
+    },
+    {
+      "number": 14,
+      "id": "PR_kwDOOE2vos8AAAABCvtwfg",
+      "title": "sync with levels doc",
+      "url": "https://github.com/openid/ipsie-openid-sl1/pull/14",
+      "state": "OPEN",
+      "author": "aaronpk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Nothing should be surprising here, this just brings the actual spec text in line with the levels doc that we've discussed over the last few months.",
+      "createdAt": "2026-09-08T22:41:45Z",
+      "updatedAt": "2026-09-09T22:32:32Z",
+      "baseRepository": "openid/ipsie-openid-sl1",
+      "baseRefName": "main",
+      "baseRefOid": "5238d9f14cd07ce3ce0e0488d33f7d00e65e8ab9",
+      "headRepository": "openid/ipsie-openid-sl1",
+      "headRefName": "aaronpk/sync-with-levels",
+      "headRefOid": "23b357a6b296b0dc2a53791027025607ee9682b9",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOE2vos8AAAABM37l-g",
+          "commit": {
+            "abbreviatedOid": "192cac5"
+          },
+          "author": "basudn",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-09T19:27:39Z",
+          "updatedAt": "2026-09-09T19:27:39Z",
+          "comments": [
+            {
+              "originalPosition": 111,
+              "body": "@aaronpk Clarified that `max_age` measures the maximum allowable time since the user last interactively authenticated",
+              "createdAt": "2026-09-09T19:27:39Z",
+              "updatedAt": "2026-09-09T19:27:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos8AAAABM39Dlg",
+          "commit": {
+            "abbreviatedOid": "192cac5"
+          },
+          "author": "basudn",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-09T19:29:34Z",
+          "updatedAt": "2026-09-09T19:29:35Z",
+          "comments": [
+            {
+              "originalPosition": 39,
+              "body": "@aaronpk is this specifying `session_expiry` being >5m from the `iat`? Do we need a strict minimum? ",
+              "createdAt": "2026-09-09T19:29:35Z",
+              "updatedAt": "2026-09-09T19:30:46Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos8AAAABM4JFFQ",
+          "commit": {
+            "abbreviatedOid": "192cac5"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-09T19:48:28Z",
+          "updatedAt": "2026-09-09T19:48:28Z",
+          "comments": [
+            {
+              "originalPosition": 39,
+              "body": "Yes, we agreed to a 5 minute minimum a little while ago, captured here: https://github.com/openid/ipsie/blob/main/ipsie-levels.md#ipsie-session-lifecycle-sl1---single-sign-on--session-lifetime-controls Below that it becomes impractical to actually build an RP that adheres to a lower number.",
+              "createdAt": "2026-09-09T19:48:28Z",
+              "updatedAt": "2026-09-09T19:48:28Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos8AAAABM4Jbnw",
+          "commit": {
+            "abbreviatedOid": "192cac5"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-09T19:49:00Z",
+          "updatedAt": "2026-09-09T19:49:00Z",
+          "comments": [
+            {
+              "originalPosition": 111,
+              "body": "the clarification is the _interactively_ part",
+              "createdAt": "2026-09-09T19:49:00Z",
+              "updatedAt": "2026-09-09T19:49:00Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos8AAAABM4icDw",
+          "commit": {
+            "abbreviatedOid": "192cac5"
+          },
+          "author": "basudn",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-09T20:32:50Z",
+          "updatedAt": "2026-09-09T20:32:50Z",
+          "comments": [
+            {
+              "originalPosition": 111,
+              "body": "@aaronpk Should it not be 'maximum allowable time' here?",
+              "createdAt": "2026-09-09T20:32:50Z",
+              "updatedAt": "2026-09-09T20:33:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos8AAAABM4l-nw",
+          "commit": {
+            "abbreviatedOid": "192cac5"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-09T20:38:48Z",
+          "updatedAt": "2026-09-09T20:38:49Z",
+          "comments": [
+            {
+              "originalPosition": 111,
+              "body": "This is just the changelog, let me rephrase that though",
+              "createdAt": "2026-09-09T20:38:49Z",
+              "updatedAt": "2026-09-09T20:38:49Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos8AAAABM4mYpg",
+          "commit": {
+            "abbreviatedOid": "192cac5"
+          },
+          "author": "aaronpk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-09T20:39:37Z",
+          "updatedAt": "2026-09-09T20:39:37Z",
+          "comments": [
+            {
+              "originalPosition": 111,
+              "body": "```suggestion\n* Clarified that `max_age` is about the time since the user last interactively authenticated, not just bounced through the IdP\n```",
+              "createdAt": "2026-09-09T20:39:37Z",
+              "updatedAt": "2026-09-09T20:39:37Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos8AAAABM5Xoyw",
+          "commit": {
+            "abbreviatedOid": "cbc511b"
+          },
+          "author": "gffletch",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-09T22:12:12Z",
+          "updatedAt": "2026-09-09T22:12:13Z",
+          "comments": [
+            {
+              "originalPosition": 57,
+              "body": "```suggestion\n* MUST support the `max_age` parameter with a value representing the maximum number of seconds allowable since the user last interactively authenticated at the OP. If the elapsed time since interactive authentication is less than this value, the OP MAY choose to actively reauthenticate the user.  If the elapsed time since interactive authentication is greater than this value, the OP MUST actively reauthenticate the user.\n```",
+              "createdAt": "2026-09-09T22:12:12Z",
+              "updatedAt": "2026-09-09T22:12:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOE2vos8AAAABM5YZfA",
+          "commit": {
+            "abbreviatedOid": "cbc511b"
+          },
+          "author": "gffletch",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "I made a very minor suggestion :)",
+          "createdAt": "2026-09-09T22:13:59Z",
+          "updatedAt": "2026-09-09T22:13:59Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOOE2vos8AAAABM5aGnQ",
+          "commit": {
+            "abbreviatedOid": "cbc511b"
+          },
+          "author": "gffletch",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-09T22:18:29Z",
+          "updatedAt": "2026-09-09T22:18:30Z",
+          "comments": [
+            {
+              "originalPosition": 57,
+              "body": "Note: how does this wording land with https://github.com/openid/ipsie-openid-sl1/pull/12",
+              "createdAt": "2026-09-09T22:18:29Z",
+              "updatedAt": "2026-09-09T22:18:30Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
