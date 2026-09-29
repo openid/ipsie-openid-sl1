@@ -6,6 +6,7 @@
 *.upload
 *~
 .tags
+.githooks
 /*-[0-9][0-9].xml
 /.*.mk
 /.gems/
