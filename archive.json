@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-29T03:40:29.740566+00:00",
+  "timestamp": "2026-10-01T03:33:20.366421+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -999,24 +999,26 @@
       "id": "PR_kwDOOE2vos8AAAABCvtwfg",
       "title": "sync with levels doc",
       "url": "https://github.com/openid/ipsie-openid-sl1/pull/14",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "aaronpk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Nothing should be surprising here, this just brings the actual spec text in line with the levels doc that we've discussed over the last few months.",
       "createdAt": "2026-09-08T22:41:45Z",
-      "updatedAt": "2026-09-10T03:32:59Z",
+      "updatedAt": "2026-09-29T13:22:01Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "5238d9f14cd07ce3ce0e0488d33f7d00e65e8ab9",
       "headRepository": "openid/ipsie-openid-sl1",
       "headRefName": "aaronpk/sync-with-levels",
       "headRefOid": "23b357a6b296b0dc2a53791027025607ee9682b9",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-29T13:22:01Z",
+      "mergedAt": "2026-09-29T13:22:01Z",
+      "mergedBy": "aaronpk",
+      "mergeCommit": {
+        "oid": "4130f7418c2944b150d585c8d4f26e4a11d7023e"
+      },
       "comments": [],
       "reviews": [
         {
@@ -1165,7 +1167,7 @@
             "abbreviatedOid": "cbc511b"
           },
           "author": "gffletch",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2026-09-09T22:12:12Z",
@@ -1185,7 +1187,7 @@
             "abbreviatedOid": "cbc511b"
           },
           "author": "gffletch",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "APPROVED",
           "body": "I made a very minor suggestion :)",
           "createdAt": "2026-09-09T22:13:59Z",
@@ -1198,7 +1200,7 @@
             "abbreviatedOid": "cbc511b"
           },
           "author": "gffletch",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2026-09-09T22:18:29Z",
