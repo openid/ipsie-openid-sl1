@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-11-10T05:34:23.235959+00:00",
+  "timestamp": "2026-11-12T05:18:44.027524+00:00",
   "repo": "openid/ipsie-openid-sl1",
   "labels": [
     {
@@ -49,7 +49,32 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 15,
+      "id": "I_kwDOOE2vos8AAAABeFRtxQ",
+      "title": "Clarity of broker boundary",
+      "url": "https://github.com/openid/ipsie-openid-sl1/issues/15",
+      "state": "OPEN",
+      "author": "0xandybarlow",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "onsider the following federation chain:\n\n**Application \u2192 Identity Broker (RP) \u2192 Enterprise Identity Provider (OP)**\n\nThe Enterprise Identity Provider and the broker have an SL1-conformant OIDC relationship. The Enterprise Identity Provider issues an ID Token to the broker containing: `session_expiry = 17:00`\n\nThe broker consumes this ID Token as an RP. Separately, it acts as an OP and issues a new ID Token to the application.\n\nCould the Working Group clarify the following?\nDoes participating as an RP in an SL1-conformant relationship impose any SL1 requirements on the broker\u2019s downstream relationship with the application? Or is SL1 conformance assessed independently for each OP\u2013RP relationship?\n\nIf the downstream relationship is not SL1-conformant, does session_expiry terminate at the broker, with no requirement for the broker to expose or propagate the upstream deadline to the application?\n\nIf the downstream relationship is also SL1-conformant, must the broker issue a session_expiry value no later than 17:00? Or may it calculate a later value according to its own session policy?\n\nIf the upstream deadline constrains the downstream session, how should already-issued downstream sessions and tokens be handled when that deadline is reached?\n\nThe first question is foundational, as it determines whether the propagation questions arise at all.\n\n\n```mermaid\nsequenceDiagram\n    autonumber\n    actor User as End User\n    participant App as Application\n    participant Broker as Identity Broker (RP)\n    participant IdP as Enterprise Identity Provider (OP)\n\n    User->>App: Start sign-in\n    App->>Broker: Send the user to the broker\n    Broker->>IdP: Ask the enterprise provider to authenticate the user\n    IdP->>User: Sign in or use an existing enterprise session\n    User-->>IdP: Complete authentication when required\n    IdP-->>Broker: ID Token<br/>session_expiry = 5:00 PM\n\n    Note over Broker: What is clear:<br/>the broker session created from this ID Token<br/>must end by 5:00 PM\n\n    Note over App,Broker: The broker now issues a new ID Token.<br/>Must the 5:00 PM deadline constrain it?\n\n    alt Deadline stops at the broker\n        Broker-->>App: New ID Token<br/>application session expires at 8:00 PM\n        App->>App: Keep the application session<br/>until 8:00 PM\n        Note over App,Broker: The application can remain signed in<br/>after the broker's first session has expired\n    else Deadline must carry across the broker\n        Broker-->>App: New ID Token<br/>application session expires no later than 5:00 PM\n        App->>App: End the application session<br/>by 5:00 PM\n    end\n\n    Note over App,IdP: The current drafts do not say<br/>which branch is required\n```",
+      "createdAt": "2026-11-10T19:00:31Z",
+      "updatedAt": "2026-11-10T19:01:35Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "0xandybarlow",
+          "authorAssociation": "NONE",
+          "body": "Originally posted here: https://github.com/openid/ipsie/issues/124",
+          "createdAt": "2026-11-10T19:01:35Z",
+          "updatedAt": "2026-11-10T19:01:35Z"
+        }
+      ]
+    }
+  ],
   "pulls": [
     {
       "number": 1,
@@ -1006,7 +1031,7 @@
       "labels": [],
       "body": "Nothing should be surprising here, this just brings the actual spec text in line with the levels doc that we've discussed over the last few months.",
       "createdAt": "2026-09-08T22:41:45Z",
-      "updatedAt": "2026-09-29T13:22:01Z",
+      "updatedAt": "2026-11-10T17:22:02Z",
       "baseRepository": "openid/ipsie-openid-sl1",
       "baseRefName": "main",
       "baseRefOid": "5238d9f14cd07ce3ce0e0488d33f7d00e65e8ab9",
@@ -1225,6 +1250,19 @@
           "body": "",
           "createdAt": "2026-09-10T03:32:59Z",
           "updatedAt": "2026-09-10T03:32:59Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOOE2vos8AAAABXHcIdw",
+          "commit": {
+            "abbreviatedOid": "23b357a"
+          },
+          "author": "bhjelm-yubico",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-11-10T17:22:02Z",
+          "updatedAt": "2026-11-10T17:22:02Z",
           "comments": []
         }
       ]
